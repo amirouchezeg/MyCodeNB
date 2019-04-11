@@ -1,0 +1,28 @@
+		
+
+		Geocoder gcd = new Geocoder(this, Locale.getDefault());
+		List<Address> addresses = null;
+		try {
+			addresses = gcd.getFromLocation(lat,lng, 4);
+			//addresses = gcd.getFromLocation(36.3874765,4.7254139, 4);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//remove repeated elements from List
+		Set<String> hs = new HashSet<>();
+		boolean isAddressEmpty=true;
+		for (int i =0;i<addresses.size();i++) {
+			if ((addresses.get(i).getLocality() !=null)) {
+				//get name of place
+				Log.i("CityName",addresses.get(i).getLocality());
+				hs.add(addresses.get(i).getLocality());
+				Log.i("CityName",addresses.get(i).getAdminArea());
+				hs.add(addresses.get(i).getAdminArea());
+				Log.i("CityName",addresses.get(i).getFeatureName());
+				hs.add(addresses.get(i).getFeatureName());
+				isLocationFind = true;
+				//Log.i("CityName",addresses.get(i).getCountryName());
+				//Log.i("CityName",addresses.get(i).getSubLocality());
+				//Log.i("CityName",addresses.get(i).getSubAdminArea());
+			}
+		}

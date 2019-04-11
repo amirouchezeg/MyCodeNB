@@ -1,0 +1,10 @@
+
+let tab =Array.make( 5 ) true
+
+NB : 
+	tab  : name
+	5    : size of tible
+	true : defalte value
+
+----or
+let tab =[|1;2;3;4;5|]

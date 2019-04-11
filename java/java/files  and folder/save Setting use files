@@ -1,0 +1,76 @@
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author amirouche
+ */
+public class files {
+
+    public static void main(String[] args) {
+        String strToWrite = "you are alon";
+        String nameFile = "file.txt";
+
+        saveParameter(strToWrite,nameFile);        
+    }
+
+        private static void saveParameter(String strToWrite, String nameFile) {
+        File f = new File(nameFile);
+        if (!f.exists()) {
+            writeFiles(nameFile, strToWrite);
+            System.out.println("----Writed");
+        }
+        
+            String mText= readFile(nameFile);            
+            
+            System.out.println(strToWrite);
+            System.out.println(mText);
+            if (!mText.equals(strToWrite)) {
+                File f1=new File(nameFile);
+                f1.delete();
+                writeFiles(nameFile, strToWrite);
+                System.out.println("----Text Edited");
+            }
+        
+    }
+        
+    private static String readFile(String nameFile) {
+        FileReader file;
+        String mText = "";
+        try {
+            file = new FileReader(nameFile);
+            int character;
+            while ((character = file.read()) != -1) {
+                mText += (char) character;
+            }
+            file.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(files.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(files.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return mText;
+            
+    }
+
+    private static void writeFiles(String nameFile, String strToWrite) {
+        FileWriter file;
+        try {
+            file = new FileWriter(nameFile, false);
+            file.write(strToWrite);
+            file.close();            
+        } catch (IOException ex) {
+            Logger.getLogger(files.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+
+}
+

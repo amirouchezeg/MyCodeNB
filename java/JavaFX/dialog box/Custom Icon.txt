@@ -1,0 +1,5 @@
+// Get the Stage.
+Stage stage = (Stage) dialog.getDialogPane().getScene().getWindow();
+
+// Add a custom icon.
+stage.getIcons().add(new Image(this.getClass().getResource("login.png").toString()));

@@ -1,0 +1,7 @@
+ Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_SUBJECT,"تحميل تطبيق إلخ .. ");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "مرحباً بكم جميعاً في مدونة اندرودي عربي");
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent,"اختار التطبيق الذي مشاركة النص معه :"));
+

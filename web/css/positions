@@ -1,0 +1,30 @@
+////////////////
+***Position fixed : the element relative to the window.
+h1 {
+    position:fixed ;
+    top:50px;
+    right:50px;
+}
+////////////////
+******Position relative : the element relative to its normal position.
+h1 {
+    color: red;
+    position:relative;
+    left:-20px;
+    top:30px;
+}
+////////////////
+***absolute: relative to the HTML page.
+////////////////
+***Position the <img> element behind the text.
+img {
+    position: absolute;
+    z-index:-1;*****
+    left: 0px;
+    top: 0px;
+}
+
+////////////////
+***
+////////////////
+***

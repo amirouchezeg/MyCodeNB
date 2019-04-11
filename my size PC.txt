@@ -1,0 +1,3 @@
+Les applications smartphones aujourd’hui peuvent être exécutée sur différents systèmes d'exploitations spécialement conçu pour mobiles donc ils peuvent fournir plusieurs fonctionnalités comme le calendrier, la navigation consultation et envoie des courriers électroniques, la géolocalisation, la boussole, etc.
+
+Un Smartphone nécessite un système d’exploitation et pour cela il existe plusieurs compagnies qui développent des systèmes d’exploitation conçu à des Smartphone Et permet ces systèmes il existe quatre principaux : IOS de Apple, BlackBerry OS de RIM, Windows Phone de Microsoft et Android de Google

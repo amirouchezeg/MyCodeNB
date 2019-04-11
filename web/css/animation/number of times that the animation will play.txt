@@ -1,0 +1,9 @@
+animation-iteration-count: 2;
+
+#- a specific number of iterations (default is 1)
+
+infinite - the animation repeats forever
+
+initial - sets the iteration count to the default value
+
+inherit - inherits the value from the parent

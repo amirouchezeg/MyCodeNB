@@ -1,0 +1,9 @@
+fichier = open("data.txt", "r")
+print fichier
+<open file 'data.txt', mode 'r' at 0x7ff6cf3fe4b0>
+
+#Fermeture d'un fichier
+fichier.close()
+
+#############
+r, ce paramètre indique une ouverture de fichier en lecture.

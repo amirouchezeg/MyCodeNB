@@ -1,0 +1,7 @@
+sudo apt-get install git
+
+//set up the configuration details of the GitHub user.
+
+git config --global user.name "user_name"
+
+

@@ -1,0 +1,5 @@
+
+let tab =Array.make( 5 ) true;;
+
+Array.length tab;;
+

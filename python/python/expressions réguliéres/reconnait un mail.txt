@@ -1,0 +1,14 @@
+#!/usr/bin/python2.7
+#-*- coding: utf-8 -*-
+
+import re
+
+string = "olivier@mailbidon.com"
+regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
+
+if re.match(regexp, string) is not None:
+    print ("TRUE")
+else:
+    print ("FALSE")
+
+print (re.search(regexp, string).groups())

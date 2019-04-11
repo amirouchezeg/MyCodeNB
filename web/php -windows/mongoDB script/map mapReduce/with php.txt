@@ -1,0 +1,33 @@
+if ($_GET['service_type']) {
+				#sum of all services for one type of services					
+				//get an instance of MongoDB object
+				$ins_db = $db->database;
+				//define the map function
+				$map = new MongoCode(
+					"function() { emit(this.type_service, 1); }"
+				);
+				//define the reduce function
+				$reduce = new MongoCode(
+					"function(key, values) {
+					var count = 0;
+					for (var i = 0; i < values.length; i++){
+					 	count += values[i];
+					}
+					return count;
+				};");
+				//Run the map and reduce functions, store results in a collection
+				//named tagcount
+				$command = array('mapreduce' => 'Services',		
+					'map' => $map,
+					'reduce' => $reduce,
+					'out' => 'services_per_type'
+				);
+				$ins_db->command($command);
+				$collection_services_per_type=$db->getCollection('services_per_type');
+				$cursor_services_per_type = $collection_services_per_type->find(array('_id'=> $_GET['service_type']));
+				if ($cursor_services_per_type->hasNext()) {
+					$serv_type = $cursor_services_per_type->getNext();			
+					$result[$_GET['service_type']]=$serv_type['value'];						
+				}
+				//$result[$_GET['service_type']]=$cursor_services_per_type['value'];
+			}

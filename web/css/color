@@ -1,0 +1,31 @@
+//////////////
+***use RGBA forma
+h1 {
+   background-color: rgba(0,255,0,0.3);
+}
+//////////////
+***linear gradient background top 
+div {
+    background:linear-gradient(white,green);    
+}
+//////////////
+***Set a linear gradient background for, going from the top left to the bottom right
+div {
+    background: linear-gradient(to bottom right,white, green);
+}
+//////////////
+***Set a linear gradient background for the element, going at a 70 degree angle
+div {
+    background: linear-gradient(70deg,white, green);
+}
+//////////////
+***Set a radial gradient background
+div {
+	background: radial-gradient(white, green);
+}
+//////////////
+***Set a radial gradient background with circel
+div {
+    background: radial-gradient(circle,white, green);
+}
+

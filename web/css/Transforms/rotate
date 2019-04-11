@@ -1,0 +1,21 @@
+//////////////////
+***rotate
+div {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform:rotate(45deg);***
+}
+//////////////////
+***rotate from X-axis
+div {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform:rotateX(150deg);***
+    ->transform:rotateY(90deg);
+    ->transform:rotateZ(90deg);
+}

@@ -1,0 +1,3 @@
+AdRequest adRequest = new AdRequest.Builder().build();
+///REPLACE WITHE
+AdRequest adRequest = new AdRequest.Builder().addTestDevice("3AD978965861DEA06FA7B12C35DABBA7").build();

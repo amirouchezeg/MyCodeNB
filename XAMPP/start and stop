@@ -1,0 +1,7 @@
+ Pour démarrer XAMPP :
+
+sudo /opt/lampp/lampp start
+
+ Pour arrêter XAMPP, vous devrez saisir, dans un terminal, la commande suivante:
+
+sudo /opt/lampp/lampp stop

@@ -1,0 +1,14 @@
+        <Button
+            android:id="@+id/toImage"
+            android:layout_width="@dimen/width_button"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:drawableTop="@drawable/ic_action_photo"
+            android:paddingBottom="@dimen/padding_button_top_buttom"
+            android:layout_margin="@dimen/margin_button"
+            android:paddingLeft="@dimen/padding_left_rightbutton"
+            android:paddingRight="@dimen/padding_left_rightbutton"
+            android:paddingTop="@dimen/padding_button_top_buttom"
+            android:text=" الصورة"
+            android:textColor="#e8e9e9" />
+

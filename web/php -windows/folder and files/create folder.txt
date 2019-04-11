@@ -1,0 +1,4 @@
+if (!file_exists("images/services_img/test1")) {
+    mkdir('images/services_img/test1', 0777, true);
+    echo "directory created successfully   ";
+}

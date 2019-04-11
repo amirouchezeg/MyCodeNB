@@ -1,0 +1,8 @@
+$skills_id=DB::table('skills')->where('name', $value)->value('id');
+
+--------------
+
+$users = DB::table('users')->where([
+    ['status', '=', '1'],
+    ['subscribed', '<>', '1'],
+])->get();

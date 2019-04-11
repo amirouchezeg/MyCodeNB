@@ -1,0 +1,6 @@
+<div *ngIf="selectedHero">
+
+  <h2>display wath we want...</h2>
+
+
+</div>

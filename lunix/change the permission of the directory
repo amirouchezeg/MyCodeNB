@@ -1,0 +1,2 @@
+change the permission of the directory recursively and enable all other users to create/modify and delete files and directories inside. 
+sudo chmod -R 777 /home/sixven/camp_sms/inputs

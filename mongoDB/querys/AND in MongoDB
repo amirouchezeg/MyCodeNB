@@ -1,0 +1,1 @@
+ db.mycol.find({key1:value1, key2:value2}).pretty()  //where by='tutorials point' AND title = 'MongoDB Overview' 

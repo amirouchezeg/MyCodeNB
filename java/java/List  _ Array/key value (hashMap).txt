@@ -1,0 +1,8 @@
+            HashMap<String,String > listCharacter;
+	    Set set =listCharacter.entrySet();
+            Iterator iterator=set.iterator();
+            while (iterator.hasNext()){
+                Map.Entry mEntry=(Map.Entry)iterator.next();                
+                Log.i("isType_",mEntry.getKey().toString());
+                Log.i("isType_",mEntry.getValue().toString());
+            }

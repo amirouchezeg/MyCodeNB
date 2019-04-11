@@ -1,0 +1,7 @@
+To define a specific style for one special element, add an id attribute to the element:
+<p id="p01">I am different</p>
+
+#p01 {
+    color: blue;
+}
+

@@ -1,0 +1,4 @@
+Intent intent = new Intent(this, MainList.class);
+        intent.putExtra(Intent.EXTRA_SUBJECT," .. ");
+        intent.putExtra(Intent.EXTRA_TEXT, "..");
+        startActivity(intent);

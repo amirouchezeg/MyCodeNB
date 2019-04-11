@@ -1,0 +1,10 @@
+  private static void selectMounthYear(String date) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy hh:mm:ss");
+        SimpleDateFormat formatterMounth = new SimpleDateFormat("MM");
+        SimpleDateFormat formatterYear = new SimpleDateFormat("yyyy");
+        String dateInString = date;
+        Date dateM = formatter.parse(dateInString);                             
+        Date dateY = formatter.parse(dateInString);                             
+        System.out.println(formatterMounth.format(dateM)); 
+        System.out.println(formatterYear.format(dateY));                               
+    }

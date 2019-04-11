@@ -1,0 +1,12 @@
+/////////////	
+***insert normal document	
+		$connection = new Mongo();//connect to mongodb 
+		$database = $connection->selectDB('sdz201819911993ZB');//select DB
+		$collection = $database->selectCollection('Abonne');//select collection
+		$abonne = array(
+			'nom_prenom' => $_POST['nom_prenom'],
+			'email' => $_POST['email'],
+			'mot_pass' => $_POST['mot_pass'],
+			'saved_at' => new MongoDate()
+		);
+		$collection->insert($abonne);		

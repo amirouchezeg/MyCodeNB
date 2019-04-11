@@ -1,0 +1,5 @@
+            $xmlFile=pathinfo($file);
+            echo $xmlFile['filename'];//without exetesion
+            echo $xmlFile['basename'];
+            echo $xmlFile['extension'];
+            echo $xmlFile['dirname'];

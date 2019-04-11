@@ -1,0 +1,3 @@
+$articles->update(array('_id' => MongoId('4dcd2abe5981')), array('$set' => array('title' => 'New Title')));
+
+$cursor= $collection->update(array('_id' =>new MongoId($_POST["_id"])),array('$set'=> $service));

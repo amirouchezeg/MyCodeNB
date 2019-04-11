@@ -1,0 +1,19 @@
+Picasso.with(this).load(filePath)
+                        .placeholder(R.drawable.no_image)
+                        .fit().centerInside()
+                        .error(R.drawable.no_image)
+                        .memoryPolicy(MemoryPolicy.NO_CACHE)
+                        .into(img, new Callback() {
+                            @Override
+                            public void onSuccess() {
+                                uploadImage();                
+                            }
+
+                            @Override
+                            public void onError() {
+                                Snackbar.make(commune_btn,
+                                        R.string.operation_failed,
+                                        Snackbar.LENGTH_LONG)
+                                        .setAction("No action", null).show();
+                            }
+                        });

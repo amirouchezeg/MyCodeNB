@@ -1,0 +1,75 @@
+    body{
+    	color:red;	
+    }
+    h1{
+    	color:blue;	
+    }
+all text in page is red exepte h1
+
+///////////////
+***Remove the underline from the link.
+a{
+    	text-decoration: none;        
+}
+///////////////
+***to uppercase letters
+h1{
+    	text-transform: uppercase;        
+  }
+///////////////
+***to capitalized letters.
+ p{
+    	text-transform:capitalize;
+  }
+///////////////
+***Indent the first line of the <p> 
+p{
+    	text-indent:20px;
+ }
+///////////////
+***background style
+a:link {
+    background-color:lightblue;
+}
+///////////////
+***only first line
+p::first-line{
+	color:red;
+}
+///////////////
+***only first letter
+p::first-letter{
+	color:red;
+    font-size:xx-large;
+}
+///////////////
+***Insert the element before, and after elements
+p::before,
+p::after{
+	content:url('smiley.gif');	
+}
+//////////////
+***overflowed content for the element should be signaled with an ellipsis (...)
+
+p {
+    white-space: nowrap; 
+    width: 200px; 
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow:ellipsis;***
+}
+//////////////
+***Specify that text in the <p> element should wrap, even if it needs to split in the middle of a word.
+p {
+    width: 150px; 
+    border: 1px solid #000000;
+    word-wrap:break-word;***    
+}
+//////////////
+***Specify that text in the <p> element can break between any two letters.
+p {
+    width: 150px; 
+    border: 1px solid #000000;
+    word-break: break-all;***
+
+}

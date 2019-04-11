@@ -1,0 +1,17 @@
+
+		//Toujours notre 25 Décembre 2018 a 13H37
+		LocalDateTime ldt = LocalDateTime.of(2018, Month.DECEMBER, 25, 13, 37, 0);
+		LocalDateTime ldt2 = ldt.plus(3, ChronoUnit.YEARS);
+		LocalDateTime ldt3 = ldt.minusMinutes(1337);
+		
+		Period p = Period.between(ldt.toLocalDate(), ldt2.toLocalDate());
+		Duration d = Duration.between(ldt.toLocalTime(), ldt3.toLocalTime());
+		System.out.println("Période : " + p);
+		System.out.println("Durée : " + d.getSeconds());
+		System.out.println("Ecart en jour : " + ChronoUnit.DAYS.between(ldt, ldt2));
+
+
+-----------------output
+Période : P3Y
+Durée : 6180
+Ecart en jou

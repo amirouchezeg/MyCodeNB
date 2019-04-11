@@ -1,0 +1,3 @@
+$mEmailLowerCase=strtoupper("azerRTY");
+
+$mEmailLowerCase=strtolower("azerRTY") ;

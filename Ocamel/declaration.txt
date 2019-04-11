@@ -1,0 +1,13 @@
+let x = 1 + 2;;
+print_int x;;
+let y = x * x;;
+print_int y;;
+
+Le contenu de la variable n'est pas modiable
+
+////////une variable modiable
+
+	let x = ref 1;;
+	//et pour modier le contenu
+	x := 2;;
+

@@ -1,0 +1,3 @@
+private JFXComboBox<String> comboMoin;
+...
+comboMoin.getItems().add("amqm");   

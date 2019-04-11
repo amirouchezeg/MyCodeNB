@@ -1,0 +1,2 @@
+int->int->int ( une fonction qui prend une valeur de type int et qui renvoie une fonction de int vers int )
+

@@ -1,0 +1,5 @@
+$articleCollection = $mongodb->myblogsite->articles;
+
+...
+
+$cursor = $articleCollection->find(array(),array('title','saved_at'));

@@ -1,0 +1,4 @@
+	File f = new File(nameFile);
+        if (f.exists()) {
+		//EXIST
+        }

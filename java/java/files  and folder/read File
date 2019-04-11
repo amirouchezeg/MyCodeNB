@@ -1,0 +1,7 @@
+	    FileReader file = new FileReader(nameFile);
+            int character;
+	    String mText="";
+            while ((character = file.read()) != -1) {
+                mText+=(char) character;
+            }
+            file.close();

@@ -1,0 +1,8 @@
+
+let tab =Array.make( 5 ) true
+
+tab.(0) <- true
+
+----or
+
+Array.set tab 0 true

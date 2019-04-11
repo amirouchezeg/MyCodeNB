@@ -1,0 +1,7 @@
+See The Use of Multiple JFrames, Good/Bad Practice? 
+(But see also JFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE)
+
+//jesperReport
+Change this: JasperViewer.viewReport(jasperPrint);
+
+to JasperViewer.viewReport(jasperPrint, false);

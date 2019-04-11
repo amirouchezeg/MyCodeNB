@@ -1,0 +1,111 @@
+ public void onPickImage(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        //intent.addCategory(Intent.CATEGORY_APP_GALLERY);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+        } else {
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+        }
+        imgId=view.getId();
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1);
+    }
+
+
+//onActivityResult
+
+
+@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==1 &&resultCode == RESULT_OK && data != null ) {
+            if (data.getData() != null) {
+                Uri filePath = data.getData();
+                //Getting the Bitmap from Gallery
+                ImageView imageView = img1,imageViewShow=imgShow1;
+                switch (imgId){
+                    case R.id.imgShow1:
+                        imageView=img1;
+                        imageViewShow=imgShow1;
+                        break;
+                    case R.id.imgShow2:
+                        imageView=img2;
+                        imageViewShow=imgShow2;
+                        break;
+                    case R.id.imgShow3:
+                        imageView=img3;
+                        imageViewShow=imgShow3;
+                        break;
+                    case R.id.imgShow4:
+                        imageView=img4;
+                        imageViewShow=imgShow4;
+                        break;
+                    case R.id.imgShow5:
+                        imageView=img5;
+                        imageViewShow=imgShow5;
+                        break;
+                }
+                Picasso.with(this).load(filePath)
+                        .placeholder(R.drawable.no_image)
+                        .fit().centerInside()
+                        .error(R.drawable.no_image)
+                        .into(imageView);
+                Picasso.with(this).load(filePath)
+                        .placeholder(R.drawable.no_image)
+                        .fit().centerInside()
+                        .error(R.drawable.no_image)
+                        .into(imageViewShow);
+
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    if (data.getClipData()!=null) {
+                        ClipData mClipData=data.getClipData();
+                        ArrayList<Uri>mArrayList=new ArrayList<Uri>();
+                        for (int i=0; i<mClipData.getItemCount();i++) {
+                            ClipData.Item item=mClipData.getItemAt(i);
+                            Uri uri=item.getUri();
+                            mArrayList.add(uri);
+                            ImageView imageView = img1,imageViewShow=imgShow1;
+                            switch (i){
+                                case 0:
+                                    imageView=img1;
+                                    imageViewShow=imgShow1;
+                                    break;
+                                case 1:
+                                    imageView=img2;
+                                    imageViewShow=imgShow2;
+                                    break;
+                                case 2:
+                                    imageView=img3;
+                                    imageViewShow=imgShow3;
+                                    break;
+                                case 3:
+                                    imageView=img4;
+                                    imageViewShow=imgShow4;
+                                    break;
+                                case 4:
+                                    imageView=img5;
+                                    imageViewShow=imgShow5;
+                                    break;
+                            }
+                            Picasso.with(this).load(uri)
+                                    .placeholder(R.drawable.no_image)
+                                    .fit().centerInside()
+                                    .error(R.drawable.no_image)
+                                    .into(imageView);
+                            Picasso.with(this).load(uri)
+                                    .placeholder(R.drawable.no_image)
+                                    .fit().centerInside()
+                                    .error(R.drawable.no_image)
+                                    .into(imageViewShow);
+                        }
+
+                    }
+                }
+                Toast.makeText(this, "I am here", Toast.LENGTH_SHORT).show();
+            }
+            
+            
+        }
+    }

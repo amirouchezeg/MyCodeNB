@@ -1,0 +1,2 @@
+String pathtoimage= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+ "/Camera/IMG_20150521_144859.jpg";
+

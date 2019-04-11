@@ -1,0 +1,1 @@
+String mess = getResources().getString(R.string.mess_1);

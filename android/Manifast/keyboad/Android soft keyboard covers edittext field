@@ -1,0 +1,19 @@
+
+
+android:windowSoftInputMode="adjustPan"
+
+
+add it to your manifest.xml in the activity tag of the activity that holds the input. 
+example:
+
+	
+<activity
+
+            android:name=".Activities.InputsActivity"
+
+            ...
+            
+		android:windowSoftInputMode="adjustPan"
+            />
+
+

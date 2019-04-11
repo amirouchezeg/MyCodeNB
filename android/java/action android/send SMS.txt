@@ -1,0 +1,7 @@
+
+
+////////java code
+
+	Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("sms:0666681387"));
+//      intent.putExtra("sms_body","default content");
+        startActivity(intent);

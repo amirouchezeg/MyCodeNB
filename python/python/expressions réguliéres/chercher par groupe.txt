@@ -1,0 +1,8 @@
+>>> import re
+>>> m = re.search(r"Bienvenue chez (?P<chezqui>\w+) ! Tu as (?P<age>\d+) ans ?", "Bienvenue chez olivier ! Tu as 32 ans")
+>>> if m is not None:
+...     print m.group('chezqui')
+...     print m.group('age')
+... 
+olivier
+32

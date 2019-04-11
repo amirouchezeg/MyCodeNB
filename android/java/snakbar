@@ -1,0 +1,2 @@
+Snackbar.make(view, "text", Snackbar.LENGTH_LONG)
+        .setAction("No action", null).show();

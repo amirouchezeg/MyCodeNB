@@ -1,0 +1,9 @@
+fichier = open("data.txt", "a")
+fichier.write("Bonjour monde")
+fichier.close()
+
+#A noter que pour le monde d'ouverture a, si vous voulez écrire à la ligne, vous pouvez utiliser le saut de ligne \n:
+
+fichier = open("data.txt", "a")
+fichier.write("\nBonjour monde")
+fichier.close()

@@ -1,0 +1,32 @@
+if (uri!=null) {
+			Bitmap bmp = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			bmp.compress(Bitmap.CompressFormat.JPEG, 25, baos);
+			byte[] data = baos.toByteArray();
+
+
+			StorageReference storageReference = mStorageRef.child("images/books/" + nameImg);
+			storageReference.putBytes(data).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+				@Override
+				public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+					// Get a URL to the uploaded content
+					Uri downloadUrl = taskSnapshot.getDownloadUrl();
+					Log.i("downloadUrl", downloadUrl.toString());
+					snackBarMessage("Upload image Success");
+					progressDialog.dismiss();
+					uri=null;
+					//todo : make notebook image to imageView
+				}
+			}).addOnFailureListener(new OnFailureListener() {
+				@Override
+				public void onFailure(@NonNull Exception e) {
+					snackBarMessage("Upload image Failed");
+					Log.i("downloadUrl", e.toString());
+					progressDialog.dismiss();
+				}
+			});
+		} else {
+			progressDialog.dismiss();
+		}
+

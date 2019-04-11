@@ -1,0 +1,6 @@
+
+
+f =open('namefile.stylesheet','r')
+style=f.read()
+f.close()
+window.setStylesheet(style)

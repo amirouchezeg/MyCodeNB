@@ -1,0 +1,10 @@
+$center = array(23.42342,90.23423);
+$radius = 10;
+$collection->find(array('location' => array('$within' =>
+array('$center' =>
+array($center,
+$radius)
+)
+)
+)
+);

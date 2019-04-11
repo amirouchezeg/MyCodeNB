@@ -1,0 +1,2 @@
+print re.sub(r"Bienvenue chez (?P<chezqui>\w+) ! Tu as (?P<age>\d+) ans ?", r"\g<chezqui> a \g<age> ans", "Bienvenue chez olivier ! Tu as 32 ans")
+olivier a 32 ans

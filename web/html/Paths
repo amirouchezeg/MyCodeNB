@@ -1,0 +1,23 @@
+#Relative File Paths
+
+A relative file path points to a file relative to the current page.
+
+In this example the file path points to a file in the images folder located at the root of the current web:
+Example
+<img src="/images/picture.jpg" alt="Mountain"> 
+///////////////////
+#current folder
+In this example the file path points to a file in the images folder located in the current folder:
+Example
+<img src="images/picture.jpg" alt="Mountain"> 
+///////////////////
+#above the current folder
+In this example the file path points to a file in the images folder located in the folder one level above the current folder:
+Example
+<img src="../images/picture.jpg" alt="Mountain"> 
+///////////////////
+#the root of the current
+In this example the file path points to a file in the images folder located at the root of the current web:
+Example
+<img src="/images/picture.jpg" alt="Mountain"> 
+

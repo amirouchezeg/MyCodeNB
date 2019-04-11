@@ -1,0 +1,7 @@
+if ($cursor->hasNext()):
+    	$abonnes = $cursor->getNext();
+	echo $abonnes['_id'];
+	    
+else:
+	echo "false"; 		
+endif;	

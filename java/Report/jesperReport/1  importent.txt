@@ -1,0 +1,11 @@
+the Bean attribuet shold be started withe Small letter
+
+example 
+
+public class DataBean {
+
+    private String name;
+    private String dateDebut;
+    private String DateFin; //xxxx Error here ->dateFin
+    private String prixTotale;
+    private String prixPayer;

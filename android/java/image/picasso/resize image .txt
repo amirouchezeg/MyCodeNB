@@ -1,0 +1,5 @@
+Picasso.with(mContext).load(dataModel.getImage())
+	.placeholder(R.drawable.ic_launcher_background)
+        .error(R.drawable.img_logo_sdz)
+	.resize(x,y)
+	.into(viewHolder.img);

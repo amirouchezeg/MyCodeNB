@@ -1,0 +1,5 @@
+inpute  '2'
+
+$i=(int)'2'
+
+output 2

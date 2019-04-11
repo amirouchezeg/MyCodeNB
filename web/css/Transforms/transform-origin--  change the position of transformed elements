@@ -1,0 +1,10 @@
+//////////////
+***allows you to change the position of transformed elements.
+div {
+    transform: rotate(45deg);
+    transform-origin: 20% 40%;
+}
+//////////////
+***
+//////////////
+***

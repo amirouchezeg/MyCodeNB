@@ -1,0 +1,26 @@
+    try {
+      $connection = new Mongo();
+      $database = $connection->selectDB('sdz201819911993ZB');
+      $collection = $database->selectCollection('Abonne');
+    } catch(MongoConnectionException $e) {
+      die("Failed to connect to database ".$e->getMessage());
+    }
+    //$cursor = $collection->find();
+    $cursor = $collection->find(array("email" => "amirouchez656@gmail.com"));
+
+
+
+//////affichage
+
+
+
+<?php while ($cursor->hasNext()):
+    $abonnes = $cursor->getNext();     
+    ?>
+    <?php echo $abonnes['email']; ?>
+    <?php echo $abonnes['mot_pass']; ?>
+                  
+                  
+<?php endwhile; ?>  
+
+

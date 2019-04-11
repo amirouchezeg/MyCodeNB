@@ -1,0 +1,10 @@
+animation-direction: alternate;
+
+
+normal (default) - The animation plays forward. On each cycle the animation resets to the beginning state (0%) and plays forward again (to 100%).
+
+reverse - The animation plays backwards. On each cycle the animation resets to the end state (100%) and plays backwards (to 0%).
+
+alternate - The animation reverses direction every cycle. On each odd cycle, the animation plays forward (0% to 100%). On each even cycle, the animation plays backwards (100% to 0%).
+
+alternate-reverse - The animation reverses direction every cycle. On each odd cycle, the animation plays in reverse (100% to 0%). On each even cycle, the animation plays forward (0% or 100%).

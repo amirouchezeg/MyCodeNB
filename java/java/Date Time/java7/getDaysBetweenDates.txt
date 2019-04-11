@@ -1,0 +1,12 @@
+ public static void getDaysBetweenDates(Date startdate, Date enddate) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(startdate);
+
+        while (calendar.getTime().before(enddate)) {
+            Date result = calendar.getTime();
+            calendar.add(Calendar.DATE, 1);                                     
+            String formattedDate = new SimpleDateFormat("dd-MM-yyyy").format(result);
+            System.out.println(formattedDate);
+        }
+
+    }

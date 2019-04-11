@@ -1,0 +1,9 @@
+Merge branch: fast-forward merging
+
+1-> Switch to the master branch
+	$ git checkout master
+
+2-> Merge changes from the future-plans branch into the 
+	$ git merge future-plans
+
+

@@ -1,0 +1,15 @@
+on create and system methodes
+
+  /*
+    * ********* On button clicked *********
+    * */
+
+
+    /*
+    * ********* methods used from on Click *********
+    * */
+
+
+   /*
+    * ********* Invariable Methods *********
+    * */

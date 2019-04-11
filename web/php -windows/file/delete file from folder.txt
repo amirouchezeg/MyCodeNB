@@ -1,0 +1,4 @@
+		if (file_exists("img.png")) {
+			unlink("img.png");
+			$result=array('result'=>1);
+		}

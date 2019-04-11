@@ -1,0 +1,160 @@
+package com.sdz.www.servicedz.API;
+
+import android.os.AsyncTask;
+import android.util.Log;
+
+import com.sdz.www.servicedz.user.AddServiceActivity;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import javax.net.ssl.HttpsURLConnection;
+
+/**
+ * Created by amirouche on 25/04/2018.
+ */
+
+public class addServices extends AsyncTask<String, Void, String> {
+
+    String  id_user, name_service,type_service,type_detail_level2,
+    type_detail_level3,email,phone,phone1 ,description, wilaya, commune,city;
+    HashMap<String,String > listCharacter;
+
+            public addServices(String id_user, String name_service, String type_service, String type_detail_level2, String type_detail_level3, String email, String phone, String phone1, String description, String wilaya, String commune, String city
+    ,HashMap<String,String > listCharacter) {
+        this.id_user = id_user;
+        this.name_service = name_service;
+        this.type_service = type_service;
+        this.type_detail_level2 = type_detail_level2;
+        this.type_detail_level3 = type_detail_level3;
+        this.email = email;
+        this.phone = phone;
+        this.phone1 = phone1;
+        this.description = description;
+        this.wilaya = wilaya;
+        this.commune = commune;
+        this.city = city;
+        this.listCharacter=listCharacter;
+    }
+
+    @Override
+    protected String doInBackground(String... strings) {
+        try {
+            URL url = new URL("http://192.168.43.221/sdz/sdz_api/services/addService.php"); // here is your URL path
+            //C:\xampp\htdocs\sdz\sdz_api\services\addService.php
+            Set set =listCharacter.entrySet();
+            Iterator iterator=set.iterator();
+            JSONObject postDataParams = new JSONObject();
+            postDataParams.put("id_user",id_user);
+            while (iterator.hasNext()){
+                Map.Entry mEntry=(Map.Entry)iterator.next();
+                postDataParams.put(mEntry.getKey().toString(),mEntry.getValue().toString());
+                Log.i("isType_",mEntry.getKey().toString());
+                Log.i("isType_",mEntry.getValue().toString());
+            }
+            postDataParams.put("name_service",name_service);
+            postDataParams.put("type_service",type_service);
+            postDataParams.put("type_detail_level2",type_detail_level2);
+            postDataParams.put("type_detail_level3",type_detail_level3);
+            postDataParams.put("email",email);
+            postDataParams.put("phone",phone);
+            postDataParams.put("phone1",phone1);
+            postDataParams.put("description",description);
+            postDataParams.put("wilaya",wilaya);
+            postDataParams.put("commune",commune);
+            postDataParams.put("city",city);
+
+            Log.e("ACTIVITYnOW",postDataParams.toString());
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000 /* milliseconds */);
+            conn.setConnectTimeout(15000 /* milliseconds */);
+            conn.setRequestMethod("POST");
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+            writer.write(getPostDataString(postDataParams));
+
+            writer.flush();
+            writer.close();
+            os.close();
+
+            int responseCode=conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+
+                BufferedReader in=new BufferedReader(new
+                        InputStreamReader(conn.getInputStream()));
+
+                StringBuffer sb = new StringBuffer("");
+                String line="";
+
+                while((line = in.readLine()) != null) {
+
+                    sb.append(line);
+                    break;
+                }
+
+                in.close();
+                return sb.toString();
+
+            }
+            else {
+                return new String("false : "+responseCode);
+            }
+        }
+        catch(Exception e){
+            Log.i("ACTIVITYnOW",e.getMessage());
+            return new String("Exception: " + e.getMessage());
+        }
+
+    }
+
+
+    @Override
+    protected void onPostExecute(String result) {
+        //textView.setText(result);
+        // ParcJson(result);
+        //AddServiceActivity.postFinished();
+    }
+
+    public String getPostDataString(JSONObject params) throws Exception {
+
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+
+        Iterator<String> itr = params.keys();
+
+        while(itr.hasNext()){
+
+            String key= itr.next();
+            Object value = params.get(key);
+
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(key, "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(value.toString(), "UTF-8"));
+
+        }
+        return result.toString();
+    }
+
+}

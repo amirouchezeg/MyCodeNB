@@ -1,0 +1,6 @@
+
+//set
+request.getSession().setAttribute("key","value");
+
+//get
+value = request.getParameter("key")

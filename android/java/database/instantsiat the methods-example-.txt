@@ -1,0 +1,3 @@
+	
+        DatabaseHandler handler=new DatabaseHandler(this);
+        dataModels= handler.getAllCotacts();

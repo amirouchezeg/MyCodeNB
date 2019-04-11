@@ -1,0 +1,6 @@
+
+mdpi (Baseline):	160 dpi		1×
+hdpi:			240 dpi		1.5×
+xhdpi:			320 dpi		2×
+xxhdpi:			480 dpi		3×
+xxxhdpi:		640 dpi		4×

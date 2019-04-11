@@ -1,0 +1,9 @@
+in my app I add anly in xml
+	android:inputType="text"
+
+
+the anwser in stakoverflow is 
+	android:singleLine="true"
+        android:nextFocusDown="@id/text_location"
+
+and the tow solution is rigth

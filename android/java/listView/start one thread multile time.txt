@@ -1,0 +1,17 @@
+	Runnable mTasck = new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.notifyDataSetChanged();
+                        listViewComment.invalidateViews();
+                    }
+                });
+            }
+        };
+
+
+
+//call it multiple time
+new Thread(threadNotifyListView).start();

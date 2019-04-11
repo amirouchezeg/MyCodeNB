@@ -1,0 +1,7 @@
+for (int i = 0; i < tableReservation.getItems().size(); i++) {
+                                    if (tableReservation.getItems().get(i).getID()== rowDataClicked.getID()) {
+                                        tableReservation.requestFocus();
+                                        tableReservation.getSelectionModel().select(i);                                
+                                        tableReservation.getFocusModel().focus(i);
+                                    }
+                                }

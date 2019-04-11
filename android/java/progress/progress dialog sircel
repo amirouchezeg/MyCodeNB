@@ -1,0 +1,15 @@
+		
+		progressDialog = new ProgressDialog(this);
+		//progressDialog = new ProgressDialog(EditUserActivity.this,R.style.AppTheme_Dark_Dialog);
+		progressDialog.setIndeterminate(true);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.setMessage(getString(R.string.get_position));
+		progressDialog.show();
+		progressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface dialogInterface) {
+
+			}
+		});
+		...
+		progressDialog.dismiss();

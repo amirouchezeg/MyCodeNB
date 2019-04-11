@@ -1,0 +1,2 @@
+#draw a circle inside the rectangle drawn above.
+cv2.circle(img,(447,63), 63, (0,0,255), -1)

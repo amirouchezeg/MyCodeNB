@@ -1,0 +1,1 @@
+!android.util.Patterns.EMAIL_ADDRESS.matcher(list[i]).matches()

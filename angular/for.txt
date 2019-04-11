@@ -1,0 +1,9 @@
+///////in componenet.ts
+//we create array 
+goals=[];
+
+//////in html
+//in html we make for loop for array
+<p class="life-container" *ngFor="let goal of goals">
+      {{goal}}
+</p>

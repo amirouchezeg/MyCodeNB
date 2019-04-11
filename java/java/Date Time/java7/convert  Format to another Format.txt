@@ -1,0 +1,7 @@
+	
+
+	SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy hh:mm:ss");
+        SimpleDateFormat formatter1 = new SimpleDateFormat("dd-MM-yyyy");
+        String dateInString = "10 mai 2017 14:07:52";
+        Date date = formatter.parse(dateInString);                     
+        System.out.println(formatter1.format(date));   

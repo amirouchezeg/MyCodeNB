@@ -1,0 +1,58 @@
+///////
+**animation button
+
+//create button in xml***************
+<Button
+        android:id="@+id/button"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:onClick="didTapButton"
+        android:background="#FFA400"
+/>
+
+
+//create an animation file res/anim/bounce.xml **************
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<set xmlns:android="http://schemas.android.com/apk/res/android" >
+
+		<scale
+			android:duration="2000"
+			android:fromXScale="0.3"
+			android:toXScale="1.0"
+			android:fromYScale="0.3"
+			android:toYScale="1.0"
+			android:pivotX="50%"
+			android:pivotY="50%" />
+	</set>
+
+
+//Create Class name it MyBounceInterpolator*************
+
+class MyBounceInterpolator implements android.view.animation.Interpolator {
+    private double mAmplitude = 1;
+    private double mFrequency = 10;
+
+    MyBounceInterpolator(double amplitude, double frequency) {
+        mAmplitude = amplitude;
+        mFrequency = frequency;
+    }
+
+    public float getInterpolation(float time) {
+        return (float) (-1 * Math.pow(Math.E, -time/ mAmplitude) *
+                Math.cos(mFrequency * time) + 1);
+    }
+}
+
+////add the code that animates the button on tap***********
+
+public void didTapButton(View view) {
+    Button button = (Button)findViewById(R.id.button);
+    final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+    // Use bounce interpolator with amplitude 0.2 and frequency 20
+    MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+    myAnim.setInterpolator(interpolator);
+
+    button.startAnimation(myAnim);
+}

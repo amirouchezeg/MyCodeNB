@@ -1,0 +1,33 @@
+ 103
+down vote
+	
+
+One approach is to create an XML file like this in drawable, called whatever.xml:
+
+<?xml version="1.0" encoding="utf-8"?> 
+  <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/bgalt" />
+
+    <item
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/bgalt" />
+
+    <item android:drawable="@drawable/bgnorm" />
+</selector>
+
+bgalt and bgnormare PNG images in drawable.
+
+If you create the buttons programatically in your activity, you can set the background with:
+
+final Button b = new Button (MyClass.this);
+b.setBackgroundDrawable(getResources().getDrawable(R.drawable.whatever));
+
+If you set your buttons' style with an XML, you would do something like:
+
+<Button
+  android:id="@+id/mybutton"
+  android:background="@drawable/watever" />

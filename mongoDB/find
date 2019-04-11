@@ -1,0 +1,7 @@
+find collection document 		: db.COLLECTION_NAME.find()
+
+find collection formatted		: db.mycol.find().pretty()
+
+returns only one document		: findOne()
+
+select only limit fields from document	: db.COLLECTION_NAME.find({},{KEY:1})  ex:db.mycol.find({},{"title":1,_id:0})

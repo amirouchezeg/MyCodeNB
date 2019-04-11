@@ -1,0 +1,3 @@
+			<?php while ($cursor->hasNext()):
+
+			<?php endwhile; ?>

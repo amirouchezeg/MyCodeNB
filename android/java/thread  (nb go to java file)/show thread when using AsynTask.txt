@@ -1,0 +1,10 @@
+when use .execute().get(); and we want use prograssdailog it shold to run the tasck in the Thread
+
+	Thread handel = new Thread() {
+            @Override
+            public void run() {
+
+
+            }
+        };
+        handel.start();

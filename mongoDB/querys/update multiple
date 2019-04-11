@@ -1,0 +1,4 @@
+To update multiple documents, you need to set a parameter 'multi' to true.
+
+db.mycol.update({'title':'MongoDB Overview'},
+{$set:{'title':'New MongoDB Tutorial'}},{multi:true})

@@ -1,0 +1,28 @@
+----------------example
+drop TABLE if exists leads;
+drop TRIGGER if exists validate_email_before_insert_leads;
+
+CREATE TABLE leads (
+ id integer PRIMARY KEY,
+ first_name text NOT NULL,
+ last_name text NOT NULL,
+ source int NOT NULL,
+ email text NOT NULL,
+ phone int NOT NULL
+
+);
+
+CREATE TRIGGER validate_email_before_insert_leads BEFORE INSERT ON leads
+BEGIN
+ SELECT CASE
+ WHEN ((select SUM(source) from leads )>20) THEN
+ RAISE (Fail,'ERROR')
+ END;
+END;
+
+insert into leads values(1, "f", "l", 10,"amimai@ld.xom","s");
+insert into leads values(2, "f", "l", 10,"amimai@ld.xom","s");
+insert into leads values(3, "f", "l", 11,"amimai@ld.xom","s");
+insert into leads values(4, "f", "l", 10,"amimai@ld.xom","s");
+
+select * from leads;

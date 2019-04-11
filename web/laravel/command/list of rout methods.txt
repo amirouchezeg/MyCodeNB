@@ -1,0 +1,2 @@
+amirouche@amirouche-K:~/laravel/first-project$ php artisan route:list
+

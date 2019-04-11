@@ -1,0 +1,42 @@
+ArrayList<login> myuserLogin=new ArrayList<login>();                
+        myuserLogin.add(new login("janr", "kzaoqsdf"));
+        myuserLogin.add(new login("jane", "kzaoqsdf"));
+        myuserLogin.add(new login("janz", "kzaoqsdf"));
+        myuserLogin.add(new login("jana", "kzaoqsdf"));
+        //use forEACH
+        for (login log : myuserLogin) {
+            System.out.println(log.userName+"  "+log.Password);
+        }
+
+
+
+/////////
+
+public class login {
+    public String userName;
+    public String Password;
+
+    public login(String userName, String Password) {
+        this.userName = userName;
+        this.Password = Password;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+    
+    
+    
+}

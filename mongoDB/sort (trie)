@@ -1,0 +1,2 @@
+1 is used for ascending order while -1 is used for descending order.
+>db.COLLECTION_NAME.find().sort({KEY:1})  ex 				:>db.mycol.find({},{"title":1,_id:0}).sort({"title":-1})

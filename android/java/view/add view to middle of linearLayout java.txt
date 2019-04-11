@@ -1,0 +1,1 @@
+parentLinearLayout.addView(editText,int index+6);

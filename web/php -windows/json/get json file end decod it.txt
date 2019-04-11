@@ -1,0 +1,26 @@
+		$content= file_get_contents("http://localhost/sdz/sdz_api/admin/getAllUser.php?nbr_page=1");
+		$json=json_decode($content,true);				
+		
+		foreach ($json as $keys => $values) {
+			foreach ($values as $key => $value) {
+				echo '	'.$key.' : ';
+				if (!(gettype($value)=="array")) {
+					echo $value;
+				}else {
+					foreach ($value as $ke => $valu) {
+						if ($ke=='sec') {
+							$timestamp = new MongoDate($valu);
+							//print date('g:i a,Y F j', $timestamp->sec);
+							print date('j/m/Y g:i a', $timestamp->sec);
+							#22/03/2013  9:09 am
+						}						
+						echo '	'.$ke.' : '.$valu;
+					}
+				}
+			}
+			echo $keys.'</br>';
+		}
+
+echo "<pre>";
+		print_r($json);
+		echo "<pre>";

@@ -1,0 +1,12 @@
+$mongo = new Mongo();
+$database = $mongo->selectDB('myfiles');
+$gridFS = $database->getGridFS();
+//remove all files of PNG format
+$gridFS->remove(array('filetype' => 'image/png'));
+$error = $database->lastError();
+if(isset($error['err'])) {
+echo 'Files deleted.';
+} else {
+echo 'Error deleting files '.$error['err'];
+}
+www.it-

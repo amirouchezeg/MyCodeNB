@@ -1,0 +1,67 @@
+https://github.com/laravel/passport/issues/161
+
+
+
+------------OR
+
+
+
+File: vendor\laravel\passport\src\Bridge\UserRepository.php
+Copy / Paste getUserEntityByUserCredentials to make a duplicate of it and name it getEntityByUserCredentials
+
+Then, in the new duplicated function, find the below:
+$provider = config('auth.guards.api.provider');
+and Replace it with:
+$provider = config('auth.guards.'.$theNewProvider.'.provider');
+
+After that add $theNewProvider to getEntityByUserCredentials arguments as follow:
+
+  public function getEntityByUserCredentials($username, $password, $grantType, 
+  ClientEntityInterface $clientEntity, $theNewProvider)
+2)File: vendor\league\oauth2-server\src\Grant\PasswordGrant.php
+
+In the function validateUser update with the following code:
+
+  $user = $this->userRepository->getEntityByUserCredentials(
+      $username,
+      $password,
+      $this->getIdentifier(),
+      $client,
+      $theNewProvider
+add the following variable to the same function:
+
+ $theNewProvider = $this->getRequestParameter('theNewProvider', $request);
+
+ if (is_null($theNewProvider)) {
+ throw OAuthServerException::invalidRequest('theNewProvider');
+ }
+Try it with Postman with the following:
+url: http://127.0.0.1:8000/oauth/token
+Headers:
+Content-Type: application/json
+
+body:
+
+{
+"username":"test@gmail.com",
+"password":"secret",
+"grant_type": "password",
+    "client_id": 2,
+    "client_secret": "string",
+    "theNewProvider": "admin"
+}
+Do not forget to do the following as well:
+
+Update the model, for example in the admin model add the following
+
+  use Laravel\Passport\HasApiTokens;
+  class Admin extends Authenticatable
+  {
+       use Notifiable,HasApiTokens;
+In auth.php:
+
+  'guards' => [
+  'admin' => [
+      'driver' => 'passport',
+      'provider' => 'admins',
+  ],

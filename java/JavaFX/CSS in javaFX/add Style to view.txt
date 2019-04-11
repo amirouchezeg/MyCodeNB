@@ -1,0 +1,17 @@
+aftre show add style sheets
+
+
+        primaryStage.show();
+        scene.getStylesheets().add("/Views/MainClasses/style.css");*************
+
+and in file css add the css style
+
+.button {
+    -fx-font: 16px "Serif";
+    -fx-padding: 10;
+    -fx-background-color: #CCFF99;
+}
+
+
+the # is for class 
+#button

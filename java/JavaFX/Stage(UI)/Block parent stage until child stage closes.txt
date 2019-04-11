@@ -1,0 +1,13 @@
+ 
+ou can get the primaryStage by putting it to static variable in main class
+
+	Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+            
+        //Block parent stage until child stage closes
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(Salle_des_fêtes.primaryStage);
+        //////end
+        
+        stage.show();

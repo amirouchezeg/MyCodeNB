@@ -1,0 +1,7 @@
+delet document insid the collection			: db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+
+
+>db.mycol.remove({'title':'MongoDB Overview'})
+
+Remove All Documents					: db.mycol.remove()  //f you don't specify deletion criteria then MongoDB will delete 								  whole documents
+

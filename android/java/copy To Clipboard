@@ -1,0 +1,4 @@
+                    ClipboardManager myClipboard = (ClipboardManager) mContext.getSystemService(CLIPBOARD_SERVICE);
+                    ClipData myClip = ClipData.newPlainText("text", dataModel.getTitle());
+                    myClipboard.setPrimaryClip(myClip);
+

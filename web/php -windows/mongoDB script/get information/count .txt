@@ -1,0 +1,11 @@
+
+require('dbconnection.php');
+$mongo = DBConnection::instantiate();
+$collection = $mongo->getCollection('sample_articles');
+//get the number of articles written by Spock
+$collection->count(array('author' => 'Spock'));
+
+
+**********
+//returns total number of articles in collection
+$collection->count();

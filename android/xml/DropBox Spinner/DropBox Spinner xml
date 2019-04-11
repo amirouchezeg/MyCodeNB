@@ -1,0 +1,18 @@
+efine list of item in res/values/strings.xml
+	
+
+    <string-array name="langage_spinner">
+        <item>العربية</item>
+        <item>english</item>
+        <item>russky</item>
+        <item>Français</item>
+    </string-array>
+
+and add it to layout.xml
+
+	<Spinner
+                android:id="@+id/spinnerLang"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/langage_spinner"/>

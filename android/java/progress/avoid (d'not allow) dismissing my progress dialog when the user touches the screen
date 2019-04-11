@@ -1,0 +1,9 @@
+Use dialog.setCancelable(false);
+
+Example :
+
+        ProgressDialog dialog = new ProgressDialog(WiFiFinderActivity.this);
+        dialog.setMessage("please wait...");
+        dialog.show();
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);

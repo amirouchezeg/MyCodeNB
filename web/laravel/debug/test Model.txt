@@ -1,0 +1,14 @@
+for example I have tow models
+	-Product (return->$this->hasMany(Review::class);)
+	-Review (return->$this->belongsTo(Product::class);)
+tabe in terminal
+ ~$php artisan tinker *************
+then tape the name of class and method
+ ~$App\Model\Product::find(4);
+to test if thier are relation between product and review
+ ~>>> App\Model\Product::find(4)->reviews;
+
+find review
+ ~>>> App\Model\Review::find(39);
+find his Product
+ ~>>> App\Model\Review::find(39)->product;

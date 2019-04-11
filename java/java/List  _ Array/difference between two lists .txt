@@ -1,0 +1,27 @@
+List<Date> a;
+contains : 10/10/2014, 10/11/2016
+
+List<Date> b;
+contains : 10/10/2016
+
+//code 1
+
+You can convert them to Set collections, and perform a set difference operation on them.
+
+Like this:
+
+Set<Date> ad = new HashSet<Date>(a);
+Set<Date> bd = new HashSet<Date>(b);
+ad.removeAll(bd);
+
+//code 2
+
+If you only want find missing values in b, you can do:
+
+List toReturn = new ArrayList(a);
+toReturn.removeAll(b);
+
+return toReturn;
+
+
+If you want to find out values which are present in either list you can execute upper code twice. With changed lists.

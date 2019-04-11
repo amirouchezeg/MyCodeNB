@@ -1,0 +1,21 @@
+ ///add ad to app
+        Window window1 = getWindow();
+        RelativeLayout layout = new RelativeLayout(this);
+        RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+        AdView adView = new AdView(this);
+        layout.setGravity(Gravity.BOTTOM);
+
+        adView.setAdSize(com.google.android.gms.ads.AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-77511207851935/1216421608");
+        layout.addView(adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+        window1.addContentView(layout, lp2);
+
+        InterstitialAd interstitial = new InterstitialAd(this);
+        interstitial.setAdUnitId("ca-app-pub-77511207851935/1216421608");
+        AdRequest adReq = new AdRequest.Builder().build();
+        interstitial.loadAd(adReq);
+        interstitial.show();
+        ///////////end ad

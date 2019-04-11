@@ -1,0 +1,16 @@
+ Connection con = db.connexionDatabase();
+        
+        String myreport="Report\\reportAdherent.jrxml";
+        JasperReport jasperReport;
+        
+      try {
+            jasperReport=JasperCompileManager.compileReport(myreport);
+            JasperPrint jasperPrint=JasperFillManager.fillReport(jasperReport,null,con);
+            JasperViewer.viewReport(jasperPrint);
+      } catch (JRException ex) {
+          System.err.println(ex.getMessage());
+          Logger.getLogger(Cachier.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+        
+        db.closeconnexion();

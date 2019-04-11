@@ -1,0 +1,45 @@
+<html>
+<head>
+	<script>
+		function showHint(str) {
+
+			if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				var param='_id='+str;
+				xmlhttp.open('POST', "abonne/getById.php", true);
+				xmlhttp.setRequestHeader('Content-type',' application/x-www-form-urlencoded');
+
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("txtHint").innerHTML = this.responseText;
+						var obj=JSON.parse(this.responseText);						
+						var objId=JSON.parse(JSON.stringify(obj._id));//convert JS object to Json string
+
+						document.getElementById("name").innerHTML = obj.nom_prenom;
+						document.getElementById("email").innerHTML = obj.email;
+						document.getElementById("id_abonne").innerHTML = objId.$id;
+					}
+				};
+				xmlhttp.send(param);
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<p><b>Start typing a name in the input field below:</b></p>
+	<form id="id_form"> 
+		_id : <input type="text" id="_id" name="_id" />
+		<p><input type="button" value="Send" onclick="showHint(document.getElementById('_id').value)"  /></p>
+	</form>
+	<p>Suggestions: <span id="txtHint"></span></p>
+	<p>_id: <span id="id_abonne"></span></p>
+	<p>name : <span id="name"></span></p>
+	<p>email: <span id="email"></span></p>
+	
+	
+</body>
+</html>

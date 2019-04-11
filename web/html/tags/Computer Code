@@ -1,0 +1,17 @@
+#<kbd> For Keyboard Input
+ <p>Save the document by pressing <kbd>Ctrl + S</kbd></p> 
+
+////////////////////////////
+
+#<samp> For Program Output
+	represents output from a program or computing system.
+ <p>If you input wrong value, the program will return <samp>Error!</samp></p> 
+
+#<code> For Computer Code
+#<var> For Variables
+
+
+<code> 	Defines programming code
+<kbd> 	Defines keyboard input 
+<samp> 	Defines computer output
+<var> 	Defines a variable

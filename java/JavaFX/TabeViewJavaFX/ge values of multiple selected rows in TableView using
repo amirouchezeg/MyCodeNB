@@ -1,0 +1,19 @@
+tableLocal.setOnMousePressed(new EventHandler<MouseEvent>() {
+    @Override
+    public void handle(MouseEvent event) {
+        ObservableList<ObservableList<String>> selectedItems = tableLocal.getSelectionModel().getSelectedItems();
+        System.out.println(selectedItems);
+
+        // TEST
+        ArrayList<String> selectedIDs = new ArrayList<String>();
+        for (ObservableList<String> row : selectedItems) {
+           selectedIDs.add(row.get(0));
+        }
+
+        ListIterator<String> iterator = selectedIDs.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        // END TEST
+    }
+});

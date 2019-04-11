@@ -1,0 +1,42 @@
+//***inside project folder 
+pm install @angular/animations@latest --save
+//***in app modul.ts add import
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//in same file add this line in import
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule *****
+  ],
+
+//***and import the animation(specific fonction) in to the componenet 
+import {trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+
+//****difine the animation in 
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    // Animations here...************
+    //example of animation in name is : goals
+    trigger('goals', [
+      transition('* => *', [
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+        query(':enter', stagger('300ms', [
+          animate('.6s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
+            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
+          ]))]), {optional: true})
+      ])
+    ])
+  ]
+})
+/// in the html
+[@goals]="goals.length"
+<div class="container color-light" [@goals]="goals.length">
+
+

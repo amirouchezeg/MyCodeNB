@@ -1,0 +1,4 @@
+// Get the Intent that started this activity and extract the string
+        Intent intent = getIntent();
+        String text = intent.getStringExtra(MainList.EXTRA_TEXT);
+        String title = intent.getStringExtra(MainList.EXTRA_TITLE);

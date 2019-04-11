@@ -1,0 +1,14 @@
+creat in folder values ids.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="edit_text_1" type="id"/>
+</resources>
+
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                            editText.setId(View.generateViewId());
+                        }else {
+
+			    ...
+                            editText.setId(R.id.edit_text_1);
+
+			}

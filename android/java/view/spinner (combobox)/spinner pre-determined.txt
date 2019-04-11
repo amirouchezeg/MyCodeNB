@@ -1,0 +1,20 @@
+create array in strings.xml    
+    <string-array name="spinner_date">
+        <item>Toutes périodes</item>
+        <item>Aujourd'hui</item>
+        <item>Cette semaine</item>
+        <item>ce mois-ci</item>
+        <item>Cette année</item>
+    </string-array>
+
+
+create the view in the layout (xml) and this code in java class
+
+
+	Spinner spinner_date=findViewById(R.id.spinner_date);
+
+
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
+                R.array.spinner_date,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_date.setAdapter(adapter);

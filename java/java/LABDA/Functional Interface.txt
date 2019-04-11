@@ -1,0 +1,11 @@
+
+public class Greeter {
+		
+	public static void main(String[] args) {
+		myLambda2 lambda2=(int a)-> a*2;		
+		System.out.println(lambda2.foo(2));
+	}
+}
+interface myLambda2{
+	int foo(int a) ;
+}

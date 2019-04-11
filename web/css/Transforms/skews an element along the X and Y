@@ -1,0 +1,8 @@
+//////////////////
+***skews an element along the X-axis
+	transform: skewX(20deg);
+//////////////////
+***kews an element along the Y-axis
+	transform: skewY(30deg);
+**X and Y
+transform: skew(20deg, 30deg);

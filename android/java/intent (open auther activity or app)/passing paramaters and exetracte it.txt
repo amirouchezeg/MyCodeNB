@@ -1,0 +1,10 @@
+send with paramater
+
+	Intent intent=new Intent(this, MainActivity.class);
+        intent.putExtra("key","value");
+        startActivity(intent);
+
+riceve and extract paramater
+		
+        Intent mIntent=getIntent();
+        String from=mIntent.getStringExtra("key");

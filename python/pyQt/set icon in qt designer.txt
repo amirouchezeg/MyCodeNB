@@ -1,0 +1,10 @@
+1 copy the icon in the same dir
+2 creat file qrc and inside write the following code
+	<!DOCTYPE RCC><RCC version="1.0"> 
+	  <qresource>
+	      <file>photos/icon.png</file>
+	      ...
+	  </qresource>
+	</RCC>
+3 selecte the wedget in Qt designer and go to the 'Explorateur de ressource'
+  and select the qrc file and the photo

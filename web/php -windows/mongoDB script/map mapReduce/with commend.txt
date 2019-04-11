@@ -1,0 +1,19 @@
+var map = function() { emit(this.type_service, 1); }
+
+####mapReduce
+var reduce = function(key, values) {
+	var count = 0;
+	for (var i = 0; i < values.length; i++){
+	 	count += values[i];
+	}
+	return count;
+};
+
+######Apply the MapReduce operation on the 
+
+db.runCommand({
+	mapreduce: 'Services',
+	map: map,
+	reduce: reduce,
+	out: 'services_per_type'
+})

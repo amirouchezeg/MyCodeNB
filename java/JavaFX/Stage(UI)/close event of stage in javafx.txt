@@ -1,0 +1,15 @@
+stage.setOnHiding(new EventHandler<WindowEvent>() {
+
+            @Override
+            public void handle(WindowEvent event) {
+		//to do here
+		System.out.println("resirvation closed");
+                Platform.runLater(new Runnable() {//or to do in Thread if all application closed
+                    @Override
+                    public void run() {
+                        System.out.println("Application Closed by click to Close Button(X)");
+                        //System.exit(0);
+                    }
+                });
+            }
+        });

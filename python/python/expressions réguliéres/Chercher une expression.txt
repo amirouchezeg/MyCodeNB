@@ -1,0 +1,3 @@
+>>> import re
+>>> re.findall("([0-9]+)", "Bonjour 111 Aurevoir 222")
+['111', '222']

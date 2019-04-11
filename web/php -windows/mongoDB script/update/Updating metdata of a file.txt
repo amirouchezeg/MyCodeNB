@@ -1,0 +1,5 @@
+$gridFS = $mongo->selectDB('myfiles')->getGridFS();
+//change the caption of the file 'beach.jpeg'
+$gridFS->update(array('filename' => 'beach.jpeg'),
+array('$set' => array('caption' =>
+'Me @ the beach')));

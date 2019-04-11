@@ -1,0 +1,13 @@
+//      After the layout is complete, get screen dimensions from the layout.
+        ViewTreeObserver viewTreeObserver = mContentView.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    mContentView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    mScreenWidth = mContentView.getWidth();
+                    mScreenHeight = mContentView.getHeight();
+                }
+            });
+        }
+

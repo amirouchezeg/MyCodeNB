@@ -1,0 +1,2 @@
+//100 milliseconds timeout on the update operation
+$collection->update($criteria, $newobj, array('safe => True, 'timeout' => 100));

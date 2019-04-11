@@ -1,0 +1,23 @@
+R.color.red is an ID (which is also an int), but is not a color.
+
+Use one of the following instead:
+
+// If you're in an activity:
+Button11.setBackgroundColor(getResources().getColor(R.color.red));
+// OR, if you're not: 
+Button11.setBackgroundColor(Button11.getContext().getResources().getColor(R.color.red));
+
+Or, alternatively:
+
+Button11.setBackgroundColor(Color.RED); // From android.graphics.Color
+
+Or, for more pro skills:
+
+Button11.setBackgroundColor(0xFFFF0000); // 0xAARRGGBB
+
+
+/////////////
+***from no class activity 
+viewHolder.txtName.setTextColor(ContextCompat.getColor(mContext,R.color.colortext_readed));
+
+

@@ -1,0 +1,43 @@
+///////////////////
+
+***Hide the element. It should still take up the same space as 
+	before.
+h1{
+	
+		visibility:hidden;
+
+	}
+
+///////////////////
+
+***Hide the element. It should not take up any 
+	space
+h1{
+
+		display:none;
+	
+}
+
+///////////////////
+
+***In one line .Display the list items as inline 
+	elements.
+li{
+
+		display:inline;
+	
+}
+
+///////////////////
+
+***Display the elements as block elements. Tack line 
+	complitely
+strong{
+
+		display:block;
+
+	}
+
+///////////////////
+
+***

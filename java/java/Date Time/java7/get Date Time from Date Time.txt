@@ -1,0 +1,6 @@
+ DateFormat f = new SimpleDateFormat("dd MMM yyyy hh:mm:ss");
+            Date d = f.parse("10 mai 2017 14:07:52");
+            DateFormat date = new SimpleDateFormat("MM/dd/yyyy");
+            DateFormat time = new SimpleDateFormat("hh:mm:ss a");
+            System.out.println("Date: " + date.format(d));
+            System.out.println("Time: " + time.format(d));

@@ -1,0 +1,19 @@
+////////to hind
+
+In the AndroidManifest.xml:
+
+    <activity android:name="com.your.package.ActivityName"
+      android:windowSoftInputMode="stateHidden"  />
+	  or try
+	  android:windowSoftInputMode="stateAlwaysHidden"
+
+or try withe java code
+
+getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+////////to show
+
+android:windowSoftInputMode="stateVisible"
+
+
+

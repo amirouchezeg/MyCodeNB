@@ -1,0 +1,22 @@
+
+	MobileAds.initialize(getApplicationContext(),
+                getResources().getString(R.string.ID_application));//this is the app id and not the panner id
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+
+///////////////////////
+
+   <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ID_banner_ad">
+    </com.google.android.gms.ads.AdView>

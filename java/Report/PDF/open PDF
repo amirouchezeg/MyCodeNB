@@ -1,0 +1,19 @@
+Desktop.getDesktop().open(file);
+
+
+
+or
+
+
+ public class openFilePDf extends Thread {
+        public void run(){
+            File f=new File("barcode Report.pdf");
+            try {            
+                Desktop.getDesktop().open(f);
+            } catch (IOException ex) {
+                Logger.getLogger(testClass.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+

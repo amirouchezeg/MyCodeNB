@@ -1,0 +1,12 @@
+
+myRef = mFirebaseDatabase.getReference().child("users").child(userID);
+
+myRef.child("username").addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot snapshot) {
+				Log.i("qsdf", (String) snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
+			}
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+			}
+		});

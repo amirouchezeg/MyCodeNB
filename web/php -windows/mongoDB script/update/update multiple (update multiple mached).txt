@@ -1,0 +1,1 @@
+$collection->update($criteria, $newobj, array('multiple' =>True));

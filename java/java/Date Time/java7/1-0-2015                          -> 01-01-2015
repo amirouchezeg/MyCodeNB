@@ -1,0 +1,16 @@
+	private String convertToCompletDate(int dd, int mm, int yyyy) {
+		String d,m,y;
+		if (dd < 10) {
+			d = "0" + dd;
+		} else {
+			d= String.valueOf(dd);
+		}
+		mm++;
+		if (mm < 10) {
+			m = "0"+mm;
+		} else {
+			m= String.valueOf(mm);
+		}
+		
+		return d+"/"+m+"/"+y;
+	}

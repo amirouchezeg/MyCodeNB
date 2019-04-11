@@ -1,0 +1,6 @@
+		    Object value=...;
+                    if (value.getClass()== Array.class) {
+                        print( "is array");
+                    }else if (value.getClass()== String.class) {
+                        print( "is String");
+                    }

@@ -1,0 +1,17 @@
+1-> create a branch
+	$ git branch future-plans
+	****This command creates a branch but does not switch you to that branch
+2->Checkout to the branch
+	$ git checkout future-plans
+	
+	aftre change some file make 
+		$ git status
+3->Stage your file.
+	$ git add name.file (all -> . )
+	$ git commit <name-file-chnged> -m 'making a change in a branch'  // make . instid of <name-file-chnged> for all file
+
+4->push the btanche
+	$ git push origin <branchname>
+
+
+

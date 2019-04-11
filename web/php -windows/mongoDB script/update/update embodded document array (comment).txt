@@ -1,0 +1,20 @@
+		$comment = array(
+			'count_comments_id'=>(int)$_POST["count_comments_id"],
+			'id_user' => "0383304djfghlkjdqsdf",
+			'name' => $abonne['nom_prenom'],
+			'text' => $_POST['text'],
+			'updated_at' => new MongoDate()
+		);
+//delete the old one
+		//$collection->update(array('_id' => new MongoId($_POST["id_service"]) , "name_service" => 'amirouche'), array('$push' => array('comments' => $comment)));	
+
+		$collection->update(array('_id' => new MongoId( $_POST["id_service"])),
+			array('$pull'=> array(
+				"comments"=>array('count_comments_id' => (int)$_POST["count_comments_id"] )	)
+		));	
+	
+//insert the new document
+
+		$collection->update(array('_id' => new MongoId($_POST["id_service"]))
+		, array('$push' => array('comments' => $comment)));	
+		

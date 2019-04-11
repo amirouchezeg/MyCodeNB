@@ -1,0 +1,16 @@
+public String[] concatenateArrays(String[] firstArray,String[] secondArray,String[] thirdArray,String[] forthArray) {
+        String[] ar1 = Arrays.copyOf(firstArray,firstArray.length+secondArray.length);
+        System.arraycopy(secondArray,0,ar1,firstArray.length,secondArray.length);
+
+        String[] ar2 = Arrays.copyOf(thirdArray,thirdArray.length+forthArray.length);
+        System.arraycopy(forthArray,0,ar2,thirdArray.length,forthArray.length);
+
+        String[] result = Arrays.copyOf(ar2,ar2.length+ar1.length);
+        System.arraycopy(ar1,0,result,ar2.length,ar1.length);
+
+
+        return result;
+    }
+
+
+/////NB: this method concatinate four array

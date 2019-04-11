@@ -1,0 +1,12 @@
+git remote add origin https://amirouche0@bitbucket.org/amirouche0/book.git
+
+git push -u origin master
+
+touch README
+git add README
+
+git add .
+git commit -m 'reinitialized files'
+git push origin master --force  # <- caution, --force can delete others work.
+
+

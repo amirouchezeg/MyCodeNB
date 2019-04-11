@@ -1,0 +1,2 @@
+$collection->update(array('_id' => new MongoId("5a9ea7c2a2147c0413000029")),
+			array('$pull'=> array("comments"=>array('_id' => new MongoId("5a9ea7c2a2147c0413000013"))))

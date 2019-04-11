@@ -1,0 +1,88 @@
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+
+import javax.crypto.NullCipher;
+
+public class DatabaseHandler extends SQLiteOpenHelper {
+	private static final int DATABASE_VERTION=1;
+	private static final String DATABASE_NAME="jokesDB";
+	private static final String TABLE_JOKES="jokesTAB";
+
+
+	private static final String KEY_TITLE="titlejok";
+	private static final String KEY_TEXT="textjok";
+
+
+
+	public DatabaseHandler(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERTION);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase sqLiteDatabase) {
+		sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_JOKES+" ( " +
+				KEY_TITLE +" text  primary key, " +
+				KEY_TEXT +" text )");
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+		sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_JOKES);
+	}
+
+	public long insertJokes(String title, String text ){
+		SQLiteDatabase db=this.getWritableDatabase();
+		ContentValues contentValues=new ContentValues();
+		contentValues.put(KEY_TITLE,title);
+		contentValues.put(KEY_TEXT,text);
+		long a= db.insert(TABLE_JOKES,null,contentValues);
+		return a;
+	}
+
+	public Integer deleteJoke(String id){
+		SQLiteDatabase db=this.getWritableDatabase();
+		return db.delete(TABLE_JOKES,KEY_TITLE +" = ?" ,new String[]{id});
+	}
+
+
+	public boolean exitData(String id){
+		SQLiteDatabase db=this.getReadableDatabase();
+		Cursor cursor=db.rawQuery("SELECT *  from "+TABLE_JOKES +
+				" where "+ KEY_TITLE +"='"+id+"'",null);
+		if (cursor.moveToNext()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public Cursor getAllDate(){
+		SQLiteDatabase db=this.getReadableDatabase();
+		Cursor cursor=db.rawQuery("SELECT *  from "+TABLE_JOKES,null);
+		return cursor;
+	}
+
+	public ArrayList<DataModel> getAllCotacts() {
+		ArrayList<DataModel> dataModels= new ArrayList<>();
+		DataModel dataJoke = new DataModel();
+
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor =  db.rawQuery( "select * from "+TABLE_JOKES, null );
+		cursor.moveToFirst();
+
+		while(cursor.isAfterLast() == false){
+
+			dataModels.add(
+					new DataModel(cursor.getString(cursor.getColumnIndex(KEY_TITLE))
+					, cursor.getString(cursor.getColumnIndex(KEY_TEXT))));
+			cursor.moveToNext();
+		}
+		return dataModels;
+	}
+}
+

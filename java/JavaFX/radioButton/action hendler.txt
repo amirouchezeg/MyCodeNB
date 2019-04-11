@@ -1,0 +1,8 @@
+radio.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent arg0) {
+                if (radioCredit.isSelected()) {
+                    
+                }
+            }
+        });

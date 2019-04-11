@@ -1,0 +1,4 @@
+List<String> dan = Arrays.asList("Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Orange", "Blue");
+
+        boolean contains = dan.contains("Rd");
+        System.out.println(contains);

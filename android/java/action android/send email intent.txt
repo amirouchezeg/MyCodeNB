@@ -1,0 +1,8 @@
+
+
+////////java code
+
+Intent intent = new Intent(Intent.ACTION_SENDTO,Uri.fromParts("mailto","abc@gmail.com",null));
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Via Service DZ");
+        //intent.putExtra(Intent.EXTRA_TEXT,"Body");
+        startActivity(intent);

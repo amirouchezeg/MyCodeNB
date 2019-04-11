@@ -1,0 +1,16 @@
+///////:in the luncher class make	**************
+
+	public class Luncher extends Application{
+	    public static void main(String[] args) {
+		launch(args);
+	    }
+
+	    @Override
+	    public void start(Stage primaryStage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource("MainFXML.fxml"));
+		Scene scene = new Scene(root);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	    }
+	}
+

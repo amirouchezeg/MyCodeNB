@@ -1,0 +1,8 @@
+    public static void main(String[] args) {
+        Runnable myRunnable=()->{
+          //run code  
+            System.out.println("Thread is working with lamda");
+        };
+        Thread t = new Thread(myRunnable);
+        t.start();
+    }

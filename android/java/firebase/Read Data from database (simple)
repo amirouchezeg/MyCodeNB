@@ -1,0 +1,20 @@
+myRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				// This method is called once with the initial value and again
+				// whenever data at this location is updated.
+				User user=dataSnapshot.getValue(User.class);
+				String s= user.getEmail();
+				String s1= user.getUid();
+				String s2= user.getFirstName();
+				Log.i("userInf email: ",s);
+				Log.i("userInf UID: ",s1);
+				Log.i("userInf FirstName: ",s2);
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+
+			}
+		});
+

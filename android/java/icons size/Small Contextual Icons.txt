@@ -1,0 +1,8 @@
+
+16 × 16 (mdpi)
+24 × 24 (hdpi)
+32 × 32 (xhdpi)
+48 × 48 (xxhdpi)
+64 × 64 (xxxhdpi)
+.png	
+Small icons are used to surface actions and/or provide status for specific items. For example, in the Gmail app, each message has a star icon that marks the message as important.

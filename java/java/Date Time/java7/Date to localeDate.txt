@@ -1,0 +1,5 @@
+	
+	Date input = yourdate;                   
+	LocalDate date = input.toLocalDate();
+
+

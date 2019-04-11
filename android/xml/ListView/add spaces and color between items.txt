@@ -1,0 +1,3 @@
+	android:divider="#4a92d2"//to add color
+
+        android:dividerHeight="20dp"//to add spaces

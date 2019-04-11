@@ -1,0 +1,54 @@
+/////////////
+***set background
+body {
+    background-image: url("paper.gif");
+}
+
+/////////////
+***Full Size Background Image
+html {
+    background: url(img_flower.jpg) no-repeat center fixed; 
+    background-size: cover;
+}
+/////////////
+***background image to be as large as possible( depending on the proportions of image)
+body {
+    background-image: url("paper.gif");
+}
+/////////////
+***background image width, height.
+body {
+    background:url(img_flwr.gif);
+    background-repeat: no-repeat;
+    background-size:100px 80px;***    
+}
+/////////////
+***size of the background image fits the entire page.
+html { 
+  background: url(img_flower.jpg) no-repeat center center fixed;
+  background-size: cover;***
+}
+/////////////
+***repeat horizontely
+body {
+    background-image: url("paper.gif");
+    background-repeat:repeat-y;***
+}
+/////////////
+***no repeat and position
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;***
+    background-position: top right;***
+}
+/////////////
+***background to the outside edge
+div { 
+    border: 10px dotted black;
+    padding: 75px;
+    background: lightblue;
+    background-clip: padding-box;***
+}
+***border-box - (default) the background is painted to the outside edge of the border
+***padding-box - the background is painted to the outside edge of the padding
+***content-box - the background is painted within the content box

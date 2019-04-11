@@ -1,0 +1,2 @@
+xrandr | grep ' connected'
+->  1366 <> 768

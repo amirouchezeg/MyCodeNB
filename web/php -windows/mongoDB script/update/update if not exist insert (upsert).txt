@@ -1,0 +1,3 @@
+$users->update(array('email' => 'alice@wonderland.com'),
+array('firstname' => 'Alice', 'lastname'=> 'Liddell'),
+array('upsert' => True));

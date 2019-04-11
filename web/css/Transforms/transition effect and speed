@@ -1,0 +1,45 @@
+//////////////////
+***Add a 2 second transition effect for width changes of the <div> element.
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition:2s width;
+}
+
+div:hover {
+    width: 300px;
+}
+
+//////////////////
+***speed transition
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s ease-in-out;***    
+}
+//////////////////
+***delay before starting.
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s ease-in-out;
+    transition-delay:0.5s;***    
+}
+//////////////////
+***Add a 2 second transition effect for background and transform changes of the element.
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition:background 2s,transform 2s;
+}
+
+div:hover {
+    background: blue;
+    transform: rotate(180deg);
+}
+
+

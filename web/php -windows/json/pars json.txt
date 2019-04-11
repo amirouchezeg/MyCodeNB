@@ -1,0 +1,14 @@
+$content= file_get_contents("http://localhost/sdz/sdz_api/services/types/characteristics_of_eche_one.php");
+				$json=json_decode($content,true);
+
+				foreach ($json as $keys => $values) {
+					if ($_POST["type_detail_level3"]==$keys) {			
+						$characteristic = array();
+						foreach ($values as  $value) {
+							if (isset($_POST[$value])) {
+								$characteristic[$value] = $_POST[$value];
+							}
+						}
+						$service['characteristic']=$characteristic ;
+					}
+				}		

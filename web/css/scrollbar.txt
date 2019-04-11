@@ -1,0 +1,38 @@
+///////////
+***Add a scrollbar to the element.
+div {
+    background-color: #eee;
+    width: 200px;
+    height: 70px;
+    border: 1px dotted black;
+    overflow:scroll;****
+}
+
+
+//////////////
+***overflowing text in the element should not be visible
+Specify that the overflowing text in the <div> element should not be visible, not even with scrolling.
+div {
+    background-color: lightblue;
+    width: 200px;
+    height: 200px;
+    overflow:hidden;****
+}
+
+//////////////
+***Add a horizontal scrollbar to <div>
+div {
+    background-color: #eee;
+    width: 150px;
+    height: 70px;
+    border: 1px dotted black;
+    white-space: nowrap;
+    overflow-x:scroll;***
+}
+
+//////////////
+***
+//////////////
+***
+//////////////
+***

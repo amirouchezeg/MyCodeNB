@@ -1,0 +1,52 @@
+ ArrayList<login> myuserLogin=new ArrayList<login>();                
+        myuserLogin.add(new login("janr", "kzaoqsdf"));
+        myuserLogin.add(new login("jane", "kza"));
+        myuserLogin.add(new login("janz", "kzaoqsdf"));
+        myuserLogin.add(new login("jana", "kz"));
+
+        Predicate<login>preRle=(p)->p.wekPasword()==true;
+        
+        myuserLogin.forEach(user->{
+            if (preRle.test(user)) {    
+             System.out.println(user.userName+"  "+user.Password);
+            }
+        });
+
+
+
+//////////////////////
+
+public class login {
+    public String userName;
+    public String Password;
+
+    public login(String userName, String Password) {
+        this.userName = userName;
+        this.Password = Password;
+    }
+
+   public boolean wekPasword(){
+        if (Password.length()<4) {
+            return true ;
+        }else
+            return  false;
+    }
+ 
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }   
+    
+}

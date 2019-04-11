@@ -1,0 +1,3 @@
+foreach ($cursor as $movie) {
+//do something with $movie
+}

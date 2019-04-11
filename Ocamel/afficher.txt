@@ -1,0 +1,12 @@
+//////string 
+	
+	print_string "hello world!\n";;
+
+//////integer
+	let x = 1;;
+	print_int x;;
+
+//////les variable non modifieble
+	
+	let a= ref 33;;
+	print_int !a;;

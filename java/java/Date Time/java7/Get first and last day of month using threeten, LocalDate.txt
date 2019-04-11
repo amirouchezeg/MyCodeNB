@@ -1,0 +1,4 @@
+	LocalDate initial = LocalDate.of(2017, 6, 3);
+        LocalDate start = initial.withDayOfMonth(1);
+        LocalDate end = initial.withDayOfMonth(initial.lengthOfMonth());
+        System.out.println(start + "  " + end);

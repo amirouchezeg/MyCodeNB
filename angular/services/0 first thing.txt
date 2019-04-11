@@ -1,0 +1,3 @@
+//***inside project folder 
+ng generate service data
+//

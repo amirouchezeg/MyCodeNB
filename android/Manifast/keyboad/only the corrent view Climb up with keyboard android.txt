@@ -1,0 +1,10 @@
+add to activity this code 
+
+
+<activity android:name=".services.ShowOneServiceActivity"
+            android:windowSoftInputMode="adjustResize"****>
+			
+			
+and layout shold be RelativLayout 
+
+and if we don't need to show from start chek "Climb up with keyboard and hide in starte.txt"

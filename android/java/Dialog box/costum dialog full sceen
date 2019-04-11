@@ -1,0 +1,73 @@
+	private void customAlert() {
+		//custum alert dialog
+		final Dialog dialog = new Dialog(this,android.R.style.Theme_Light);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		dialog.setContentView(R.layout.custom_dialog_solo);
+		// set the custom dialog components - text, image and button
+		TextView textScoreAdd = (TextView) dialog.findViewById(R.id.score_text_add);
+		TextView textScoreMinus = (TextView) dialog.findViewById(R.id.score_text_minus);
+		TextView textScoreDiv = (TextView) dialog.findViewById(R.id.score_text_divis);
+		TextView textScoreMul = (TextView) dialog.findViewById(R.id.score_text_multi);
+
+		textScoreAdd.setText(new PreferenceManager(this,PREFERENCE_KEY_ADD, PREFERENCE_KEY).getSharedPrefrenceStr());
+		textScoreMinus.setText(new PreferenceManager(this,PREFERENCE_KEY_MINUS, PREFERENCE_KEY).getSharedPrefrenceStr());
+		textScoreDiv.setText(new PreferenceManager(this,PREFERENCE_KEY_DIV, PREFERENCE_KEY).getSharedPrefrenceStr());
+		textScoreMul.setText(new PreferenceManager(this,PREFERENCE_KEY_MUL, PREFERENCE_KEY).getSharedPrefrenceStr());
+
+		Button btnAdd = (Button) dialog.findViewById(R.id.btnlevel3);
+		Button btnMinus = (Button) dialog.findViewById(R.id.btnlevel1);
+		Button btnDiv = (Button) dialog.findViewById(R.id.btnlevel4);
+		Button btnMul = (Button) dialog.findViewById(R.id.btnlevel2);
+		// if button is clicked, close the custom dialog
+		final boolean[] dismiss = {true};
+		btnAdd.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mOperation =OPERATION_ADD;
+				dismiss[0] =false;
+				startLevel();
+				timer();
+				dialog.dismiss();
+			}
+		});
+		btnMinus.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mOperation =OPERATION_MINUS;
+				dismiss[0] =false;
+				startLevel();
+				timer();
+				dialog.dismiss();
+			}
+		});
+		btnDiv.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mOperation =OPERATION_DIV;
+				dismiss[0] =false;
+				startLevel();
+				timer();
+				dialog.dismiss();
+			}
+		});
+		btnMul.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				mOperation =OPERATION_MUL;
+				dismiss[0] =false;
+				startLevel();
+				timer();
+				dialog.dismiss();
+			}
+		});
+		dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface dialogInterface) {
+				if (dismiss[0]) {
+					finish();
+				}
+			}
+		});
+		dialog.show();
+	}

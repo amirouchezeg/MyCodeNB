@@ -1,0 +1,6 @@
+first installe pip 
+
+after that tape in comend prompte   pip3 pyqt5
+After dawlode and anstalle 
+
+you are reade to start lerning

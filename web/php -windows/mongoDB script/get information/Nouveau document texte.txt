@@ -1,0 +1,4 @@
+db.dialogs.find({"_id": [dialogId]}, {msgs:{$slice: 5}}) // first 5 comments
+db.dialogs.find({"_id": [dialogId]}, {msgs:{$slice: -5}}) // last 5 comments
+db.dialogs.find({"_id": [dialogId]}, {msgs:{$slice: [20, 10]}}) // skip 20, limit 10
+db.dialogs.find({"_id": [dialogId]}, {msgs:{$slice: [-20, 10]}}) // 20 from end, limit 10

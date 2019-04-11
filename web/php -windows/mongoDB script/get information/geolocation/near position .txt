@@ -1,0 +1,3 @@
+$db->command(array('geoNear' => 'restaurants',
+'near' => array(23.75174102,90.383315705),
+'num' => 2));

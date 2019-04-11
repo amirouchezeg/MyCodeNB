@@ -1,0 +1,23 @@
+1 save the file from Qt designer (in desktop)
+2 open powerShall windows 
+3 go to the path file saved (to desktop)
+4 execute > pyuic5 login.ui -o namefile.py
+5 creat new file python in same path 
+	from PyQt5.QtWidgets import *
+	from PyQt5.QtGui import *
+	import sys
+
+	from (nameFile) import Ui_Form
+
+	class main(QWidget ,Ui_Form):
+	    def __init__(self):
+	        QWidget.__init__(self)
+	        self.setupUi(self)
+
+	app=QApplication(sys.argv)
+	w=main()
+	w.show()
+	app.exec_()
+
+
+

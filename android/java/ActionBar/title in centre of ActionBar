@@ -1,0 +1,24 @@
+in the Activity:	
+	getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.abs_layout);
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.color.colorPrimary));
+
+
+create the abc_layout.xml in layout folder
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+	    <TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:text="@string/app_name"
+		android:textColor="#ffffff"
+		android:id="@+id/mytext"
+		android:textSize="23sp" />
+
+	</LinearLayout>

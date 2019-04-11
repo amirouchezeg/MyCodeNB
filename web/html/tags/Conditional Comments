@@ -1,0 +1,5 @@
+<!--[if IE 9]>
+    .... some HTML here ....
+<![endif]-->
+
+Conditional comments defines some HTML tags to be executed by Internet Explorer only.

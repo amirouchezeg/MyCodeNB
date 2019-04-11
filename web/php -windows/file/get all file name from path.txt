@@ -1,0 +1,6 @@
+
+        $nameImage=$counter;
+        foreach (glob("Folder"."/*.*") as $file) {
+            $xmlFile=pathinfo($file);
+            echo $xmlFile['filename'];
+        }

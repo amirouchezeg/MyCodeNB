@@ -1,0 +1,5 @@
+[class.some-css-class]="some-condition"
+
+//example
+
+[class.selected]="hero === selectedHero"

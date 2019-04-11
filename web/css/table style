@@ -1,0 +1,25 @@
+/////////////////
+***Set the border
+table ,th,td{
+	border:2px solid green;
+}
+/////////////////
+***collapse:table borders should collapse into a single border
+table{
+    border-collapse:collapse;
+}
+/////////////////
+***Set the text alignment in <td> 
+td{
+	text-align:right;
+}
+/////////////////
+***
+/////////////////
+***
+/////////////////
+***
+/////////////////
+***
+/////////////////
+***

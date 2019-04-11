@@ -1,0 +1,2 @@
+comboMoin.valueProperty().addListener((obs, oldVal, newVal)-> 
+            System.out.println("Price of the " + newVal+ " is : " + newVal));

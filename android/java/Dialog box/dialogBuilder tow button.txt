@@ -1,0 +1,26 @@
+
+    private void dialogGoToLogin() {
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
+            alertDialogBuilder.setTitle(R.string.warning);
+            alertDialogBuilder
+                    .setMessage(R.string.connect)
+                    .setIcon(R.drawable.ic_action_error)
+                    .setNegativeButton(getResources().getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    })
+                    .setPositiveButton(getResources().getString(android.R.string.ok),new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            dialog.cancel();
+                            Intent intent=new Intent(AccountActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+
+    }

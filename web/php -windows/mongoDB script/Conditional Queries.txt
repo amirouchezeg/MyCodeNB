@@ -1,0 +1,19 @@
+//get all items with field 'x' greater than 100
+$collection->find(array('x' => array('$gt' => 100)));
+//get all items with field 'x' lower than 100
+$collection->find(array('x' => array('$lt' => 100)));
+//get all items with field 'x' greater than or equal to 100
+$collection->find(array('x' => array('$gte' => 100)));
+//get all items with field 'x' lower than or equal to 100
+$collection->find(array('x' => array('$lte' => 100)));
+//get all items with field 'x' between 100 and 200
+$collection->find(array('x' => array('$gte' => 100, '$lte' => 200)));
+//get all items with field 'x' not equal to 100
+$collection->find(array('x' => array('$ne' => 100)));
+
+
+
+
+/////NB
+
+we must use the operator within single quotes (')

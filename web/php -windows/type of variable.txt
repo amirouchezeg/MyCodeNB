@@ -1,0 +1,3 @@
+if(gettype($value)=="string"){
+	#the valeur is string
+}

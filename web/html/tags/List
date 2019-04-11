@@ -1,0 +1,71 @@
+Note: List items can contain new list, and other HTML elements, like images and links, etc.
+/////////////
+##Unordered HTML List
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul> 
+/////////////
+#Choose List Item Marker
+ CSS list-style-type property is used to define the style of the list item marker:
+  disc 	Sets the list item marker to a bullet (default)
+  circle 	Sets the list item marker to a circle 
+  square 	Sets the list item marker to a square
+  none 	The list items will not be marked
+
+////////////////////////////
+##Ordered HTML List
+ <ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol> 
+//////////////////////
+The type attribute of the <ol> tag, defines the type of the list item marker:
+Type 	Description
+type="1" 	The list items will be numbered with numbers (default)
+type="A" 	The list items will be numbered with uppercase letters
+type="a" 	The list items will be numbered with lowercase letters
+type="I" 	The list items will be numbered with uppercase roman numbers
+type="i" 	The list items will be numbered with lowercase roman numbers
+
+////////////
+#Description Lists
+ <dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl> 
+
+Coffee
+    - black hot drink
+Milk
+    - white cold drink 
+
+///////////////////
+#Horizontal Lists
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}

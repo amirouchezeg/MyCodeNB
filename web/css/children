@@ -1,0 +1,70 @@
+//////////////////:
+*** all children
+div p{
+	color:red;
+}
+...
+<div>
+	<p>This</p>
+	<p>This</p>
+	<span><p>This</p></span>
+</div>
+	<p>NOT This</p>
+//////////////////:
+*** immediate children
+div>p{
+	color:red;
+}
+...
+<div>
+	<p>This</p>
+	<p>This</p>
+	<span><p>NOT This</p></span>
+</div>
+	<p>NOT This</p>
+//////////////////:
+***adjacent (immediately following) 
+div+p{
+	color:red;
+}
+...
+<div>
+	<p>NOT This</p>
+	<p>NOT This</p>
+	<span><p>NOT This</p></span>
+</div>
+	<p>This</p>
+//////////////////:
+***elements, that are the siblings
+div~p{
+	color:red;
+}
+...
+<div>
+	<p>NOT This</p>
+	<p>NOT This</p>
+	<span><p>NOT This</p></span>
+</div>
+	<p>This</p>
+	<p>This</p>
+//////////////////:
+***first-child
+p:first-child{
+	color:red;
+}
+...
+	<p>This</p>
+	<p>NOT This</p>
+	<p>NOT This</p>
+//////////////
+*** select one or more elements based on their source order
+.module:nth-child(4n) {
+  margin-right: 0;
+}
+<section class="grid">
+  <article class="module">One</article>
+  <article class="module">Two</article>
+  <article class="module">Three</article>
+  <article class="module">this one</article>
+  <article class="module">Five</article>
+</section>

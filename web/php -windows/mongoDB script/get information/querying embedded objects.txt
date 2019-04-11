@@ -1,0 +1,10 @@
+<?php
+    $articles= $collection->find(array('comments.name'=>'smail'));
+?>                
+
+<?php     
+    while ($articles->hasNext()):
+      $article = $articles->getNext();     
+  ?>
+    <?php echo  $article['title'],'</br>';  ?>  
+<?php endwhile; ?> 

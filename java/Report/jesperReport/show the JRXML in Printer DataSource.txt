@@ -1,0 +1,41 @@
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import jesperreport.collections.DataBeanList;
+import jesperreport.jBean.DataBean;
+/**
+ *
+ * @author Amirouch
+ */
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
+
+public class JasperReportFill {
+
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        String sourceFileName
+                = "E:\\informatique\\mes_proper_program\\java\\JesperReport\\src\\jesperreport\\FillingReports"
+                + "/jasper_report_template.jrxml";
+        DataBeanList DataBeanList = new DataBeanList();
+        ArrayList<DataBean> dataList = DataBeanList.getDataBeanList();
+
+        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(dataList);
+        Map parameters = new HashMap();
+        JasperReport jasperReport;
+
+        try {
+            jasperReport = JasperCompileManager.compileReport(sourceFileName);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, beanColDataSource);
+            JasperViewer.viewReport(jasperPrint);
+        } catch (JRException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+}

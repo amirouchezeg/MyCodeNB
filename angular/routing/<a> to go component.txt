@@ -1,0 +1,23 @@
+//import a 
+import { Router } from '@angular/router';
+//add in constroctor
+
+constructor(private router:Router) {
+...
+
+//
+
+  sendMeHome(){
+    this.router.navigate(['home']);
+  }
+
+
+///the home name is here
+
+
+const routes: Routes = [
+  {
+    path:'home',****//in the app-routing
+    component:HomeComponent
+  },
+

@@ -1,0 +1,10 @@
+-installation in ubuntu
+	sudo apt install telnetd
+	sudo apt install xinetd
+-start xinetd
+	/etc/init.d/xinetd start
+
+in windows start putty ssH and telnet
+
+
+

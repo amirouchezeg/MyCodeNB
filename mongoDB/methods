@@ -1,0 +1,6 @@
+statistic                     	: db.stats() 
+create Db                    	: use mydb    
+show all db in server 		: show dbs
+show curent DB			: db
+delet database			: db.dropDatabase()
+insert to db			: db.mydb.insert({"name":"tutorials point"})

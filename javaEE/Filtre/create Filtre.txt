@@ -1,0 +1,12 @@
+create class implement Filter
+add annotations @WebFilter(urlPatterns= {"*.do"})//it will applay before all utl *.do
+
+
+		if (condetion) {
+			//if allow to do thid
+			chain.doFilter(servletRequest, servletResponse);
+		} else {
+			//if not allow do auther thing
+			request.getRequestDispatcher("/login.do").forward(servletRequest,
+					servletResponse);
+		}

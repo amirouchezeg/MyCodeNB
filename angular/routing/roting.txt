@@ -1,0 +1,14 @@
+//add routerLink in html componenet
+
+<a routerLink="about">About</a>
+
+//first import component 
+import { AboutComponent } from './about/about.component';
+
+//and add it in Routes array
+const routes: Routes = [
+  {
+    path:'about',
+    component:AboutComponent
+  }
+];

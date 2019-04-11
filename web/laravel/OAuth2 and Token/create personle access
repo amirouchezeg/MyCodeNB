@@ -1,0 +1,5 @@
+
+fails to create the Personal Access Token
+then
+	$php artisan passport:client --personal
+

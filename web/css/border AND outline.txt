@@ -1,0 +1,37 @@
+p{
+    	border-style: dotted ;
+        border-width:4px;
+    }
+
+////////////
+***only in top
+p {
+    border-top-style: dotted;
+    border-top-width: 4px;
+    border-top-color: red;
+}
+
+////////////
+***in one line
+p{
+    	border: 10px solid green;
+}
+/////////////
+***Give the element an image borde. Slice the image at 30px and repeat it.
+div {
+	border:solid 10px transparent;
+    border-image:url('border.png') 30 round ;
+    
+}
+/////////////
+***Give the element an image border. Slice the image at 30px and stretch it
+div {
+	border:solid 10px transparent;
+    border-image:url('border.png') 30 stretch;
+}
+/////////////
+***outline
+An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+    p{
+    	outline:solid 5px red;
+    }

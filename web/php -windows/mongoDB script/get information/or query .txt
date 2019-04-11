@@ -1,0 +1,2 @@
+$cursor = $collection->find(array('$or'=>array( array("id_members1" =>$_POST["id_members"]),
+			array("id_members2" =>$_POST["id_members"]))));	

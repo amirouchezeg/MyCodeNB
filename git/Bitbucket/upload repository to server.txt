@@ -1,0 +1,15 @@
+3-> local to Bitbucket server
+	-to add file to the staged snapshot (before add to server) (in the local)
+		~$git add locations.txt (moves changes from the working directory to the Git staging area (not into the server yet))
+	-takes the staged snapshot and commits it to the project "history" (in the local)
+		~$ git commit -m 'Initial commit'
+	-This command specifies that pushing to the master branch (the branch on Bitbucket) on origin (the server).
+		~$ git push origin master
+
+
+
+*********************
+
+~$git add locations.txt (moves changes from the)
+~$ git commit -m 'Initial commit'
+~$ git push origin master

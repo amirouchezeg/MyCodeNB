@@ -1,0 +1,64 @@
+Note: A link does not have to be text. It can be an image or any other HTML element.
+
+//////////////////////////
+new  window/tab in browser
+ <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+//////////////////////////
+#Link Colors 
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+//////////////////////////
+
+#The target Attribute
+	 specifies where to open the linked document.
+
+    _blank - Opens the linked document in a new window or tab
+    _self - Opens the linked document in the same window/tab as it was clicked (this is default)
+    _parent - Opens the linked document in the parent frame
+    _top - Opens the linked document in the full body of the window
+    framename - Opens the linked document in a named frame
+Example:
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a> 
+
+
+
+/////////////////////////// 
+#Create a Bookmark
+
+HTML bookmarks are used to allow readers to jump to specific parts of a Web page.
+
+Bookmarks can be useful if your webpage is very long.
+
+To make a bookmark, you must first create the bookmark, and then add a link to it.
+
+When the link is clicked, the page will scroll to the location with the bookmark.
+Example
+
+
+<h2 id="C4">Chapter 4</h2>
+
+
+<a href="#C4">Jump to Chapter 4</a>
+

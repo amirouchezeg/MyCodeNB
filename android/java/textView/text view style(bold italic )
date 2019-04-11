@@ -1,0 +1,4 @@
+	txtName.setTypeface(null, Typeface.BOLD);
+        txtName.setTypeface(null, Typeface.BOLD_ITALIC);
+        txtName.setTypeface(null, Typeface.ITALIC);
+        txtName.setTypeface(null, Typeface.NORMAL);

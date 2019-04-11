@@ -1,0 +1,39 @@
+$authors = Author::all();
+
+to paginate it make
+
+ $authors = Author::paginate(5);
+
+or to impliment for the pagination falow this link 
+
+https://stackoverflow.com/questions/44090392/how-to-use-pagination-with-laravel-dbselect-query
+
+public function index(Request $request){
+
+$notices = DB::select('select notices.id,notices.title,notices.body,notices.created_at,notices.updated_at,
+users.name,departments.department_name
+FROM notices
+INNER JOIN users ON notices.user_id = users.id
+INNER JOIN departments on users.dpt_id = departments.id
+ORDER BY users.id DESC');
+
+$notices = $this->arrayPaginator($notices, $request);
+
+return view('welcome')->with('allNotices', $notices);
+
+}
+
+public function arrayPaginator($array, $request)
+{
+    $page = Input::get('page', 1);
+    $perPage = 10;
+    $offset = ($page * $perPage) - $perPage;
+
+    return new LengthAwarePaginator(array_slice($array, $offset, $perPage, true), count($array), $perPage, $page,
+        ['path' => $request->url(), 'query' => $request->query()]);
+}
+
+import this
+use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator;
+

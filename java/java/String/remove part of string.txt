@@ -1,0 +1,14 @@
+	String image="I am image";
+	image=image.replace("http:I am","");
+	//output -> image
+
+	str="salam - alikom";
+	String w= String.valueOf(str.split(" - "));
+        wilaya_btn.setText(w);
+	//output -> alikom
+
+	
+	str="salam - alikom";	
+	String w= wilayaFromJson[i].split(" - ","");
+        wilaya_btn.setText(w);
+	//output ->salam alikom

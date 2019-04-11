@@ -1,0 +1,16 @@
+
+for exmple we are this method doProcess(not static):
+	public void doProcess(int i) {
+		System.out.println(i);
+	}
+
+and in the we wont to call il from static method 
+
+	public static void main(String[] args) {
+		doProcess(10);	//it is not possible 
+
+		//we shold to do this
+		ClassDoprocess d=new ClassDoprocess();
+		d.doProcess(10);
+
+	}	

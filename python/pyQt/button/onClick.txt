@@ -1,0 +1,17 @@
+	self.nameButton.clicked.connect(self.function)
+or
+self.connect(self.nameBtton,SIGNAL("clicked()"),self.function)
+
+############## full example
+
+class main(QWidget ,Ui_Form):
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setupUi(self)
+
+        self.leUser.setPlaceholderText('user')
+        self.lePass.setEchoMode(QLineEdit.Password)
+        self.pbLogin.clicked.connect(self.function)
+
+    def function(self):
+            print("to do")

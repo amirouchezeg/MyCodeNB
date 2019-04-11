@@ -1,0 +1,9 @@
+animation-fill-mode: forwards;
+
+backwards: Before the animation (during the animation delay), the styles of the initial keyframe (0%) are applied to the element.
+
+forwards :stay in the 100% action  After the animation is finished, the 
+
+both - The animation will follow the rules for both forwards and backwards, extending the animation properties before and after the animation.
+
+normal (default) - The animation does not apply any styles to the element, before or after the animation.

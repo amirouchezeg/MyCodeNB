@@ -1,0 +1,75 @@
+////////////
+***all
+p{
+	font:italic 20px Verdana;;    
+}
+////////////
+***fonty family
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+////////////
+***style
+p.normal {
+    font-style: normal;
+}
+
+p.italic {
+    font-style: italic;
+}
+
+p.oblique {
+    font-style: oblique;
+}
+////////////
+***size
+h1 {
+    font-size: 40px;
+}
+or
+h1 {
+    font-size: 2.5em; /* 40px/16=2.5em */
+}
+or
+body {
+    font-size: 100%;
+}
+////////////
+***Font Weight
+p.normal {
+    font-weight: normal;
+}
+p.thick {
+    font-weight: bold;
+}
+////////////
+***Font Variant
+p.normal {
+    font-variant: normal;
+}
+
+p.small {
+    font-variant: small-caps;
+}
+////////////
+***@font-face: allow Web designers to use fonts that are not installed on the user's computer.
+***Add a web font with the name "sansation" and the URL "sansation_light.woff".
+
+@font-face {
+   font-family: sansation;
+   src: url(sansation_light.woff);
+}
+body {
+   font-family: sansation;
+}
+////////////
+***
+////////////
+***
+////////////
+***
+////////////
+***
+////////////
+***
+

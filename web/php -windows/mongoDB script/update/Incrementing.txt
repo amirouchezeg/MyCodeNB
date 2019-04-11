@@ -1,0 +1,13 @@
+		$articles->update(array('_id' => MongoId('4dcd2abe5981')),
+		array('$set' => array('content' => 'New Content'),'$inc' => array('update_count' => 1)));
+
+or 
+
+		$criteria = array( '_id' => new MongoId($_POST["id_service"]));
+		$newobj = array('$inc' => array('count_comments_id' => 1));
+		$collection->update($criteria,$newobj,array('upsert' => True));
+//explication
+$inc lets us increment the value of a field by a specified number. For example, let's
+assume we are keeping track of how many times an article gets modified in our blog by a
+field named update_count, and we need to increase its value by 1 each time an article
+content gets modified:

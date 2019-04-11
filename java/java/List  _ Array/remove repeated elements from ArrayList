@@ -1,0 +1,6 @@
+List<String> al = new ArrayList<>();
+// add elements to al, including duplicates
+Set<String> hs = new HashSet<>();
+hs.addAll(al);
+al.clear();
+al.addAll(hs);

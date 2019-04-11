@@ -1,0 +1,2 @@
+Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+

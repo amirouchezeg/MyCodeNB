@@ -1,0 +1,11 @@
+******between tow date
+
+$start = new MongoDate(strtotime('2011-05-01 00:00:00'));
+$end = new MongoDate(strtotime('2011-05-31 23:59:59'));
+$articleCollection->find(array('saved_at'=>
+array('$gte' => $start,'$lte' => $end)));
+
+******week
+$lastweek = new MongoDate(strtotime('-1 week'));
+$cursor = $articleCollection->find(array('saved_at' =>
+array('$gt' => $lastweek)));

@@ -1,0 +1,13 @@
+		StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+		storageRef.child("images/books/"+key).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+			@Override
+			public void onSuccess(Uri uri) {
+				Log.i("link",uri.toString());
+			}
+		}).addOnFailureListener(new OnFailureListener() {
+			@Override
+			public void onFailure(@NonNull Exception exception) {
+				Log.i("link",exception.toString());
+
+			}
+		});

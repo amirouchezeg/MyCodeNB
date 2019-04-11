@@ -1,0 +1,14 @@
+manifest.xml
+
+<uses-permission android:name="android.permission.CALL_PHONE"/>
+
+////////java code
+    public void onCallActionPhone(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:066668122"));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            return;
+        }
+        startActivity(intent);
+    }

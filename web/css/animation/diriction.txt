@@ -1,0 +1,3 @@
+///////////
+***element alternate between running forwards and backwards.
+animation-direction: alternate;   

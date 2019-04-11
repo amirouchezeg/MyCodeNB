@@ -1,0 +1,12 @@
+android icon size
+
+
+96 x 96 erea in 128 x 128	xxxhdpi
+
+72 x 72 erea in 96 x 96		xxhdpi
+
+48 x 48 erea in 64 x 64		xhdpi
+
+36 x 36 erea in 48 x 48		hdpi
+
+24 x 24 erea in 32 x 32		mdpi

@@ -1,0 +1,5 @@
+array_push(array, var)
+
+or
+
+$mArray[indice]=var;

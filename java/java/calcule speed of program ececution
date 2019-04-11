@@ -1,0 +1,5 @@
+Long startTime= System.curentTimeMillis();
+
+//your code here
+
+Long endTime= System.curentTimeMillis();

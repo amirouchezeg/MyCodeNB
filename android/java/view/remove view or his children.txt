@@ -1,0 +1,8 @@
+//remove view  from parent
+	View mView =findViewById(R.id.hiddenLayout);
+        ViewGroup parent=(ViewGroup)mView.getParent();
+        parent.removeView(mView);
+
+//remove all childs view 
+	linearLayout.removeAllViews(); 
+

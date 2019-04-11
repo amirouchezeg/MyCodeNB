@@ -1,0 +1,16 @@
+The following command will list all the packages installed on your system:
+	$ dpkg --list
+
+Run the following command as sudo in order to remove a software;
+	$ sudo apt-get remove “package-name”
+
+
+or Use apt-get purge command
+	$ sudo apt-get purge “package-name”
+
+Clean the Mess with autoremove
+	$ sudo apt-get autoremove
+
+
+
+

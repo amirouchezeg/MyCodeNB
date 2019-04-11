@@ -1,0 +1,16 @@
+
+dowload a project : git clone https://amirouche0@bitbucket.org/amirouche0/name_project.git
+
+display status :			git status
+
+add file: 				git add nameFile.txt
+add all : 				git add .
+
+enregistre avec un commentair: 		git commit -m 'test add '
+
+upload(update) to clode: 			git push origin master 
+
+
+now 
+
+download (pull) changes from clode to local :git pull --all

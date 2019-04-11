@@ -1,0 +1,6 @@
+Bitmap bmp = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			bmp.compress(Bitmap.CompressFormat.JPEG, 25, baos);
+			byte[] data = baos.toByteArray();
+			

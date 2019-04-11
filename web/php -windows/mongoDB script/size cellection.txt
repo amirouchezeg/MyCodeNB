@@ -1,0 +1,2 @@
+//////// to set size of normale collection
+db.createCollection('noncapped_coll', {size : 100000})

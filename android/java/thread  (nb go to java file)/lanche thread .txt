@@ -1,0 +1,8 @@
+	Thread handel = new Thread() {
+            @Override
+            public void run() {
+        	//your action here...
+
+            }
+        };
+        handel.start();

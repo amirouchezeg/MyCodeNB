@@ -1,0 +1,10 @@
+final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				for (Balloon balloon : mBalloons) {
+					mContentView.removeView(balloon);
+				}
+				mBalloons.clear();
+			}
+		}, 2000);

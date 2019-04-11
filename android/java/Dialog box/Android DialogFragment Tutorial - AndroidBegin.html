@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width,user-scalable=no">		
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link rel="pingback" href="http://www.androidbegin.com/xmlrpc.php">
+                    <link rel="shortcut icon" href="http://www.androidbegin.com/wp-content/uploads/2013/04/favicon1.png">
+            <title>Android DialogFragment Tutorial - AndroidBegin</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v5.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="In this tutorial, you will learn how to implement a DialogFragment in your Android application. A DialogFragment is a fragment that displays a dialog window, floating on top of its activity&#39;s window.">
+<link rel="canonical" href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/">
+<link rel="publisher" href="https://plus.google.com/+Androidbegin/about">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android DialogFragment Tutorial - AndroidBegin">
+<meta property="og:description" content="In this tutorial, you will learn how to implement a DialogFragment in your Android application. A DialogFragment is a fragment that displays a dialog window, floating on top of its activity&#39;s window.">
+<meta property="og:url" content="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/">
+<meta property="og:site_name" content="AndroidBegin">
+<meta property="article:publisher" content="https://www.facebook.com/AndroidBegin">
+<meta property="article:tag" content="Adroid ButtonClick">
+<meta property="article:tag" content="Android AlertDialog">
+<meta property="article:tag" content="Android Development">
+<meta property="article:tag" content="Android DialogFragment">
+<meta property="article:tag" content="Android Tutorial">
+<meta property="article:section" content="Tutorial">
+<meta property="article:published_time" content="2013-10-02T16:50:57+08:00">
+<meta property="article:modified_time" content="2014-03-27T16:30:26+08:00">
+<meta property="og:updated_time" content="2014-03-27T16:30:26+08:00">
+<meta property="og:image" content="http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="In this tutorial, you will learn how to implement a DialogFragment in your Android application. A DialogFragment is a fragment that displays a dialog window, floating on top of its activity&#39;s window.">
+<meta name="twitter:title" content="Android DialogFragment Tutorial - AndroidBegin">
+<meta name="twitter:site" content="@AndroidBeginBlg">
+<meta name="twitter:image" content="http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots.png">
+<meta name="twitter:creator" content="@AndroidBeginBlg">
+<script src="./Android DialogFragment Tutorial - AndroidBegin_files/cb=gapi.loaded_1" async=""></script><script src="./Android DialogFragment Tutorial - AndroidBegin_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Android DialogFragment Tutorial - AndroidBegin_files/plusone.js" gapi_processed="true"></script><script async="" src="./Android DialogFragment Tutorial - AndroidBegin_files/analytics.js"></script><script id="facebook-jssdk" src="http://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.2"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.androidbegin.com\/","name":"AndroidBegin","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.androidbegin.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://platform.twitter.com/">
+<link rel="dns-prefetch" href="http://apis.google.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="AndroidBegin » Feed" href="http://www.androidbegin.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="AndroidBegin » Comments Feed" href="http://www.androidbegin.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="AndroidBegin » Android DialogFragment Tutorial Comments Feed" href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.androidbegin.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="http://www.androidbegin.com/wp-includes/js/wp-emoji-release.min.js?ver=4.8.3" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="validate-engine-css-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/validationEngine.jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="tfg_style-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/tfg_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpfb-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/wp-filebase.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="ot-google-fonts-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="sdm-styles-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/sdm_wp_styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="slider-pro.min-css-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/slider-pro.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightbox-css-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/lightbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="xBlog-style-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/jquery.fancybox-1.3.8.min.css" type="text/css" media="screen">
+<link rel="stylesheet" id="ot-dynamic-custom_css-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/dynamic.css" type="text/css" media="all">
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/jquery.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.androidbegin.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/crayon.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sdm_ajax_script = {"ajaxurl":"http:\/\/www.androidbegin.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/sdm_wp_scripts.js"></script>
+<link rel="https://api.w.org/" href="http://www.androidbegin.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.androidbegin.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.androidbegin.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.8.3">
+<link rel="shortlink" href="http://www.androidbegin.com/?p=2286">
+<link rel="alternate" type="application/json+oembed" href="http://www.androidbegin.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.androidbegin.com%2Ftutorial%2Fandroid-dialogfragment-tutorial%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.androidbegin.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.androidbegin.com%2Ftutorial%2Fandroid-dialogfragment-tutorial%2F&amp;format=xml">
+
+
+<!-- Facebook Like Thumbnail -->
+<link rel="image_src" href="http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots.png">
+<!-- End Facebook Like Thumbnail -->
+
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.androidbegin.com/?wordfence_logHuman=1&hid=95C9CB41B90D9CE5A87E1BC28FF5294F');
+</script>    <style type="text/css">		
+                   	
+            .site-header {
+        background: url("http://www.androidbegin.com/wp-content/themes/xblog/img/patterns/original/shattered.png") repeat;
+        background-attachment: fixed;
+    }
+                    @media only screen and (max-width : 990px) {
+        .site-branding {       
+            margin: 0px;
+        }
+    }
+    @media only screen and (min-width : 990px) {
+        .site-branding {
+            margin: 20px 0px;                                                		   
+        }
+    }
+    @media only screen and (max-width : 990px) {
+        .header-content-ads {    
+            margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+        }    
+    }
+    @media only screen and (min-width : 990px) {
+        .header-content-ads {    
+            margin: 0px 10px 20px 10px;        
+        }
+    }
+     
+
+                                                                                                                    	
+    .default-menu > ul > li > a,
+    .default-menu ul li ul li a,
+    .sticky-menu > ul > li > a,
+    .sticky-menu ul li ul li a	{
+        color: #333;		
+    }
+
+    .default-menu ul li ul li:hover > a, 
+        .default-menu ul li ul li.active > a,
+        .sticky-menu ul li ul li:hover > a, 
+        .sticky-menu ul li ul li.active > a {
+        color: #3498DB;
+    }
+
+    .sticky-menu ul li ul li.has-sub:after {
+        background : #333;
+    }
+
+                body {
+        background: #F4F5F5;
+    }
+    
+                .excerpt-container,
+        .video-container,
+        .featured-excerpt-container,
+        .error-404,
+        .archive-header,
+        .gallery-excerpt-container,
+        .none-container,
+        .entry-meta-post-social-container,
+        .entry-meta-post-author,
+        .post-container,
+        .crumbs-container,
+        .search-container,
+        .related-post-container,
+        .entry-meta-post-comment{
+        background: #FFF;         			
+    } 
+    
+        	
+        .widget-area .widget {			
+        background: #FFF;			
+    }
+    	
+
+    	
+            .widget-area {
+        margin-left: -10px;
+        margin-right: -15px;
+    }
+
+                                                                
+
+                .footer-container {
+        background: none repeat scroll 0% 0% #ffffff;			
+    }
+    	
+
+                .copyright-footer-container {
+        background: ;
+    }
+     
+
+        .site-header {
+        text-align: center;           
+    }
+
+      
+    .header-logo {
+        max-height: 90px;
+    }
+
+        .default-menu-container,
+    .modern-sticky-menu-container,
+    .mobile-menu,
+    .sticky-menu-container {
+        font-family: raleway,ralewaylight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 800;	
+        font-size: 14px;
+    } 
+
+        .excerpt-container,
+    .post-container,
+    .entry-meta-post-social-container,
+    .entry-meta-post-author,
+    .video-container,
+    .entry-meta-post-comment,
+    .featured-excerpt-container,
+    .gallery-excerpt-container,
+    .none-container,
+    .crumbs-container,
+    .search-container,
+    .related-post-container,
+    .archive-header {
+        color: #2c3e50;            
+    }		
+
+        .excerpt-container a,
+    .archive-header a,
+    .entry-meta-post-author a,
+    .post-container a,
+    .entry-meta-post-comment a,
+    .video-container a,
+    .featured-excerpt-container a,
+    .gallery-excerpt-container a,
+    .none-container a,
+    .related-post-container a,
+    .comment-respond .submit {
+        color: #337AB7;            
+    }	
+
+        .excerpt-container a:hover,
+        .archive-header a:hover,
+        .entry-meta-post-author a:hover,
+        .post-container a:hover,
+        .entry-meta-post-comment a:hover,
+        .video-container a:hover,
+        .featured-excerpt-container a:hover,
+        .gallery-excerpt-container a:hover,
+        .none-container a:hover, 
+        .related-post-container a:hover,		
+        .comment-respond .submit:hover {
+        color: #3498db;	
+    } 
+
+        .widget-area .widget-title,
+    .footer-widget .widget-title,
+    .archive-title,
+    .site-title,
+    .site-description,
+    .index-nav-links,
+    .post-nav-links,
+    .search-title,
+    .comment-nav-links,
+    .none-title,
+    .entry-meta-title,
+    .entry-meta-social-title,
+    .entry-meta-post-title,        
+    .entry-meta-post-author-title,
+    .entry-meta-post-comment-title,
+    .entry-meta-post-closed-comment,
+    .entry-meta-post-author-social-title,
+    .comment-respond .submit,
+    .comment-reply-title,
+    .related-post-title,
+    .related-post-content-title,
+    .default-search
+    {			
+        font-family: raleway,ralewaylight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 800;	
+        font-size: 28px;					
+    }
+
+           
+    .post-container, 
+    .entry-meta-post-comment, 
+    .comment-form,        
+    .crumbs-container,
+    .error-404,
+    .none-container,
+    .search-field,
+    .entry-meta-post-author,
+    .excerpt-container,
+    .video-container,
+    .gallery-excerpt-container, 
+    .featured-excerpt-container,
+    .modern-pagination,
+    .pages-pagination,
+    .related-post-container,
+    .taxonomy-description,
+    #commentform input[type="text"], 
+    #commentform input[type="email"],
+    #commentform input[type="url"], 
+    #commentform textarea,
+    .comment-form label{
+        font-family: roboto,robotolight,"Helvetica Neue",Helvetica,Arial,sans-serif;	
+        font-weight: 300;
+    }
+
+    .entry-meta-content,
+    .image-content,
+    .entry-meta-post-comment,
+    .entry-meta-post-author	{
+        font-size: 16px;
+    }
+
+        .widget-area .widget,
+    .default-search {
+        font-family: roboto,robotolight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 300;	
+    }
+
+    .widget-area .widget {			
+        color: #333;			
+    }
+
+    .widget-area .widget a{			
+        color: #337AB7;			
+    }
+
+    .widget-area .widget a:hover{			
+        color: #3498db;			
+    }
+
+    .widget-area {			
+        font-size: 14px;
+    }
+
+            
+    .footer-container {
+        font-family: roboto,robotolight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 300;
+        color: #333;   			
+    }	
+
+    .footer-container a{            
+        color: #337AB7;   			
+    }	
+
+    .footer-container a:hover{            
+        color: #3498db;   			
+    }
+
+    .footer-widget .widget-title {
+        color: #333;            
+    }     
+
+    .footer-container {
+        font-size: 14px;
+    }
+
+        .copyright-footer-container {                     
+        color: #333;	
+        text-align: ;
+        font-family: roboto,robotolight,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 300;			
+    }
+
+    .copyright-footer-container a{                     
+        color: #337AB7;	           
+    }
+
+    .copyright-footer-container a:hover{                     
+        color: #3498db;	           
+    }
+
+    .copyright-footer-container {
+        font-size: 13px;
+    }
+
+        
+    td, th {		
+        border: 1px solid #ECF0F1;
+    } 
+
+       
+    #ui_notifIt {
+        border-radius : 0px;
+        box-shadow: none;
+    }
+    #ui_notifIt p{			
+        font-family: "raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 800;			
+    }
+
+        
+    </style>
+
+        <script type="text/javascript">
+    (function ($) {
+        "use strict";
+        $(document).ready(function () {
+
+            // Notification Bar
+            function notificationbar() {
+                notif({
+                    type: "info",
+                        msg: "Insert Your Notification Texts Here",
+                        width: "all",
+                        height: 50,
+                        position: "center",
+                        bgcolor: "#34495E",
+                        color: "#FFF",
+                        opacity: 0.8,
+                        timeout: 10000                });
+            }
+            window.onload = notificationbar;
+
+            // Mobile Menu
+            $('.mobile-menu').show().scotchPanel({
+                containerSelector: 'body',
+                    direction: 'right',
+                    clickSelector: '.toggle-panel',
+                    duration: 300,
+                    transition: 'ease',
+                    distanceX: '70%',
+                    enableEscapeKey: true
+            });
+
+            // Post Format Gallery Slider
+            $('.gallery-slider').show().sliderPro({
+                fullScreen: true,
+                    autoplay: false,
+                    autoplayDelay: 5000,
+                    buttons: true,
+                    arrows: true,
+                    fade:false,
+                    width: '100%',
+                    loop: false,
+                    keyboard: false,
+                    autoHeight: true            });
+
+            // Featured Posts Slider
+            $('.featured-slider').show().sliderPro({
+                autoplay: true,
+                    autoplayDelay: 5000,
+                    buttons: true,
+                    arrows: true,
+                    fade: false,
+                    width: '100%',
+                    loop: false,
+                    waitForLayers: true,
+                    autoHeight: true
+            });
+
+            // Post Format Image
+            $('.image-slider').show().sliderPro({
+                autoplay: false,
+                    width: '100%',
+                    loop: false,
+                    touchSwipe: false,
+                    autoHeight: true,
+                    fullScreen: true
+            });
+
+            // Back to top
+            $('.back-to-top').click(function (event) {
+                $('html, body').animate({scrollTop: 0}, 1000);
+            });
+
+            // Sticky Navigation Menu
+			$(".sticky-menu-container").sticky({topSpacing:0});
+			
+            // Sticky Mobile Menu Toggle
+            $('#sticky-toggle-panel').on('click', function () {
+                var menu = $(this).next('ul');
+                if (menu.hasClass('open')) {
+                    menu.removeClass('open');
+                } else {
+                    menu.addClass('open');
+                }
+            });
+
+            // Align Center Embed Facebook Post			  
+            if ($(".entry-meta-content").find("fb-post")) {
+                $(".fb-post").wrap("<div class='text-center' style='background-color: #E5E6E9;'></div>");
+            }          
+        });
+    })(jQuery);
+
+    // Facebook Plugin Script
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+        return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.2";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script> 
+    
+<!-- Easy FancyBox 1.6 using FancyBox 1.3.8 - RavanH (http://status301.net/wordpress-plugins/easy-fancybox/) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'hideOnOverlayClick' : true, 'showCloseButton' : true, 'margin' : 20, 'centerOnScroll' : true, 'enableEscapeButton' : true, 'autoScale' : true };
+var easy_fancybox_handler = function(){
+	/* IMG */
+	var fb_IMG_select = 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpg"]:not(.nolightbox), a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a), area[href*=".jpeg"]:not(.nolightbox), a[href*=".png"]:not(.nolightbox,li.nolightbox>a), area[href*=".png"]:not(.nolightbox), a[href*=".webp"]:not(.nolightbox,li.nolightbox>a), area[href*=".webp"]:not(.nolightbox)';
+	jQuery(fb_IMG_select).addClass('fancybox image');
+	var fb_IMG_sections = jQuery('div.gallery ');
+	fb_IMG_sections.each(function() { jQuery(this).find(fb_IMG_select).attr('rel', 'gallery-' + fb_IMG_sections.index(this)); });
+	jQuery('a.fancybox, area.fancybox, li.fancybox a').fancybox( jQuery.extend({}, fb_opts, { 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'hideOnContentClick' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true, 'showNavArrows' : true, 'enableKeyboardNav' : true, 'cyclic' : false }) );
+}
+var easy_fancybox_auto = function(){
+	/* Auto-click */
+	setTimeout(function(){jQuery('#fancybox-auto').trigger('click')},1000);
+}
+/* ]]> */
+</script>
+	
+    <script src="./Android DialogFragment Tutorial - AndroidBegin_files/sitecart.js" id="bsasitecart" data-site="185711"></script><script type="text/javascript">
+	(function(){
+	  var bsa = document.createElement('script');
+		 bsa.type = 'text/javascript';
+		 bsa.async = true;
+		 bsa.src = '//s3.buysellads.com/ac/bsa.js';
+	  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+	})();
+	</script><script type="text/javascript" async="" src="./Android DialogFragment Tutorial - AndroidBegin_files/bsa.js"></script><script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66514242-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script><script type="text/javascript" async="" src="http://androidbegin.disqus.com/embed.js"></script><script async="" type="text/javascript" src="http://androidbegin.disqus.com/count.js"></script><script type="text/javascript" async="" src="http://www.androidbegin.com/?wordfence_logHuman=1&amp;hid=95C9CB41B90D9CE5A87E1BC28FF5294F&amp;r=0.3830258936004516"></script><script type="text/javascript" id="_bsap_js_11f065becd0e145bd32ad9a7c1ffd916" src="http://s3.buysellads.com/r/s_11f065becd0e145bd32ad9a7c1ffd916.js?v=1510340400000" async="async"></script></head>
+	<!-- BuySellAds Ad Code -->
+	<!-- BuySellAds On-Site Shopping Cart -->
+	
+	
+	<!-- End BuySellAds Ad Code -->
+	
+    <body class="post-template-default single single-post postid-2286 single-format-standard group-blog">
+                <header id="masthead" class="site-header clearfix" role="banner">
+            <div class="container">
+                     	
+
+                <div class="row">                    			
+                     
+<div class="col-md-offset-2 col-md-8 col-md-offset-2">
+    <div class="site-branding text-center">
+             <div class="header-logo"><a href="http://www.androidbegin.com/" rel="home" title="AndroidBegin"><img src="./Android DialogFragment Tutorial - AndroidBegin_files/Web-Logo.png" alt="AndroidBegin" class="header-logo"></a></div>		
+    </div><!-- $header_logo_align -->
+</div><!-- $header_logo_align -->   
+<div class="header-ads col-md-offset-2 col-md-8 col-md-offset-2"> 
+         </div><!-- $header_logo_align -->                    	
+                </div><!-- .row -->	
+
+                		
+            </div><!-- $full_width_container -->	
+        </header><!-- #masthead -->
+
+         
+        <div class="default-menu-container">
+            <div class="container">
+                <div class="row">
+                    <div class="default-menu hidden-xs hidden-sm col-md-9 col-lg-9"><ul id="menu-main-menu" class="menu"><li id="menu-item-385" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children has-sub"><a title="Home" href="http://www.androidbegin.com/"><span>Home</span></a>
+<ul>
+	<li id="menu-item-1618" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Privacy Policy" href="http://www.androidbegin.com/privacy-policy/"><span>Privacy Policy</span></a></li>
+	<li id="menu-item-1619" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Terms of Service" href="http://www.androidbegin.com/terms-of-service/"><span>Terms of Service</span></a></li>
+	<li id="menu-item-1620" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Contact Us" href="http://www.androidbegin.com/contact-us/"><span>Contact Us</span></a></li>
+	<li id="menu-item-1658" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="Advertise" href="http://www.androidbegin.com/advertise/"><span>Advertise</span></a></li>
+	<li id="menu-item-1621" class="menu-item menu-item-type-post_type menu-item-object-page"><a title="About Us" href="http://www.androidbegin.com/about-us/"><span>About Us</span></a></li>
+	<li id="menu-item-3216" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.androidbegin.com/write-for-us/"><span>Write for Us</span></a></li>
+</ul>
+</li>
+<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a title="Tutorial" href="http://www.androidbegin.com/category/tutorial/"><span>Tutorial</span></a></li>
+<li id="menu-item-929" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a title="ActionBarSherlock" href="http://www.androidbegin.com/category/actionbarsherlock/"><span>ActionBarSherlock</span></a></li>
+<li id="menu-item-1043" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a title="Animation" href="http://www.androidbegin.com/category/animation/"><span>Animation</span></a></li>
+<li id="menu-item-2539" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.androidbegin.com/category/blog/"><span>Blog</span></a></li>
+</ul></div>                    <div class="mobile-menu-toggle hidden-md hidden-lg text-right">
+                        <div class="toggle-panel">
+                            <i class="fa fa-bars"></i>
+                        </div><!-- .toggle-panel -->
+                    </div><!-- .mobile-menu-toggle -->
+                    <div class="text-right hidden-xs hidden-sm col-md-3 col-lg-3">
+                        <form role="search" method="get" name="SearchForm" action="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/">
+                            <input type="search" class="default-menu-search" placeholder="Search ..." value="" name="s">
+                        </form>
+                    </div>
+                </div><!-- .row -->
+            </div><!-- $full_width_container -->
+        </div><!-- .default-menu-container -->
+        <div class="mobile-menu"><form role="search" method="get" action="http://www.androidbegin.com/">
+          <input type="search" class="mobile-menu-search" placeholder="Search ..." value="" name="s">
+          </form><ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-385"><div class="mobile-menu-link"><a title="Home" href="http://www.androidbegin.com/">Home</a></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1618"><div class="mobile-menu-link"><a title="Privacy Policy" href="http://www.androidbegin.com/privacy-policy/">Privacy Policy</a></div></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1619"><div class="mobile-menu-link"><a title="Terms of Service" href="http://www.androidbegin.com/terms-of-service/">Terms of Service</a></div></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1620"><div class="mobile-menu-link"><a title="Contact Us" href="http://www.androidbegin.com/contact-us/">Contact Us</a></div></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1658"><div class="mobile-menu-link"><a title="Advertise" href="http://www.androidbegin.com/advertise/">Advertise</a></div></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1621"><div class="mobile-menu-link"><a title="About Us" href="http://www.androidbegin.com/about-us/">About Us</a></div></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3216"><div class="mobile-menu-link"><a href="http://www.androidbegin.com/write-for-us/">Write for Us</a></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-328"><div class="mobile-menu-link"><a title="Tutorial" href="http://www.androidbegin.com/category/tutorial/">Tutorial</a></div></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-929"><div class="mobile-menu-link"><a title="ActionBarSherlock" href="http://www.androidbegin.com/category/actionbarsherlock/">ActionBarSherlock</a></div></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1043"><div class="mobile-menu-link"><a title="Animation" href="http://www.androidbegin.com/category/animation/">Animation</a></div></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2539"><div class="mobile-menu-link"><a href="http://www.androidbegin.com/category/blog/">Blog</a></div></li>
+</ul></div>   
+
+        <div id="page" class="hfeed site">	
+            <div class="container">
+                <div id="content" class="site-content"><div class="row">
+    <div class="col-md-8">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <div class="post-container">
+        
+    <div class="post-page-top-ads text-center">		
+        <!-- BuySellAds Zone Code -->
+<div id="bsap_1289653" class="bsap_1289653 bsap"></div>
+<!-- End BuySellAds Zone Code -->        <div class="ads-text text-center">
+            Advertisement        </div><!-- .ads-text -->
+    </div><!-- .post-page-top-ads -->
+    <article id="post-2286" class="post-2286 post type-post status-publish format-standard hentry category-tutorial tag-adroid-buttonclick tag-android-alertdialog tag-android-development tag-android-dialogfragment tag-android-tutorial">
+        <header class="entry-header">
+            <div class="entry-meta-header">
+                <div class="clearfix">
+                    <div class="entry-meta-author">
+    <a href="http://www.androidbegin.com/author/androidbegin/"><img alt="" src="./Android DialogFragment Tutorial - AndroidBegin_files/78a58803ab8ba1a53bf6c5dc0c1ec4f7" srcset="http://1.gravatar.com/avatar/78a58803ab8ba1a53bf6c5dc0c1ec4f7?s=82&amp;d=mm&amp;r=g 2x" class="avatar avatar-41 photo" height="41" width="41"></a>			
+</div><!-- .entry-meta-author -->		<div class="entry-meta-details-left"> 
+    posted 4 years ago    <br>
+            by <a href="http://www.androidbegin.com/author/androidbegin/" title="View all posts by AndroidBegin">AndroidBegin</a></div><!-- .entry-meta-details-left --><div class="entry-meta-details-right"> 
+			<span title="October 2nd, 2013 - 4:50 pm">2 Oct, 2013</span>	<br>
+	<a href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/#disqus_thread" data-disqus-identifier="2286 http://www.androidbegin.com/?p=2286"><span class="dsq-postid" data-dsqidentifier="2286 http://www.androidbegin.com/?p=2286">11 <i class="fa fa-comments-o"></i></span></a>	
+</div><!-- .entry-meta-details-right -->                </div><!-- .clearfix --> 
+            </div><!-- .entry-meta-header --> 
+            <h1 class="entry-meta-post-title">	
+    Android DialogFragment Tutorial</h1><!-- .entry-meta-post-title -->			
+        </header><!-- .entry-header --> 
+		<div class="text-center" style="margin-left: 10px;"> 	
+			<div class="bottomcontainerBox" style="">
+			<div style="float:left; width:95px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="./Android DialogFragment Tutorial - AndroidBegin_files/like.html" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:95px; height:21px;"></iframe></div>
+			<div style="float:left; width:75px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1510341782094" name="I0_1510341782094" src="./Android DialogFragment Tutorial - AndroidBegin_files/fastbutton.html" data-gapiattached="true" title="G+"></iframe></div>
+			</div>
+			<div style="float:left; width:90px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" data-text="Android DialogFragment Tutorial" data-count="horizontal"></a>
+			</div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div>		</div>
+        <div class="entry-meta-categories">
+    <i class="fa fa-folder-open"></i>
+    <a href="http://www.androidbegin.com/category/tutorial/" title="View all posts in Tutorial">Tutorial</a></div><!-- .entry-meta-categories -->        <div class="entry-meta-content">
+            <div class="clearfix">
+                <p>In this tutorial, you will learn how to implement a DialogFragment in your Android application. A DialogFragment is a&nbsp;fragment that displays a dialog window, floating on top of its activity’s window. This fragment contains a Dialog object, which it displays as appropriate based on the fragment’s state. Alternatively, you can&nbsp;create an entirely custom dialog, such as an AlertDialog, with its own content.&nbsp;We will create buttons that will show a DialogFragment and a custom Alert DialogFragment.</p>
+<p><span id="more-2286"></span></p>
+<p align="center"><iframe src="./Android DialogFragment Tutorial - AndroidBegin_files/BFyr2KDWwaI.html" height="360" width="480" frameborder="0"></iframe></p>
+<p>Create a new project in Eclipse&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Android Application Project.&nbsp;</strong>Fill in the details and name your project&nbsp;<strong>DialogFragmentTutorial</strong><strong>.</strong></p>
+<p>Application Name :&nbsp;<strong>DialogFragmentTutorial</strong></p>
+<p>Project Name :&nbsp;<strong>DialogFragmentTutorial</strong></p>
+<p>Package Name :<strong>&nbsp;com.androidbegin.dialogfragmenttutorial</strong></p>
+<p>Open your&nbsp;<strong>MainActivity</strong><strong>.java</strong>&nbsp;and paste the following code.</p>
+<p><strong><strong>MainActivity</strong>.java</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea20e061267373" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-14">14</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-16">16</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-18">18</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-20">20</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-22">22</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-24">24</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-26">26</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-28">28</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-30">30</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-32">32</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-34">34</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-36">36</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-38">38</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-40">40</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-41">41</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-42">42</div><div class="crayon-num" data-line="crayon-5a05fc8cea20e061267373-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea20e061267373-44">44</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-1"><span class="crayon-t">package</span><span class="crayon-h"> </span><span class="crayon-v">com</span><span class="crayon-sy">.</span><span class="crayon-v">androidbegin</span><span class="crayon-sy">.</span><span class="crayon-v">dialogfragmenttutorial</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-2">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-3"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">os</span><span class="crayon-sy">.</span><span class="crayon-v">Bundle</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-4"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">support</span><span class="crayon-sy">.</span><span class="crayon-v">v4</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">FragmentActivity</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-5"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">support</span><span class="crayon-sy">.</span><span class="crayon-v">v4</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">FragmentManager</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-6"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">view</span><span class="crayon-sy">.</span><span class="crayon-v">View</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-7"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">view</span><span class="crayon-sy">.</span><span class="crayon-v">View</span><span class="crayon-sy">.</span><span class="crayon-v">OnClickListener</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-8"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">widget</span><span class="crayon-sy">.</span><span class="crayon-v">Button</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-9">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-10"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">class</span><span class="crayon-h"> </span><span class="crayon-e">MainActivity</span><span class="crayon-h"> </span><span class="crayon-r">extends</span><span class="crayon-h"> </span><span class="crayon-e">FragmentActivity</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-11">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-12"><span class="crayon-h">	</span><span class="crayon-e">Button </span><span class="crayon-v">dfragbutton</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-13"><span class="crayon-h">	</span><span class="crayon-e">Button </span><span class="crayon-v">alertdfragbutton</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-14"><span class="crayon-h">	</span><span class="crayon-e">FragmentManager </span><span class="crayon-v">fm</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">getSupportFragmentManager</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-15">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-16"><span class="crayon-h">	</span><span class="crayon-sy">@</span><span class="crayon-e">Override</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-17"><span class="crayon-e">	</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">onCreate</span><span class="crayon-sy">(</span><span class="crayon-e">Bundle </span><span class="crayon-v">savedInstanceState</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-18"><span class="crayon-h">		</span><span class="crayon-r">super</span><span class="crayon-sy">.</span><span class="crayon-e">onCreate</span><span class="crayon-sy">(</span><span class="crayon-v">savedInstanceState</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-19"><span class="crayon-h">		</span><span class="crayon-c">// Get the view from activity_main.xml</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-20"><span class="crayon-h">		</span><span class="crayon-e">setContentView</span><span class="crayon-sy">(</span><span class="crayon-v">R</span><span class="crayon-sy">.</span><span class="crayon-v">layout</span><span class="crayon-sy">.</span><span class="crayon-v">activity_main</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-21">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-22"><span class="crayon-h">		</span><span class="crayon-c">// Locate the button in activity_main.xml</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-23"><span class="crayon-h">		</span><span class="crayon-v">dfragbutton</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">Button</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-e">findViewById</span><span class="crayon-sy">(</span><span class="crayon-v">R</span><span class="crayon-sy">.</span><span class="crayon-v">id</span><span class="crayon-sy">.</span><span class="crayon-v">dfragbutton</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-24"><span class="crayon-h">		</span><span class="crayon-v">alertdfragbutton</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">Button</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-e">findViewById</span><span class="crayon-sy">(</span><span class="crayon-v">R</span><span class="crayon-sy">.</span><span class="crayon-v">id</span><span class="crayon-sy">.</span><span class="crayon-v">alertdfragbutton</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-25">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-26"><span class="crayon-h">		</span><span class="crayon-c">// Capture button clicks</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-27"><span class="crayon-h">		</span><span class="crayon-v">dfragbutton</span><span class="crayon-sy">.</span><span class="crayon-e">setOnClickListener</span><span class="crayon-sy">(</span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">OnClickListener</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-28"><span class="crayon-h">			</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">onClick</span><span class="crayon-sy">(</span><span class="crayon-e">View </span><span class="crayon-v">arg0</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-29"><span class="crayon-h">				</span><span class="crayon-e">DFragment </span><span class="crayon-v">dFragment</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">DFragment</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-30"><span class="crayon-h">				</span><span class="crayon-c">// Show DialogFragment</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-31"><span class="crayon-h">				</span><span class="crayon-v">dFragment</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-v">fm</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"Dialog Fragment"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-32"><span class="crayon-h">			</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-33"><span class="crayon-h">		</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-34">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-35"><span class="crayon-h">		</span><span class="crayon-c">// Capture button clicks</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-36"><span class="crayon-h">		</span><span class="crayon-v">alertdfragbutton</span><span class="crayon-sy">.</span><span class="crayon-e">setOnClickListener</span><span class="crayon-sy">(</span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">OnClickListener</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-37"><span class="crayon-h">			</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">onClick</span><span class="crayon-sy">(</span><span class="crayon-e">View </span><span class="crayon-v">arg0</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-38"><span class="crayon-h">				</span><span class="crayon-e">AlertDFragment </span><span class="crayon-v">alertdFragment</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-e">AlertDFragment</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-39"><span class="crayon-h">				</span><span class="crayon-c">// Show Alert DialogFragment</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-40"><span class="crayon-h">				</span><span class="crayon-v">alertdFragment</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-v">fm</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"Alert Dialog Fragment"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-41"><span class="crayon-h">			</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-42"><span class="crayon-h">		</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea20e061267373-43"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea20e061267373-44"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0055 seconds] -->
+<p>In this activity, we have created two buttons that will show different dialog fragments. The first button will show a simple DialogFragment and another with a custom Alert DialogFragment.</p>
+<p>Next, create an XML graphical layout for the MainActivity. Go to&nbsp;<strong>res</strong>&nbsp;&gt;&nbsp;<strong>layout</strong>&nbsp;&gt;&nbsp;Right Click&nbsp;on&nbsp;<strong>layout</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Android XML File</strong></p>
+<p>Name your new XML file<strong>&nbsp;activity_main.xml&nbsp;</strong>and paste the following code.</p>
+<p><strong>activity_main.xml</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea220624334646" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-14">14</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-16">16</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-18">18</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea220624334646-20">20</div><div class="crayon-num" data-line="crayon-5a05fc8cea220624334646-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea220624334646-1"><span class="crayon-o">&lt;</span><span class="crayon-e">RelativeLayout </span><span class="crayon-v">xmlns</span><span class="crayon-o">:</span><span class="crayon-v">android</span><span class="crayon-o">=</span><span class="crayon-s">"http://schemas.android.com/apk/res/android"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">xmlns</span><span class="crayon-o">:</span><span class="crayon-v">tools</span><span class="crayon-o">=</span><span class="crayon-s">"http://schemas.android.com/tools"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_width</span><span class="crayon-o">=</span><span class="crayon-s">"match_parent"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_height</span><span class="crayon-o">=</span><span class="crayon-s">"match_parent"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">Button</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-7"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-s">"@+id/dfragbutton"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_width</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_height</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_centerInParent</span><span class="crayon-o">=</span><span class="crayon-s">"true"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">text</span><span class="crayon-o">=</span><span class="crayon-s">"@string/dialogfragment"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-12">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">Button</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-14"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-s">"@+id/alertdfragbutton"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_width</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_height</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_below</span><span class="crayon-o">=</span><span class="crayon-s">"@+id/dfragbutton"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_centerInParent</span><span class="crayon-o">=</span><span class="crayon-s">"true"</span></div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">text</span><span class="crayon-o">=</span><span class="crayon-s">"@string/alertdialogfragment"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea220624334646-20">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea220624334646-21"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">RelativeLayout</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0021 seconds] -->
+<p>Next, create a fragment. Go to&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Class</strong>&nbsp;and name it&nbsp;<strong>DFragment</strong><strong>.java.&nbsp;</strong>Select your package named&nbsp;<strong>com.androidbegin.<strong>dialogfragmenttutorial&nbsp;</strong></strong>and click&nbsp;<strong>Finish</strong><em>.</em></p>
+<p>Open your&nbsp;<strong>DFragment</strong><strong>.java</strong><strong>&nbsp;</strong>and paste the following code.</p>
+<p><strong>DFragment</strong><strong>.java</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea224423102551" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-14">14</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-16">16</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea224423102551-18">18</div><div class="crayon-num" data-line="crayon-5a05fc8cea224423102551-19">19</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea224423102551-1"><span class="crayon-t">package</span><span class="crayon-h"> </span><span class="crayon-v">com</span><span class="crayon-sy">.</span><span class="crayon-v">androidbegin</span><span class="crayon-sy">.</span><span class="crayon-v">dialogfragmenttutorial</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-2">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-3"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">os</span><span class="crayon-sy">.</span><span class="crayon-v">Bundle</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-4"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">support</span><span class="crayon-sy">.</span><span class="crayon-v">v4</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">DialogFragment</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-5"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">view</span><span class="crayon-sy">.</span><span class="crayon-v">LayoutInflater</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-6"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">view</span><span class="crayon-sy">.</span><span class="crayon-v">View</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-7"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">view</span><span class="crayon-sy">.</span><span class="crayon-v">ViewGroup</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-8">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-9"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">class</span><span class="crayon-h"> </span><span class="crayon-e">DFragment</span><span class="crayon-h"> </span><span class="crayon-r">extends</span><span class="crayon-h"> </span><span class="crayon-e">DialogFragment</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-10"><span class="crayon-h">	</span><span class="crayon-sy">@</span><span class="crayon-e">Override</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-11"><span class="crayon-e">	</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-e">View </span><span class="crayon-e">onCreateView</span><span class="crayon-sy">(</span><span class="crayon-e">LayoutInflater </span><span class="crayon-v">inflater</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">ViewGroup </span><span class="crayon-v">container</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-12"><span class="crayon-h">			</span><span class="crayon-e">Bundle </span><span class="crayon-v">savedInstanceState</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-13"><span class="crayon-h">		</span><span class="crayon-e">View </span><span class="crayon-v">rootView</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">inflater</span><span class="crayon-sy">.</span><span class="crayon-e">inflate</span><span class="crayon-sy">(</span><span class="crayon-v">R</span><span class="crayon-sy">.</span><span class="crayon-v">layout</span><span class="crayon-sy">.</span><span class="crayon-v">dialogfragment</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">container</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-14"><span class="crayon-h">				</span><span class="crayon-t">false</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-15"><span class="crayon-h">		</span><span class="crayon-e">getDialog</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">setTitle</span><span class="crayon-sy">(</span><span class="crayon-s">"DialogFragment Tutorial"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">		</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-16"><span class="crayon-h">		</span><span class="crayon-c">// Do something else</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-17"><span class="crayon-h">		</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">rootView</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea224423102551-18"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a05fc8cea224423102551-19"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0024 seconds] -->
+<p>Next, create an XML graphical layout for the DialogFragment. Go to&nbsp;<strong>res</strong>&nbsp;&gt;&nbsp;<strong>layout</strong>&nbsp;&gt;&nbsp;Right Click&nbsp;on&nbsp;<strong>layout</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Android XML File</strong></p>
+<p>Name your new XML file<strong>&nbsp;dialogfragment.xml&nbsp;</strong>and paste the following code.</p>
+<p><strong><strong>dialogfragment</strong>.xml</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea228596807736" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea228596807736-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea228596807736-13">13</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea228596807736-1"><span class="crayon-o">&lt;</span><span class="crayon-e">RelativeLayout </span><span class="crayon-v">xmlns</span><span class="crayon-o">:</span><span class="crayon-v">android</span><span class="crayon-o">=</span><span class="crayon-s">"http://schemas.android.com/apk/res/android"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">xmlns</span><span class="crayon-o">:</span><span class="crayon-v">tools</span><span class="crayon-o">=</span><span class="crayon-s">"http://schemas.android.com/tools"</span></div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_width</span><span class="crayon-o">=</span><span class="crayon-s">"match_parent"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_height</span><span class="crayon-o">=</span><span class="crayon-s">"match_parent"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">TextView</span></div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-7"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_width</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_height</span><span class="crayon-o">=</span><span class="crayon-s">"wrap_content"</span></div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">layout_centerInParent</span><span class="crayon-o">=</span><span class="crayon-s">"true"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">padding</span><span class="crayon-o">=</span><span class="crayon-s">"10dp"</span></div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">text</span><span class="crayon-o">=</span><span class="crayon-s">"@string/welcome"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea228596807736-12">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea228596807736-13"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">RelativeLayout</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0014 seconds] -->
+<p>Next, create another fragment. Go to&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Class</strong>&nbsp;and name it <strong>AlertDFragment.java.&nbsp;</strong>Select your package named&nbsp;<strong>com.androidbegin.<strong>dialogfragmenttutorial&nbsp;</strong></strong>and click&nbsp;<strong>Finish</strong><em>.</em></p>
+<p>Open your&nbsp;<strong>AlertDFragment</strong><strong>.java</strong><strong>&nbsp;</strong>and paste the following code.</p>
+<p><strong><strong>AlertDFragment</strong>.java</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea22e824474144" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-14">14</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-16">16</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-18">18</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-20">20</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-22">22</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-24">24</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-26">26</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-28">28</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-30">30</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-32">32</div><div class="crayon-num" data-line="crayon-5a05fc8cea22e824474144-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea22e824474144-34">34</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-1"><span class="crayon-t">package</span><span class="crayon-h"> </span><span class="crayon-v">com</span><span class="crayon-sy">.</span><span class="crayon-v">androidbegin</span><span class="crayon-sy">.</span><span class="crayon-v">dialogfragmenttutorial</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-2">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-3"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">AlertDialog</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-4"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">Dialog</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-5"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">content</span><span class="crayon-sy">.</span><span class="crayon-v">DialogInterface</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-6"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">os</span><span class="crayon-sy">.</span><span class="crayon-v">Bundle</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-7"><span class="crayon-e">import </span><span class="crayon-v">android</span><span class="crayon-sy">.</span><span class="crayon-v">support</span><span class="crayon-sy">.</span><span class="crayon-v">v4</span><span class="crayon-sy">.</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">DialogFragment</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-8">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-9"><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">class</span><span class="crayon-h"> </span><span class="crayon-e">AlertDFragment</span><span class="crayon-h"> </span><span class="crayon-r">extends</span><span class="crayon-h"> </span><span class="crayon-e">DialogFragment</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-10"><span class="crayon-h">	</span><span class="crayon-sy">@</span><span class="crayon-e">Override</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-11"><span class="crayon-e">	</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-e">Dialog </span><span class="crayon-e">onCreateDialog</span><span class="crayon-sy">(</span><span class="crayon-e">Bundle </span><span class="crayon-v">savedInstanceState</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-12"><span class="crayon-h">		</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-v">AlertDialog</span><span class="crayon-sy">.</span><span class="crayon-e">Builder</span><span class="crayon-sy">(</span><span class="crayon-e">getActivity</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-13"><span class="crayon-h">				</span><span class="crayon-c">// Set Dialog Icon</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-14"><span class="crayon-h">				</span><span class="crayon-sy">.</span><span class="crayon-e">setIcon</span><span class="crayon-sy">(</span><span class="crayon-v">R</span><span class="crayon-sy">.</span><span class="crayon-v">drawable</span><span class="crayon-sy">.</span><span class="crayon-v">androidhappy</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-15"><span class="crayon-h">				</span><span class="crayon-c">// Set Dialog Title</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-16"><span class="crayon-h">				</span><span class="crayon-sy">.</span><span class="crayon-e">setTitle</span><span class="crayon-sy">(</span><span class="crayon-s">"Alert DialogFragment"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-17"><span class="crayon-h">				</span><span class="crayon-c">// Set Dialog Message</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-18"><span class="crayon-h">				</span><span class="crayon-sy">.</span><span class="crayon-e">setMessage</span><span class="crayon-sy">(</span><span class="crayon-s">"Alert DialogFragment Tutorial"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-19">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-20"><span class="crayon-h">				</span><span class="crayon-c">// Positive button</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-21"><span class="crayon-h">				</span><span class="crayon-sy">.</span><span class="crayon-e">setPositiveButton</span><span class="crayon-sy">(</span><span class="crayon-s">"OK"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-v">DialogInterface</span><span class="crayon-sy">.</span><span class="crayon-e">OnClickListener</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-22"><span class="crayon-h">					</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">onClick</span><span class="crayon-sy">(</span><span class="crayon-e">DialogInterface </span><span class="crayon-v">dialog</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">int</span><span class="crayon-h"> </span><span class="crayon-v">which</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-23"><span class="crayon-h">						</span><span class="crayon-c">// Do something else</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-24"><span class="crayon-h">					</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-25"><span class="crayon-h">				</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-26">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-27"><span class="crayon-h">				</span><span class="crayon-c">// Negative Button</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-28"><span class="crayon-h">				</span><span class="crayon-sy">.</span><span class="crayon-e">setNegativeButton</span><span class="crayon-sy">(</span><span class="crayon-s">"Cancel"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-v">DialogInterface</span><span class="crayon-sy">.</span><span class="crayon-e">OnClickListener</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-29"><span class="crayon-h">					</span><span class="crayon-m">public</span><span class="crayon-h"> </span><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">onClick</span><span class="crayon-sy">(</span><span class="crayon-e">DialogInterface </span><span class="crayon-v">dialog</span><span class="crayon-sy">,</span><span class="crayon-h">	</span><span class="crayon-t">int</span><span class="crayon-h"> </span><span class="crayon-v">which</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-30"><span class="crayon-h">						</span><span class="crayon-c">// Do something else</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-31"><span class="crayon-h">					</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-32"><span class="crayon-h">				</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">create</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a05fc8cea22e824474144-33"><span class="crayon-h">	</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea22e824474144-34"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0037 seconds] -->
+<p>In this fragment, we have created custom alert DialogFragment that consist of two buttons, a positive and negative.&nbsp;We have prepared a sample alert dialog icon for this tutorial.&nbsp;Insert your downloaded sample alert dialog&nbsp;icon into your&nbsp;<strong>res</strong>&nbsp;&gt;&nbsp;<strong>drawable-hdpi.</strong></p>
+<p><strong>Sample Alert Dialog Icon</strong></p>
+<style type="text/css" media="screen">
+	.wpfb-dlbtn div { width:250px; height:40px; padding:0; background:transparent url('http://www.androidbegin.com/wp-content/plugins/wp-filebase/images/dl_btn.png') no-repeat top center;}
+	.wpfb-dlbtn div:hover { background-image: url(http://www.androidbegin.com/wp-content/plugins/wp-filebase/images/dl_btn_hover.png); }
+</style>
+<div style="text-align:center; width:250px; font-size: 10px;"><a href="javascript:;" class="wpfb-dlbtn"><div></div></a>
+Androidhappy (1.2 KiB, 1342 downloads)
+</div>
+<p>Next, change the application name and texts.&nbsp;Open your&nbsp;<strong>strings.xml&nbsp;</strong>in your<strong>&nbsp;res &gt; values&nbsp;</strong>folder&nbsp;and paste the following code.</p>
+<p><strong>strings.xml</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea232168656978" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contains Mixed Languages"></span><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea232168656978-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea232168656978-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea232168656978-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea232168656978-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea232168656978-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea232168656978-11">11</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea232168656978-1"><span class="crayon-ta">&lt;?</span><span class="crayon-e">xml </span><span class="crayon-i">version</span><span class="crayon-o">=</span><span class="crayon-s">"1.0"</span><span class="crayon-h"> </span><span class="crayon-i">encoding</span><span class="crayon-o">=</span><span class="crayon-s">"utf-8"</span><span class="crayon-ta">?&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea232168656978-2"><span class="crayon-o">&lt;</span><span class="crayon-v">resources</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea232168656978-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea232168656978-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"app_name"</span><span class="crayon-o">&gt;</span><span class="crayon-e">DialogFragment </span><span class="crayon-v">Tutorial</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea232168656978-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"action_settings"</span><span class="crayon-o">&gt;</span><span class="crayon-v">Settings</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea232168656978-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"hello_world"</span><span class="crayon-o">&gt;</span><span class="crayon-e">Hello </span><span class="crayon-v">world</span><span class="crayon-o">!</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea232168656978-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"welcome"</span><span class="crayon-o">&gt;</span><span class="crayon-r">This</span><span class="crayon-h"> </span><span class="crayon-st">is</span><span class="crayon-h"> </span><span class="crayon-i">a</span><span class="crayon-h"> </span><span class="crayon-v">DialogFragment</span><span class="crayon-sy">.</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea232168656978-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"dialogfragment"</span><span class="crayon-o">&gt;</span><span class="crayon-e">Open </span><span class="crayon-v">DialogFragment</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea232168656978-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-t">string</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"alertdialogfragment"</span><span class="crayon-o">&gt;</span><span class="crayon-e">Open </span><span class="crayon-e">Alert </span><span class="crayon-v">DialogFragment</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-t">string</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea232168656978-10">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea232168656978-11"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">resources</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0047 seconds] -->
+<p>No changes needed for the AndroidManifest.xml.</p>
+<p><strong>AndroidManifest.xml</strong></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a05fc8cea235955830549" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contains Mixed Languages"></span><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-2">2</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-4">4</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-6">6</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-8">8</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-10">10</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-12">12</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-14">14</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-16">16</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-18">18</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-20">20</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-22">22</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-24">24</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a05fc8cea235955830549-26">26</div><div class="crayon-num" data-line="crayon-5a05fc8cea235955830549-27">27</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a05fc8cea235955830549-1"><span class="crayon-ta">&lt;?</span><span class="crayon-e">xml </span><span class="crayon-i">version</span><span class="crayon-o">=</span><span class="crayon-s">"1.0"</span><span class="crayon-h"> </span><span class="crayon-i">encoding</span><span class="crayon-o">=</span><span class="crayon-s">"utf-8"</span><span class="crayon-ta">?&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-2"><span class="crayon-o">&lt;</span><span class="crayon-e">manifest </span><span class="crayon-v">xmlns</span><span class="crayon-o">:</span><span class="crayon-v">android</span><span class="crayon-o">=</span><span class="crayon-s">"http://schemas.android.com/apk/res/android"</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">package</span><span class="crayon-o">=</span><span class="crayon-s">"com.androidbegin.dialogfragmenttutorial"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">versionCode</span><span class="crayon-o">=</span><span class="crayon-s">"1"</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">versionName</span><span class="crayon-o">=</span><span class="crayon-s">"1.0"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-6">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">uses</span><span class="crayon-o">-</span><span class="crayon-e">sdk</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-8"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">minSdkVersion</span><span class="crayon-o">=</span><span class="crayon-s">"8"</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">targetSdkVersion</span><span class="crayon-o">=</span><span class="crayon-s">"17"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-10">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">application</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-12"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">allowBackup</span><span class="crayon-o">=</span><span class="crayon-s">"true"</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">icon</span><span class="crayon-o">=</span><span class="crayon-s">"@drawable/ic_launcher"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">label</span><span class="crayon-o">=</span><span class="crayon-s">"@string/app_name"</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">theme</span><span class="crayon-o">=</span><span class="crayon-s">"@style/AppTheme"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">activity</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-17"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">".MainActivity"</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">label</span><span class="crayon-o">=</span><span class="crayon-s">"@string/app_name"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-v">intent</span><span class="crayon-o">-</span><span class="crayon-v">filter</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">action </span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"android.intent.action.MAIN"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-21">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">category </span><span class="crayon-v">android</span><span class="crayon-o">:</span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"android.intent.category.LAUNCHER"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">intent</span><span class="crayon-o">-</span><span class="crayon-v">filter</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">activity</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">application</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a05fc8cea235955830549-26">&nbsp;</div><div class="crayon-line" id="crayon-5a05fc8cea235955830549-27"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">manifest</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0029 seconds] -->
+<p><strong>Output:</strong></p>
+<p><img class="alignnone size-full wp-image-2290" alt="DialogFragment ScreenShots" src="http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots.png" width="572" height="456" srcset="http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots.png 572w, http://www.androidbegin.com/wp-content/uploads/2013/10/DialogFragment-ScreenShots-300x239.png 300w" sizes="(max-width: 572px) 100vw, 572px"></p>
+<p><strong>Source Code</strong></p>
+<style type="text/css" media="screen">
+	.wpfb-dlbtn div { width:250px; height:40px; padding:0; background:transparent url('http://www.androidbegin.com/wp-content/plugins/wp-filebase/images/dl_btn.png') no-repeat top center;}
+	.wpfb-dlbtn div:hover { background-image: url(http://www.androidbegin.com/wp-content/plugins/wp-filebase/images/dl_btn_hover.png); }
+</style>
+<div style="text-align:center; width:250px; font-size: 10px;"><a href="javascript:;" class="wpfb-dlbtn"><div></div></a>
+DialogFragmentTutorial (1.1 MiB, 2315 downloads)
+</div>
+<div style="clear:both;"></div>            </div><!-- .clearfix -->
+        </div><!-- .entry-meta-content -->
+            <div class="entry-meta-tags">
+        <i class="fa fa-tags"></i> <a href="http://www.androidbegin.com/tag/adroid-buttonclick/" rel="tag">Adroid ButtonClick</a> / <a href="http://www.androidbegin.com/tag/android-alertdialog/" rel="tag">Android AlertDialog</a> / <a href="http://www.androidbegin.com/tag/android-development/" rel="tag">Android Development</a> / <a href="http://www.androidbegin.com/tag/android-dialogfragment/" rel="tag">Android DialogFragment</a> / <a href="http://www.androidbegin.com/tag/android-tutorial/" rel="tag">Android Tutorial</a>    </div><!-- .entry-meta-tags -->
+ 
+        <footer class="entry-footer">
+                            <div class="entry-meta-footer"> 
+                    <div class="clearfix">
+                            <div class="entry-meta-lastupdate">		
+        Last updated on 27 Mar, 2014 at 4:30 PM		
+    </div><!-- .entry-meta-lastupdate -->
+<div class="entry-meta-viewcount">                                
+    				
+    40196 <i class="fa fa-eye"></i>                                
+</div><!-- .entry-meta-viewcount -->                    </div><!-- .clearfix -->
+                </div><!-- .entry-meta-footer -->
+                    </footer><!-- .entry-footer -->
+    </article><!-- #post -->
+</div><!-- .post-container -->
+
+ 
+   
+    <div class="post-page-content-bottom-ads text-center">		
+        <!-- BuySellAds Zone Code -->
+<div id="bsap_1290589" class="bsap_1290589 bsap"></div>
+<!-- End BuySellAds Zone Code -->        <div class="ads-text text-center">
+            Advertisement        </div><!-- .ads-text -->
+    </div><!-- .post-page-bottom-ads -->
+    <div class="entry-meta-post-social-container">
+        <div class="entry-meta-social-title">
+            Share on        </div><!-- .entry-meta-social-title -->
+        <div class="entry-meta-post-social">		
+                            <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/&amp;t=Android%20DialogFragment%20Tutorial" title="Share Android DialogFragment Tutorial on Facebook!" onclick="window.open(this.href);
+                                return false;"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/facebook.png"></a></li>
+                	
+                                <li class="twitter"><a href="http://twitter.com/home?status=Reading:%20http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" title="Share Android DialogFragment Tutorial on Twitter!" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/twitter.png"></a></li>
+            	
+                            <li class="google-plus"><a href="https://plus.google.com/share?url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" title="Share Android DialogFragment Tutorial on Google+" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/googleplus.png"></a></li>
+                                        <li class="reddit"><a href="http://www.reddit.com/submit?url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/&amp;title=Android%20DialogFragment%20Tutorial" title="Share Android DialogFragment Tutorial on Reddit" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/reddit.png"></a></li>
+                                        <li class="stumbleupon"><a href="http://www.stumbleupon.com/submit?url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/&amp;title=Android%20DialogFragment%20Tutorial" title="Share Android DialogFragment Tutorial on StumbleUpon" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/stumbleupon.png"></a></li>
+                                        <li class="digg"><a href="http://digg.com/submit?url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/&amp;title=Android%20DialogFragment%20Tutorial" title="Share Android DialogFragment Tutorial on Digg" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/digg.png"></a></li>
+                                        <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=Android%20DialogFragment%20Tutorial&amp;url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" title="Share Android DialogFragment Tutorial on LinkedIn" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/linkedin.png"></a></li>
+                                        <li class="pinterest"><a href="http://pinterest.com/pin/create/button/?url=http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/&amp;media=" title="Share Android DialogFragment Tutorial on Pinterest" target="_blank"><img src="http://www.androidbegin.com/wp-content/themes/xblog/img/social/pinterest.png"></a></li>
+                             
+        </div><!-- .entry-meta-post-social -->
+    	
+</div><!-- .entry-meta-post-social-container -->    
+<div class="entry-meta-post-author">
+    <div class="entry-meta-post-author-avatar">
+        <a href="http://www.androidbegin.com/author/androidbegin/"><img alt="" src="./Android DialogFragment Tutorial - AndroidBegin_files/78a58803ab8ba1a53bf6c5dc0c1ec4f7(1)" srcset="http://1.gravatar.com/avatar/78a58803ab8ba1a53bf6c5dc0c1ec4f7?s=180&amp;d=mm&amp;r=g 2x" class="avatar avatar-90 photo" height="90" width="90"></a>
+    </div><!-- .entry-meta-post-author-avatar -->
+    <div class="entry-meta-post-author-title">
+        Written by <a href="http://www.androidbegin.com/author/androidbegin/" title="Posts by AndroidBegin" rel="author">AndroidBegin</a>	
+    </div><!-- .entry-meta-post-author-title -->
+            <div class="entry-meta-post-author-website">
+            <a href="http://www.androidbegin.com/" target="_blank">http://www.androidbegin.com/</a>
+        </div><!-- .entry-meta-post-author-website -->
+            		
+</div><!-- .entry-meta-post-author -->
+<div id="disqus_thread">
+            <div id="dsq-content">
+
+
+            <ul id="dsq-comments">
+                    <li class="comment even thread-even depth-1" id="dsq-comment-665">
+        <div id="dsq-comment-header-665" class="dsq-comment-header">
+            <cite id="dsq-cite-665">
+                <span id="dsq-author-user-665">Memo</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-665" class="dsq-comment-body">
+            <div id="dsq-comment-message-665" class="dsq-comment-message"><p>yes its ok</p>
+<p>but the method ” getDialog()” where defined ?</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment odd alt depth-2" id="dsq-comment-1501">
+        <div id="dsq-comment-header-1501" class="dsq-comment-header">
+            <cite id="dsq-cite-1501">
+                <span id="dsq-author-user-1501">Aritra</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1501" class="dsq-comment-body">
+            <div id="dsq-comment-message-1501" class="dsq-comment-message"><p>it’s a FragmentDialog method.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment even thread-odd thread-alt depth-1" id="dsq-comment-737">
+        <div id="dsq-comment-header-737" class="dsq-comment-header">
+            <cite id="dsq-cite-737">
+                <span id="dsq-author-user-737">Amit</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-737" class="dsq-comment-body">
+            <div id="dsq-comment-message-737" class="dsq-comment-message"><p>that’s good 🙂 </p>
+<p>please also write a tutorial to allow user to select date &amp; time using DialogFragment (using EditText OnClick..) in SherlockFragment… By default need to show current date and time in EditText(s).</p>
+<p>I am able to do this by extending my java classes using Activity or FragmentActivity, but not with SherlockFragment<br>
+and as you always write code for latest in Android, so you are the only hope for me, its little bit urgent.</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-even depth-1" id="dsq-comment-1248">
+        <div id="dsq-comment-header-1248" class="dsq-comment-header">
+            <cite id="dsq-cite-1248">
+                <span id="dsq-author-user-1248">genericid</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1248" class="dsq-comment-body">
+            <div id="dsq-comment-message-1248" class="dsq-comment-message"><p>Hello and thanks for this tutorial.<br>
+I am new in Android development but I’d like to ask a couple of questions:</p>
+<p>What is the advantage of creating a DialogFragment with a layout file, over creating a DialogFragment which builds itself based on AlertDialog? Couldn’t you just use a plain DialogFrament and modify the xml to have all the buttons you want and then just implement listeners in DialogFragment?</p>
+<p>Also since you are building a DialogFragment to host an AlertDialog, why not just launch an AlertDialog in the first place from MainActivity?</p>
+<p>I apologize if my questions are based on wrong ideas, but I am still learning…<br>
+Thanks.</p>
+</div>
+        </div>
+
+    <ul class="children">
+    <li class="comment even depth-2" id="dsq-comment-1460">
+        <div id="dsq-comment-header-1460" class="dsq-comment-header">
+            <cite id="dsq-cite-1460">
+                <span id="dsq-author-user-1460">Andy Mills</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1460" class="dsq-comment-body">
+            <div id="dsq-comment-message-1460" class="dsq-comment-message"><p>I think it depends on what you’re trying to accomplish. At this point, I just want to display a messagebox with values I get from the system; I’m working on a camera app at the moment and want to be sure what values I’m picking up with unfamiliar functions. You’d think it’d be as simple as:<br>
+AlertDialog ad = new AlertDialog(“title”, “message”, buttonConfig);<br>
+ad.show(); </p>
+<p>I will add more functionality (setting button text, adding negativeButton functionality), but it might help to see how I got this working. I basically copied this:<br>
+stackoverflow.com/questions/18413925/how-can-i-reuse-an-alertdialog-for-yes-no-on-android#answer-26813455</p>
+<p>However, it’s not clear whether the MainActivity function ShowDialogFragment() is necessary. I was able to “get it to work” using the following:</p>
+<p>CustomDialog dialog2 = new CustomDialog() {<br>
+     @Override<br>
+  public void confirm() {<br>
+            //I’m not doing anything now, Just displaying the dialog…<br>
+  }<br>
+};<br>
+dialog2.setArgs(“display this text”);<br>
+dialog2.show(getSupportFragmentManager(), “dialog”);</p>
+<p>Again, it might depend on what you’re doing. The ShowDialogFragment() function does appear to do some management, potentially reducing memory consumption. I haven’t dove too deep into it yet (again, dialogs are just giving me data at this point, I’m not actually using them to drive logic or user input (I’ll be moving into OpenGL next)</p>
+<p>Here’s an interesting read:<br>
+<a href="http://stackoverflow.com/questions/13765127/dialogfragment-advantages-over-alertdialog/13765411#13765411" rel="nofollow">http://stackoverflow.com/questions/13765127/dialogfragment-advantages-over-alertdialog/13765411#13765411</a></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-1490">
+        <div id="dsq-comment-header-1490" class="dsq-comment-header">
+            <cite id="dsq-cite-1490">
+                <span id="dsq-author-user-1490">Kousik K</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1490" class="dsq-comment-body">
+            <div id="dsq-comment-message-1490" class="dsq-comment-message"><p>how to create dialog box like sticky?</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-1514">
+        <div id="dsq-comment-header-1514" class="dsq-comment-header">
+            <cite id="dsq-cite-1514">
+                <span id="dsq-author-user-1514">Albert Jasiński</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1514" class="dsq-comment-body">
+            <div id="dsq-comment-message-1514" class="dsq-comment-message"><p>Its great</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-1524">
+        <div id="dsq-comment-header-1524" class="dsq-comment-header">
+            <cite id="dsq-cite-1524">
+                <span id="dsq-author-user-1524">surani saunak</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1524" class="dsq-comment-body">
+            <div id="dsq-comment-message-1524" class="dsq-comment-message"><p>Fabulous tips thanks..,,,</p>
+<p>if you want to know more about android-basic-tutorial-get-current-date then goto this link.</p>
+<p><a href="http://exandroidstudio.blogspot.in/2015/02/android-basic-tutorial-get-current-date.html" rel="nofollow">http://exandroidstudio.blogspot.in/2015/02/android-basic-tutorial-get-current-date.html</a></p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-1621">
+        <div id="dsq-comment-header-1621" class="dsq-comment-header">
+            <cite id="dsq-cite-1621">
+                <span id="dsq-author-user-1621">Zaphod Beeblebroks</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1621" class="dsq-comment-body">
+            <div id="dsq-comment-message-1621" class="dsq-comment-message"><p>Next step is how to theme properly DialogFragment</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="dsq-comment-1764">
+        <div id="dsq-comment-header-1764" class="dsq-comment-header">
+            <cite id="dsq-cite-1764">
+                <span id="dsq-author-user-1764">Jay</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1764" class="dsq-comment-body">
+            <div id="dsq-comment-message-1764" class="dsq-comment-message"><p>Thanks…very helpful tutorial</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+    <li class="comment even thread-even depth-1" id="dsq-comment-1775">
+        <div id="dsq-comment-header-1775" class="dsq-comment-header">
+            <cite id="dsq-cite-1775">
+                <span id="dsq-author-user-1775">Heena Pathan</span>
+            </cite>
+        </div>
+        <div id="dsq-comment-body-1775" class="dsq-comment-body">
+            <div id="dsq-comment-message-1775" class="dsq-comment-message"><p>How to change margin of transparent background?</p>
+</div>
+        </div>
+
+    </li><!-- #comment-## -->
+            </ul>
+
+
+        </div>
+
+    </div>
+
+<script type="text/javascript">
+var disqus_url = 'http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/';
+var disqus_identifier = '2286 http://www.androidbegin.com/?p=2286';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'androidbegin';
+var disqus_title = "Android DialogFragment Tutorial";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=2286';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+ 
+        <div class="post-nav-links">
+            <div class="clearfix">
+                <a href="http://www.androidbegin.com/tutorial/actionbarsherlock-side-menu-navigation-nested-viewpager-fragment-tabs-tutorial/" rel="prev"><div class="col-md-6 pull-left" title="ActionBarSherlock Side Menu Navigation with Nested ViewPager Fragment Tabs Tutorial"><div class="post-nav-previous text-left"><i class="fa fa-angle-left"></i> <span class="hidden-xs">Previous Posts</span></div></div></a><a href="http://www.androidbegin.com/tutorial/android-delete-multiple-selected-items-listview-tutorial/" rel="next"><div class="col-md-6 pull-right" title="Android Delete Multiple Selected Items in ListView Tutorial"><div class="post-nav-next text-right"><span class="hidden-xs">Next Posts</span> <i class="fa fa-angle-right"></i></div></div></a>            </div><!-- .clearfix -->
+        </div><!-- .post-nav-links -->
+         
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div><!-- $global_layout -->
+    <div class="col-md-4">
+             <div id="secondary" class="widget-area" role="complementary">
+        <div class="widget clearfix widget_text" id="text-43">			<div class="textwidget"><!-- BuySellAds Zone Code -->
+<div id="bsap_1288064" class="bsap_1288064 bsap"></div>
+<!-- End BuySellAds Zone Code --></div>
+		</div><div class="widget clearfix widget_text" id="text-44">			<div class="textwidget"><!-- BuySellAds Zone Code -->
+<div id="bsap_1289979" class="bsap_1289979 bsap"></div>
+<!-- End BuySellAds Zone Code --></div>
+		</div><div class="widget clearfix popularitypostswidget" id="popularitypostswidget-4"><h1 class="widget-title">Popular Posts</h1><ul> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-video-streaming-videoview-tutorial/" title="Android Video Streaming (VideoView) Tutorial" rel="nofollow">Android Video Streaming (VideoView) Tutorial</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (87234) </span> | 			<span class="ppw-comments">Comments (90)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-json-parse-images-and-texts-tutorial/" title="Android JSON Parse Images and Texts Tutorial" rel="nofollow">Android JSON Parse Images and Texts Tutorial</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (72514) </span> | 			<span class="ppw-comments">Comments (181)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/implementing-actionbarsherlock-side-menu-navigation-drawer-in-android/" title="Implementing ActionBarSherlock Side Menu Navigation Drawer in Android" rel="nofollow">Implementing ActionBarSherlock Side Menu Navigation Drawer i...</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (71334) </span> | 			<span class="ppw-comments">Comments (154)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/implementing-fragment-tabs-in-android/" title="Implementing Fragment Tabs in Android" rel="nofollow">Implementing Fragment Tabs in Android</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (56711) </span> | 			<span class="ppw-comments">Comments (42)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-google-cloud-messaging-gcm-tutorial/" title="Android Google Cloud Messaging GCM using PHP Tutorial" rel="nofollow">Android Google Cloud Messaging GCM using PHP Tutorial</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (55399) </span> | 			<span class="ppw-comments">Comments (126)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-search-listview-using-filter/" title="Android Search ListView using Filter" rel="nofollow">Android Search ListView using Filter</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (55228) </span> | 			<span class="ppw-comments">Comments (29)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" title="Android DialogFragment Tutorial" rel="nofollow">Android DialogFragment Tutorial</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (52023) </span> | 			<span class="ppw-comments">Comments (11)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-button-click-new-activity-example/" title="Android Button Click New Activity Example" rel="nofollow">Android Button Click New Activity Example</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (51337) </span> | 			<span class="ppw-comments">Comments (11)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/" title="" rel="nofollow"></a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (49226) </span> | 			<span class="ppw-comments">Comments (0)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li> 
+ 	<li>
+			<span class="ppw-post-title"><a href="http://www.androidbegin.com/tutorial/android-viewpager-gallery-images-and-texts-tutorial/" title="Android ViewPager Gallery Images and Texts Tutorial" rel="nofollow">Android ViewPager Gallery Images and Texts Tutorial</a></span>
+			<span class="post-stats">
+			
+			<br>
+			
+			<span class="ppw-views">Views (47762) </span> | 			<span class="ppw-comments">Comments (41)</span> 
+			<span class="ppw-date"></span>
+			</span>
+				</li></ul></div><div class="widget clearfix widget_text" id="text-45">			<div class="textwidget"><!-- Place this tag where you want the widget to render. -->
+<div id="___page_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I1_1510341782100" name="I1_1510341782100" src="./Android DialogFragment Tutorial - AndroidBegin_files/page.html" data-gapiattached="true"></iframe></div><div class="g-page" data-href="//plus.google.com/115570444475791462549" data-layout="landscape" data-showtagline="false" data-showcoverphoto="false" data-rel="publisher" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+
+<!-- Place this tag after the last widget tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></div>
+		</div><div class="widget clearfix widget_text" id="text-46">			<div class="textwidget"><div class="fb-page" data-href="https://www.facebook.com/androidbegin" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/androidbegin"><a href="https://www.facebook.com/androidbegin">AndroidBegin</a></blockquote></div></div></div>
+		</div><div class="widget clearfix widget_text" id="text-47">			<div class="textwidget"><!-- BuySellAds Zone Code -->
+<div id="bsap_1289509" class="bsap_1289509 bsap"></div>
+<!-- End BuySellAds Zone Code --></div>
+		</div>    </div><!-- #secondary -->
+</div><!-- $global_layout -->
+</div><!-- .row:index.php --></div><!-- #content:header.php -->
+</div><!-- #container:header.php -->
+
+   
+ 
+<div class="footer-container">
+    <div class="container-fluid">
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="row">
+                                        <div class="col-md-3">
+                            <div class="footer-widget">
+                                <div class="widget widget_wysija" id="wysija-5"><h1 class="widget-title">Subscribe to our Newsletter</h1><div class="widget_wysija_cont"><div id="msg-form-wysija-5" class="wysija-msg ajax"></div><form id="form-wysija-5" method="post" action="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/#wysija" class="widget_wysija">
+<p class="wysija-paragraph">
+    
+    
+    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Insert email address" placeholder="Insert email address" value="">
+    
+    
+    
+    <span class="abs-req">
+        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="">
+    </span>
+    
+</p>
+<input class="wysija-submit wysija-submit-field" type="submit" value="Subscribe!">
+
+    <input type="hidden" name="form_id" value="1">
+    <input type="hidden" name="action" value="save">
+    <input type="hidden" name="controller" value="subscribers">
+    <input type="hidden" value="1" name="wysija-page">
+
+    
+        <input type="hidden" name="wysija[user_list][list_ids]" value="3">
+    
+ </form></div></div>                            </div><!-- .footer-widget -->
+                        </div><!-- .col-md-3 -->
+                        <div class="col-md-3">
+                            <div class="footer-widget">
+                                <div class="widget widget_categories" id="categories-2"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-43"><a href="http://www.androidbegin.com/category/actionbarsherlock/">ActionBarSherlock</a>
+</li>
+	<li class="cat-item cat-item-177"><a href="http://www.androidbegin.com/category/animation/">Animation</a>
+</li>
+	<li class="cat-item cat-item-280"><a href="http://www.androidbegin.com/category/blog/">Blog</a>
+</li>
+	<li class="cat-item cat-item-277"><a href="http://www.androidbegin.com/category/jsoup/">Jsoup</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.androidbegin.com/category/tutorial/">Tutorial</a>
+</li>
+		</ul>
+</div>						
+                            </div><!-- .footer-widget -->
+                        </div><!-- .col-md-3 -->
+                        <div class="col-md-3">
+                            <div class="footer-widget">
+                                <div class="widget widget_pages"><h1 class="widget-title">Pages</h1>		<ul>
+			<li class="page_item page-item-6"><a href="http://www.androidbegin.com/about-us/">About Us</a></li>
+<li class="page_item page-item-1654"><a href="http://www.androidbegin.com/advertise/">Advertise</a></li>
+<li class="page_item page-item-9"><a href="http://www.androidbegin.com/contact-us/">Contact Us</a></li>
+<li class="page_item page-item-15"><a href="http://www.androidbegin.com/privacy-policy/">Privacy Policy</a></li>
+<li class="page_item page-item-12"><a href="http://www.androidbegin.com/terms-of-service/">Terms of Service</a></li>
+<li class="page_item page-item-1636"><a href="http://www.androidbegin.com/write-for-us/">Write for Us</a></li>
+		</ul>
+		</div>                            </div><!-- .footer-widget -->
+                        </div><!-- .col-md-3 -->
+                        <div class="col-md-3">
+                            <div class="footer-widget">
+                                <div class="widget social_stickers_widget" id="social_stickers_widget-7"><h1 class="widget-title">Follow Us</h1><a href="http://facebook.com/AndroidBegin" target="_blank" title="Facebook"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/facebook.png" width="64" height="64"></a> <a href="http://twitter.com/AndroidBeginBlg" target="_blank" title="Twitter"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/twitter.png" width="64" height="64"></a> <a href="http://youtube.com/AndroidBeginBlg" target="_blank" title="Youtube"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/youtube.png" width="64" height="64"></a> <a href="http://plus.google.com/+androidbegin" target="_blank" title="Google+"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/googleplus.png" width="64" height="64"></a> <a href="http://delicious.com/androidbegin" target="_blank" title="Delicious"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/delicious.png" width="64" height="64"></a> <a href="http://about.me/androidbegin" target="_blank" title="About Me"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/aboutme.png" width="64" height="64"></a> <a href="http://www.androidbegin.com/feed/" target="_blank" title="RSS"><img src="http://www.androidbegin.com/wp-content/plugins/social-stickers/themes/default/rss.png" width="64" height="64"></a> </div>                            </div><!-- .footer-widget -->
+                        </div><!-- .col-md-3 -->
+                        								
+            </div><!-- .row -->
+        </footer><!-- .site-footer -->					
+    </div><!-- $footer_widget_layout -->
+</div><!-- $footer_widget_container -->
+<div class="copyright-footer-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="back-to-top-container">
+                <a href="http://www.androidbegin.com/tutorial/android-dialogfragment-tutorial/#" class="back-to-top" title="Back to top">
+                    <i class="fa fa-angle-double-up"></i>
+                </a>
+            </div><!-- .back-to-top-container -->
+             
+    <div class="footer-menu-container text-center"> 
+             <div class="footer-menu"><ul>
+<li><a href="http://www.androidbegin.com/">Home</a></li><li class="page_item page-item-6"><a href="http://www.androidbegin.com/about-us/">About Us</a></li>
+<li class="page_item page-item-1654"><a href="http://www.androidbegin.com/advertise/">Advertise</a></li>
+<li class="page_item page-item-9"><a href="http://www.androidbegin.com/contact-us/">Contact Us</a></li>
+<li class="page_item page-item-15"><a href="http://www.androidbegin.com/privacy-policy/">Privacy Policy</a></li>
+<li class="page_item page-item-12"><a href="http://www.androidbegin.com/terms-of-service/">Terms of Service</a></li>
+<li class="page_item page-item-1636"><a href="http://www.androidbegin.com/write-for-us/">Write for Us</a></li>
+</ul></div>
+    </div><!-- $footer-menu-container -->
+ 
+    <div class="footer-logo text-center">   
+             <a href="http://www.androidbegin.com/" rel="home" title="AndroidBegin"><img src="./Android DialogFragment Tutorial - AndroidBegin_files/Web-Logo.png" alt="AndroidBegin"></a>    </div><!-- $footer_logo_settings -->	 
+<div class="clearfix">
+    <div class="copyright-texts text-center">
+             Copyright © 2015 AndroidBegin.com. All Rights Reserved.    </div><!-- $footer_logo_settings --> 
+
+   
+        <div class="copyright-footer-logo hidden-xs hidden-sm hidden-md hidden-lg">
+                 <a href="http://www.androidbegin.com/" rel="home" title="AndroidBegin"><img src="./Android DialogFragment Tutorial - AndroidBegin_files/Web-Logo.png" alt="AndroidBegin"></a>        </div><!-- $footer_logo_settings -->
+ 
+</div><!-- .clearfix --> 
+<div class="credits text-center">
+                 Designed by <a href="http://www.pmydigital.com/" title="http://www.pmydigital.com" target="_blank">PMYDigital.com</a>
+        </div><!-- $footer_credits_position -->            
+        </div><!-- .row -->
+    </div><!-- .container-fluid -->
+</div><!-- $copyright_container -->
+</div><!-- #page:header.php -->
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'androidbegin';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/common.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+wpfbConf={"ql":true,"hl":1,"pl":1,"hu":"http:\/\/www.androidbegin.com\/","db":"download","fb":"http:\/\/www.androidbegin.com\/tutorial\/android-dialogfragment-tutorial\/","cm":0,"ajurl":"http:\/\/www.androidbegin.com\/wp-content\/plugins\/wp-filebase\/wpfb-ajax.php"};function wpfb_ondl(file_id,file_url,file_path){ if(typeof pageTracker == 'object') {
+	pageTracker._trackPageview(file_url); // new google analytics tracker
+} else if(typeof urchinTracker == 'function') {	
+	urchinTracker(file_url); // old google analytics tracker
+} }
+//]]>
+</script>
+<link rel="stylesheet" id="popularity-posts-widget-css" href="./Android DialogFragment Tutorial - AndroidBegin_files/ppw.css" type="text/css" media="all">
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/widgets.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/plusone(1).js" gapi_processed="true"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/jquery.sliderPro.min.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/lightbox.min.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/jquery.sticky.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/scotchPanels.min.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.androidbegin.com/wp-content/themes/xblog/js/custom-scripts.js?ver=4.8.3"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/jquery.validationEngine-en.js"></script>
+<script type="text/javascript" src="http://www.androidbegin.com/wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine.js?ver=2.7.11.3"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/www.androidbegin.com\/wp-admin\/admin-ajax.php","loadingTrans":"Loading...","is_rtl":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Android DialogFragment Tutorial - AndroidBegin_files/front-subscribers.js"></script>
+<script type="text/javascript" src="http://www.androidbegin.com/wp-content/plugins/easy-fancybox/fancybox/jquery.fancybox-1.3.8.min.js?ver=1.6"></script><iframe name="oauth2relay824535655" id="oauth2relay824535655" src="./Android DialogFragment Tutorial - AndroidBegin_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

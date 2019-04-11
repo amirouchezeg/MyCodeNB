@@ -1,0 +1,8 @@
+//////create
+let f x=x+1;;
+
+/////Call
+ f 3;; // 4
+
+NB: 
+	f 3*5 ;;//will return (f 3 )*5  then the result is 4*5 -> 20

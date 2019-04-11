@@ -1,0 +1,4 @@
+$articles->update(array(),
+array('$rename' => array('saved_at' =>
+'created_at')),
+array('multiple' => True));

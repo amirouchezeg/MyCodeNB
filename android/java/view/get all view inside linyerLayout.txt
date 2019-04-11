@@ -1,0 +1,5 @@
+	int childCount=linearSubDetail.getChildCount();
+        for (int i=0;i<childCount;i++) {
+            View v= (linearSubDetail.getChildAt(i));
+            v.setBackgroundDrawable(getResources().getDrawable(R.drawable.tag_btn));
+        }

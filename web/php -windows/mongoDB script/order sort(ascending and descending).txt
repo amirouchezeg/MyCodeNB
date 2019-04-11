@@ -1,0 +1,11 @@
+
+ascending
+$cursor->sort(array('nom_prenom'=>-1));
+
+
+descending
+$cursor->sort(array('nom_prenom'=>1));
+
+
+//this will return the newest documents first (in Capped collections )ont in simple collection
+db.access_log.find().sort({$natural : -1})

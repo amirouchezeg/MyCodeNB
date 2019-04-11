@@ -1,0 +1,1 @@
+in route folder : Route::apiResource('/products','ProductController');

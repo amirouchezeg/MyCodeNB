@@ -1,0 +1,38 @@
+public boolean validate() {
+        boolean valid = true;
+
+        if (input_name_service_str.isEmpty() ) {
+            input_name_service.setError(getString(R.string.enter_a_valid_email_address));
+            valid = false;
+        } else {
+            input_name_service.setError(null);
+        }
+        if (wilaya_btn_str.isEmpty()) {
+            wilaya_btn.setError(getString(R.string.enter_a_valid_email_address));
+            valid = false;
+        } else {
+            wilaya_btn.setError(null);
+        }
+
+        if (type_service_btn_str.isEmpty()  ) {
+            type_service_btn.setError(getResources().getString(R.string.minimum_password));
+            valid = false;
+        } else {
+            type_service_btn.setError(null);
+        }
+        if (type_detail_level2_btn_str.isEmpty()) {
+            type_detail_level2_btn.setError(getString(R.string.enter_a_valid_email_address));
+            valid = false;
+        } else {
+            type_detail_level2_btn.setError(null);
+        }
+
+        if (type_detail_level3_btn_str.isEmpty()) {
+            type_detail_level3_btn.setError(getResources().getString(R.string.minimum_password));
+            valid = false;
+        } else {
+            type_detail_level3_btn.setError(null);
+        }
+
+        return valid;
+    }

@@ -1,0 +1,10 @@
+Rebound
+Spring Animations for Android
+About
+
+Rebound is a java library that models spring dynamics. 
+Rebound spring models can be used to create animations that 
+feel natural by introducing real world physics to your application. 
+
+
+http://facebook.github.io/rebound/

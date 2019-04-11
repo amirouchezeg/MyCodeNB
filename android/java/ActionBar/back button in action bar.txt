@@ -1,0 +1,33 @@
+	
+	***add this code to Activity
+	
+	ActionBar ab = getSupportActionBar();
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
+	
+	***and make this.finish(); when click in home 
+	
+	@Override
+	    public boolean onOptionsItemSelected(MenuItem item) {
+			switch (item.getItemId()) {
+				case android.R.id.home:
+					//Write your logic here
+					this.finish();
+					return true;
+				default:
+					return super.onOptionsItemSelected(item);
+			}
+	    }
+
+
+	***Edit Manifest : make parent activity
+	<activity
+            android:name=".MainList"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>

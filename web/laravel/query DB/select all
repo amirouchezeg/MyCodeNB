@@ -1,0 +1,9 @@
+Blog::all();
+
+//example usage.
+$posts = Blog::all();
+
+$posts->each(function($post) // foreach($posts as $post) { }
+{
+    //do something
+}

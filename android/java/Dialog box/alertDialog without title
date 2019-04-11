@@ -1,0 +1,3 @@
+		//custum alert dialog
+		final Dialog dialog = new Dialog(this,android.R.style.Theme_Light);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

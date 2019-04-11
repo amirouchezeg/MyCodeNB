@@ -1,0 +1,5 @@
+Shimmer is an Android library that provides an easy way to add a shimmer 
+effect to any view in your Android app. It is useful as an unobtrusive 
+loading indicator that was originally developed for Facebook Home. 
+
+http://facebook.github.io/shimmer-android/

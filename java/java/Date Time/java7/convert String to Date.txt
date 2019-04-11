@@ -1,0 +1,26 @@
+****in android ***
+	SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("dd/MM/yyyy");
+	Date d=null;
+	try {
+		d= dateFormat.parse(mDate);
+	} catch (ParseException e) {
+		e.printStackTrace();
+	}
+
+******************
+
+
+// String -> Date
+SimpleDateFormat.parse(String);
+
+// Date -> String
+SimpleDateFormat.format(date);
+
+
+
+ String start_dt = "2011-01-01";
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-DD");
+        Date date = (Date) formatter.parse(start_dt);
+        System.err.println();
+        SimpleDateFormat newFormat = new SimpleDateFormat("MM-dd-yyyy");
+        String finalString = newFormat.format(date);

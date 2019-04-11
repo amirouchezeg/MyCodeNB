@@ -1,0 +1,2 @@
+#draw a green rectangle at the top-right corner of image.
+cv2.rectangle(img,(384,0),(510,128),(0,255,0),3)

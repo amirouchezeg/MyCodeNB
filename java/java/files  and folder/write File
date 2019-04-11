@@ -1,0 +1,12 @@
+ private static void writeFiles(String nameFile, String strToWrite) {
+        FileWriter file;
+        try {
+            file = new FileWriter(nameFile, true);
+            file.write(strToWrite);
+            file.close();            
+        } catch (IOException ex) {
+            Logger.getLogger(files.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+

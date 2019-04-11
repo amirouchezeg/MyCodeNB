@@ -1,0 +1,23 @@
+            <Spinner
+                android:id="@+id/spinnerLang"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/language_spinner"/>
+
+
+
+
+strings.xml
+
+    <string-array name="language_spinner">
+        <item>العربية</item>
+        <item>english</item>
+        <item>russky</item>
+        <item>Français</item>
+    </string-array>
+
+
+get text from spiner
+String language=spinnerLang.getSelectedItem().toString();
+    

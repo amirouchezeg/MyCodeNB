@@ -1,0 +1,17 @@
+		
+
+		FirebaseDatabase database=FirebaseDatabase.getInstance();
+		DatabaseReference databaseReference=database.getReference("/users/").child(key).child("locations");//the path
+		databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for(DataSnapshot d : dataSnapshot.getChildren()) {
+					listLocations.add(d.getKey());
+				}
+			}
+
+			@Override
+			public void onCancelled(DatabaseError databaseError) {
+				namePlacesOld.add("ERROR");
+			}
+		});

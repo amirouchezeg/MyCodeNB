@@ -1,0 +1,24 @@
+
+//add in routerLink value
+<a routerLink="about/42">About</a>
+
+//first import component 
+import { AboutComponent } from './about/about.component';
+
+//in the path add the name of parametre
+const routes: Routes = [
+  {
+    path:'about/:id',
+    component:AboutComponent
+  }
+];
+
+//***to retreav the valeus passed (42)
+//in the component.ts add import of
+import { ActivatedRoute } from '@angular/router';
+
+//in constructor
+
+constructor(private route:ActivatedRoute) {
+    this.route.params.subscribe(res=> console.log(res.id));
+}

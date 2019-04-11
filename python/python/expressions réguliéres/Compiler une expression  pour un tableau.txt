@@ -1,0 +1,9 @@
+import re
+mails = ["olivier@mailbidon.com", "olivier@mailbidon.ca", "8@mailbidon.com", "@mailbidon.com", "olivier@mailbidon"]
+regex = re.compile(r"^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+")
+for mail in mails:
+     if regex.match(mail) is not None:
+          print ("Ce mail : %s est valide" % mail)
+     else:
+          print ("Erreur ce mail : %s est non valide" % mail)
+

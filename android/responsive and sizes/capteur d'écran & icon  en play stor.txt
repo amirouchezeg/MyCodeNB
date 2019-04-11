@@ -1,0 +1,14 @@
+IcOne haute resolution: 512 x 512                  Fichier image PNG 32 bits (avec canal alpha)
+Image Par defaut     : 1 024 (l) x 500 (h)        Image JPG ou PNG 24 bits (sans canal alpha)
+Image promotionnelle  : 180 (l) x 120 (h)          JPG ou PNG 24 bits (sans canal alpha)
+
+capture d'ecran : 
+	-TELePHONE
+	-TABLETE   (w 1466-h 1008)
+	-ANDROID TV
+	-WEAR OS    
+
+
+
+Bannière télévision   :1 280 (L) x 720 (l)
+Image stéréoscopique Daydream à 360 degrés

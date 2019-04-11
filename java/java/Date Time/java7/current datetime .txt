@@ -1,0 +1,13 @@
+DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+Calendar cal = Calendar.getInstance();
+System.out.println(dateFormat.format(cal.getTime()));
+
+
+or
+
+
+import java.util.Date;
+
+DateFormat dateFormat1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+Date date = new Date();
+System.out.println(dateFormat1.format(date)); //2016/11/16 12:08:43

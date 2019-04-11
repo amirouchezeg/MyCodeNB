@@ -1,0 +1,29 @@
+////in component
+//we create variable
+btnText : String ='Add an Action';
+
+
+/////in html
+[value]="btnText"
+
+
+///////////////////from html to component
+add in module.ts
+
+import { FormsModule } from '@angular/forms';
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule	**********
+  ],
+
+
+//in component
+goalText: String = "My first goal";
+
+
+//in html
+<input [(ngModel)]="goalText" type="text" class="txt" name="item" >
+**all change in input it will chage the String variable in componenet
+
+

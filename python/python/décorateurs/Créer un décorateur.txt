@@ -1,0 +1,22 @@
+user = "jean-louis"
+#user = ""olivier"
+
+def mon_decorateur(fonction):
+
+    def autre_fonction():
+        print ("Action refusée")
+
+    if user != "olivier":
+        return autre_fonction
+
+    return fonction 
+
+
+@mon_decorateur
+def do_that():
+    print ("Execution des instructions")
+
+
+do_that()
+
+#Voila, nous avons réussi à interdire l'exécution de la fonction do_that si l'utilisateur n'est pas "olivier"

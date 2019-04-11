@@ -1,0 +1,12 @@
+	String [] type_service_tab=null;
+        ArrayList<String>  type_service_list = new ArrayList<String >();
+        while (...){                
+                type_service_list.add(value);
+
+        }
+        type_service_tab = new String[type_service_list.size()];
+        int i=0;
+        for (String type:type_service_list) {
+           type_service_tab[i]=type;
+                i++;
+        }

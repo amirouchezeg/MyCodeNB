@@ -1,0 +1,10 @@
+table.setRowFactory(tv -> {
+            TableRow<ReservationInfVo> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    ReservationInfVo rowData = row.getItem();
+                    System.out.println(rowData.getID());
+                }
+            });
+            return row;
+        });

@@ -1,0 +1,2 @@
+//remove just one movie with genre = drama
+$movies->remove(array('genre' =>'drama'),array('justOne' => True));

@@ -1,0 +1,38 @@
+////////////////
+***elements with a "spesific" attribute.
+a[target]{
+	background-color:lightblue;
+}
+...
+<a >not this</a>
+<a target="_blank">this</a>
+<a target="_top">this</a>
+////////////////
+***elements with an attribute like: target="_blank"
+a[target="_blank"] {
+    background-color: lightblue;
+}
+...
+<a >not this</a>
+<a target="_blank">this</a>
+<a target="_top">not this</a>
+////////////////
+***elements with a "title" attribute containing the word "red"
+img[title~='red']{
+	border: solid red;
+}
+////////////////
+***elements with a "title" attribute containing the value "flow"
+img[title*='flow']{
+	border: solid red;
+}
+////////////////
+***elements with a "title" attribute starting with "red"
+img[title^='red']{
+	border: solid red;
+}
+////////////////
+***elements with a "title" attribute ending with the word "flower"
+img[title$='flower']{
+	border: solid red;
+}

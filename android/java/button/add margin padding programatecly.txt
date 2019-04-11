@@ -1,0 +1,9 @@
+Button b= new Button(this);
+                b.setBackgroundDrawable(getResources().getDrawable(R.drawable.tag_btn));
+                b.setPadding(8,0,8,0);
+                LinearLayout.LayoutParams params= new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT
+                        ,LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(1,2,5,2);
+                b.setLayoutParams(params);
+                b.setText(type);
+                linearSubDetail.addView(b);

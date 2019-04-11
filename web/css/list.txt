@@ -1,0 +1,30 @@
+/////////////
+***style List
+ul{
+	list-style-type:square;
+  }
+ol{
+	list-style-type:upper-roman;
+  }
+ul{
+	list-style:circle;
+}
+/////////////
+***Set the image as item marker for list
+ul{
+	list-style-image:url('sqpurple.gif');
+}
+/////////////
+***remove style
+ul{
+	list-style:none;
+}
+/////////////
+***In one line .Display the list items as inline elements.
+li{
+	display:inline;	
+}
+/////////////
+***
+/////////////
+***
