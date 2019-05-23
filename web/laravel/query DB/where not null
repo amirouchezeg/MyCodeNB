@@ -1,0 +1,8 @@
+321
+
+Eloquent has a method for that (Laravel 4.*/5.*);
+
+Model::whereNotNull('sent_at')
+Laravel 3:
+
+Model::where_not_null('sent_at')

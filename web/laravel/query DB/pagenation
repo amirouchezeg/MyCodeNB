@@ -1,0 +1,6 @@
+//whene get all bay 20
+FileEPCs::paginate(20)
+
+//withe where clause 
+$files = FileEPCs::where('valid','=',$request->valid)->orderBy('created_at', 'desc')->paginate(20);
+

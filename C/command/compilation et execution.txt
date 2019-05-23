@@ -1,0 +1,9 @@
+//to compile 
+gcc fileName.c
+
+this will create  a.out
+
+
+//and to compile 
+
+./a.out

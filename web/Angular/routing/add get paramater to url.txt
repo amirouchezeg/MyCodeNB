@@ -1,0 +1,14 @@
+
+constructor(
+    private route: ActivatedRoute,
+    private router: Router) {    
+
+//add
+    this.router.navigate(['/offers'], { queryParams: { id: this.offer.id }});
+
+
+//get
+
+    console.log('id',this.route.snapshot.queryParams['id']);            
+
+

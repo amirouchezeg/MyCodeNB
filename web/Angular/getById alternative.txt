@@ -1,0 +1,11 @@
+add tag to element
+
+<input #maxPrice type="number" class="form-control"   placeholder="">                          
+
+
+  @ViewChild('minPrice') minPrice : ElementRef;
+
+//to use |ex:
+  const input=this.skillsStr.nativeElement; 
+  input.value="";
+

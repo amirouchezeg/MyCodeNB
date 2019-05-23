@@ -1,0 +1,1 @@
+$files = FileEPCs::where('valid','=',$request->valid)->orderBy('created_at', 'desc')->paginate(20);

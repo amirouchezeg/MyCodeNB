@@ -1,0 +1,20 @@
+
+
+	struct Coordonnees
+	{
+	    int x; // Abscisses
+	    int y; // Ordonnées
+	};
+
+// Création d'une variable "point" de type Coordonnees
+
+	struct Coordonnees point;
+//
+    Coordonnees point;
+    
+    point.x = 10;
+    point.y = 20;
+
+//init 
+Coordonnees point = {0, 0};
+

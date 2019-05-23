@@ -1,0 +1,51 @@
+ char str[] = "GeeksforGeeks";
+
+ char str[50] = "GeeksforGeeks";
+
+ char str[] = {'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};
+
+ char str[14] = {'G','e','e','k','s','f','o','r','G','e','e','k','s','\0'};
+
+
+//////////or withe string.h
+#include <string.h>
+...
+    char chaine[] = "Salut";
+    int longueurChaine = 0;
+
+    // On récupère la longueur de la chaîne dans longueurChaine
+    longueurChaine = strlen(chaine);
+
+
+///////parcoure le chain des carachtaire :
+
+    int nombreDeCaracteres = 0;
+    char caractereActuel = 0;
+
+    do
+    {
+        caractereActuel = chaine[nombreDeCaracteres];
+        nombreDeCaracteres++;
+    }
+    while(caractereActuel != '\0'); // On boucle tant qu'on n'est pas arrivé à l'\0
+
+    nombreDeCaracteres--; // On retire 1 caractère de long pour ne pas compter le caractère \0
+
+    return nombreDeCaracteres;
+
+/////// copier une chaîne dans une autre
+char chaine[] = "Texte", copie[100] = {0};
+
+    strcpy(copie, chaine); // On copie "chaine" dans "copie"
+
+
+//////// rechercher un caractère
+
+    char chaine[] = "Texte de test", *suiteChaine = NULL;
+
+    suiteChaine = strchr(chaine, 'd');
+    if (suiteChaine != NULL) // Si on a trouvé quelque chose
+    {
+        printf("Voici la fin de la chaine a partir du premier d : %s", suiteChaine);
+    }
+

@@ -1,0 +1,32 @@
+//hello.c
+
+hello.cSélectionnez
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void Hello(void)
+{
+	printf("Hello World\n");
+}
+
+
+//hello.h
+
+#ifndef H_GL_HELLO
+#define H_GL_HELLO
+
+void Hello(void);
+
+#endif
+
+//main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "hello.h"
+
+int main(void)
+{
+	Hello();
+	return EXIT_SUCCESS;
+}

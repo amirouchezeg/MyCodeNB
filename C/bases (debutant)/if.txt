@@ -1,0 +1,4 @@
+if (age == 2)
+{
+    printf("Salut bebe !");
+}

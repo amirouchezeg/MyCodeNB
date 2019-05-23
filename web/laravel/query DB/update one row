@@ -1,0 +1,6 @@
+
+
+example :
+DB::table('posts')
+            ->where("posts.id", '=',  $post->id)
+            ->update(['posts.stat'=> 'accepted']);

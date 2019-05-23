@@ -1,0 +1,5 @@
+
+
+gcc -o <name_of_executable> <name_of_source_code>
+
+

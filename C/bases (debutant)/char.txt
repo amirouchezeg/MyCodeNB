@@ -1,0 +1,11 @@
+	
+    char lettre = 'A';
+
+    printf("%d\n", lettre);
+    printf("%c\n", lettre);
+
+
+//output
+
+65
+A

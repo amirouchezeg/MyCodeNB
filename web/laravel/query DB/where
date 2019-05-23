@@ -1,3 +1,6 @@
+$files = FileEPCs::where('valid','=',$request->valid)->orderBy('created_at', 'desc')->paginate(20);
+
+
 $skills_id=DB::table('skills')->where('name', $value)->value('id');
 
 --------------

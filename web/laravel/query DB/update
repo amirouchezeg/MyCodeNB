@@ -1,0 +1,4 @@
+
+
+example :
+$company->update($request->all());     

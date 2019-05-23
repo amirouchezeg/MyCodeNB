@@ -1,0 +1,4 @@
+<textarea  #messageWrited type="text" class="write_msg" placeholder="Type a message" ></textarea>
+              <button (click)="onSend(messageWrited.value); messageWrited.value=''" class="msg_send_btn" type="button">                
+                <i class="fas fa-paper-plane"></i>
+              </button>
