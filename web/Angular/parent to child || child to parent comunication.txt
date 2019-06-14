@@ -1,0 +1,27 @@
+
+///////Child to parent
+
+--from html parent 
+<app-manage-alert (openAlert)="openAlertHandler($event)" ></app-manage-alert>
+
+--from .ts parent
+openAlertHandler(alert:IntAlert){
+    // the code
+}
+
+--in the child
+@Output('openAlert') openAlert: EventEmitter<IntAlert> =   new EventEmitter();
+...
+this.openAlert.emit(alert);
+
+
+///////Parent to Child
+variable:string='value';
+--in parent html
+   <app-manage-freelancer [alert]='variable' ></app-manage-freelancer>
+
+--in chalid
+  @Input('alert') alert: string ;
+
+
+

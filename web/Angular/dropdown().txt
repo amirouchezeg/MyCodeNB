@@ -1,0 +1,28 @@
+-----ts
+occupations:IntOccupation[];
+selectedOptionSkillAdd:string;
+...
+
+
+  onAddSkill(skill:string){
+    console.log(skill,this.selectedOptionSkillAdd);
+  }
+  
+
+-----html
+
+     <form #f="ngForm">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Nome de Compitance *</label>
+        <input #NameSkill type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Lier	Au Métier *</label>
+        <select name="something" [(ngModel)]="selectedOptionSkillAdd" class="form-control" id="exampleFormControlSelect1">
+          <option *ngFor="let occupation of occupations" (click)="occupationSelected=occupation" >{{occupation.name}}</option> 
+        </select>
+      </div>
+      <button (click)="onAddSkill(NameSkill.value)" type="submit"  class="btn btn-primary">Ajouter</button>      
+    </form>
+
+

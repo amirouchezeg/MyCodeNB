@@ -1,0 +1,8 @@
+ data => {
+        console.log("data :", data);         
+      },
+      error => {
+        console.log("erors :", JSON.stringify(error.error));                
+      }).add(() => {
+          this.loadingAddPost=false;
+      });
