@@ -1,0 +1,8 @@
+open cmd like admin
+set TEMP=C:\path
+
+set TMP=C:\path
+
+cd go to the path
+
+execute the .exe
