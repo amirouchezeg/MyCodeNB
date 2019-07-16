@@ -1,0 +1,12 @@
+add tag -------------
+
+git checkout master
+
+# Lightweight tag
+git tag my_lightweight_tag
+
+# Annotated tag
+git tag -a v1.0 -m ‘Version 1.0’
+git tag
+
+git push origin --tags
