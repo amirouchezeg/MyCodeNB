@@ -2,3 +2,6 @@ in vertuel box indecate in Reseaux> le dessier a partager et le nom
 
 dans linux
 sudo mount -t vboxsf Name ~/partage/
+
+--------my command
+sudo mount -t vboxsf Amirouche ~/Amirouche/share
