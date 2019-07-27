@@ -1,0 +1,2 @@
+var=$(python -c "print 2+3")
+echo $var

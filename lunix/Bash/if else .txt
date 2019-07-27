@@ -1,0 +1,6 @@
+
+if [ "$BIRTHDATE" == "Jan 1, 2000" ] ; then
+    echo "BIRTHDATE is correct, it is $BIRTHDATE"
+else
+    echo "BIRTHDATE is incorrect - please retry"
+fi

@@ -1,0 +1,10 @@
+echo "this is my message in one line"
+
+cat<< END
+this is my message
+in multiple 
+line
+END
+
+
+
