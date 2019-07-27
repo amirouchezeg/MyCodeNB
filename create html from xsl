@@ -1,0 +1,3 @@
+after installing xsl
+
+xsltproc --nonet -nodict throught.xsl release.xml > to.html

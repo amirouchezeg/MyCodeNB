@@ -1,0 +1,5 @@
+export http_proxy=proxy-internet.localnet:3128
+export https_proxy=proxy-internet.localnet:3128
+
+
+or create file with name .bashrc  and make the file in the home folder and relog to system 
