@@ -1,0 +1,16 @@
+for a simple example : https://github.com/krux02/minimal_cmake_example
+
+create file CMakeList.txt
+
+first command 
+  ~$ cmake .
+ 
+ then 
+ 
+  ~$ cmak
+  
+ finally we can execute our file generated
+ ex:
+ 
+    ~$ ./hello
+ 
