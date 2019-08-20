@@ -1,0 +1,9 @@
+my_string="Ubuntu.sh"
+IFS='.' read -ra my_array <<< "$my_string"
+
+echo ${my_array[0]}
+
+# for i in "${my_array[@]}"
+# do
+#     echo $i
+# done
