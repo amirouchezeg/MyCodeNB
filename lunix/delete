@@ -1,0 +1,3 @@
+
+//delete all dir and files in current folder
+rm -r *
