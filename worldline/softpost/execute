@@ -1,0 +1,22 @@
+we need first to execute :
+
+export PLATFORM_VERSION=REL
+
+export SP_TARGET=/home/amirouche/target
+
+export PLATFORM=/usr/samoa/platforms/${PLATFORM_VERSION}
+export SOFTPOS_WORK=/home/amirouche/Amirouche/project/softpos-v7-gitlab-3
+export tools=${SOFTPOS_WORK}/sources/tools/compilation
+export TOOLS=${SOFTPOS_WORK}/sources/tools/compilation
+export FR_PLATFORM=${SOFTPOS_WORK}/fr_platform/
+
+export SAMOA_INCLUDE=${PLATFORM}/include
+export SAMOA_MAPS=${SAMOA_INCLUDE}/maps
+export SAMOA_LIB=${PLATFORM}/arm/fs/usr/lib
+export SAMOA_LIB_X86=${PLATFORM}/x86/fs/usr/lib
+export TMC=/usr/samoa/tmc/current_version
+
+alias cmake_arm='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_arm.cmake ..'
+alias cmake_x86='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_x86.cmake ..'
+alias cmaked_arm='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_arm.cmake -DCMAKE_BUILD_TYPE="Debug" ..'
+alias cmaked_x86='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_x86.cmake -DCMAKE_BUILD_TYPE="Debug" ..'
