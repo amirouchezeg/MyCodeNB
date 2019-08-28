@@ -1,0 +1,7 @@
+to show the result with XML file you have to execute the test with the following command 
+
+
+    ~$ ctest -T Test
+
+and we found the result in the Testing/1234123432/test.xml
+and other files are generated too in Testing Folder
