@@ -1,0 +1,15 @@
+in cmakeLists.txt
+
+...
+add_executable(test5 test5.cpp)
+target_link_libraries (test5 cmocka)
+...
+
+
+in the test5.cpp 
+
+extern "C"
+{
+#include "cmocka.h"
+}
+..//see the file example
