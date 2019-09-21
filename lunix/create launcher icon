@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetBeans IDE 8.2
+Comment=The Smarter Way to Code
+Icon=/home/amirouche/Pictures/icon(disktopLunche)dont_delete/NetBeans.png
+Exec=/bin/sh "/home/amirouche/netbeans-8.2/bin/netbeans"
+NoDisplay=false
+Categories=Application;Development;IDE;Java;
+StartupNotify=false
+Terminal=false
