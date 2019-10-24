@@ -1,0 +1,5 @@
+to debuge instead in compilation of cmake replace by cmake CMAKE_BUILD_DEBUG=Debug
+
+and to execute the executable
+
+~$ gdb nameOfExecutable 
