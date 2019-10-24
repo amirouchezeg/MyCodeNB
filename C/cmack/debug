@@ -1,4 +1,7 @@
-to debuge instead in compilation of cmake replace by cmake CMAKE_BUILD_DEBUG=Debug
+to debuge instead in compilation of 
+   cmake 
+replace by 
+   cmake -D CMAKE_BUILD_TYPE=Debug
 
 and to execute the executable
 
