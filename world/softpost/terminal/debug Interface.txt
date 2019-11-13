@@ -1,0 +1,14 @@
+------------installation
+install putty
+install drinve FTDI :(manuale d'installation: https://www.ftdichip.com/Support/Documents/AppNotes/AN_119_FTDI_Drivers_Installation_Guide_for_Windows7.pdf)
+
+-----------utilisation 
+open putty
+
+	>choose serial
+	>serial line="COMX"(X:get the number from the device manager (gestion de périphérique)) and speed="115200"
+	>in Saved session make the name (for example "COMX") >save
+	>open
+
+
+

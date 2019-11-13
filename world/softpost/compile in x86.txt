@@ -1,4 +1,4 @@
-we need first to execute :
+----we need first to execute :
 
 export PLATFORM_VERSION=REL
 
@@ -20,3 +20,7 @@ alias cmake_arm='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_arm.cmake ..'
 alias cmake_x86='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_x86.cmake ..'
 alias cmaked_arm='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_arm.cmake -DCMAKE_BUILD_TYPE="Debug" ..'
 alias cmaked_x86='cmake -DCMAKE_TOOLCHAIN_FILE=$TOOLS/samoa_x86.cmake -DCMAKE_BUILD_TYPE="Debug" ..'
+
+
+----then
+cmake  

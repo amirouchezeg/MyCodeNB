@@ -1,0 +1,5 @@
+------------installation
+
+ipkg install name.ipk
+$to force 
+ipkg install -force-owveried name.ipk

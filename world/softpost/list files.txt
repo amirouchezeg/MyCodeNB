@@ -1,0 +1,1 @@
+host_db { path : /etc/tlcmdb/hosts_db } 
