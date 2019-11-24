@@ -1,4 +1,8 @@
 composer create-project --prefer-dist laravel/laravel laravel/nameProject
 
+composer create-project --prefer-dist laravel/laravel workspace/TOTO/docker/laravelProject
+
+or---
+
 php composer.phar create-project --prefer-dist laravel/laravel laravel/eagle_project_v2
 
