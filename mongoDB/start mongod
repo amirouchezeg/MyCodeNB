@@ -1,0 +1,8 @@
+mongod --repair worked for me ,
+
+sudo mongod --repair
+sudo mongod
+Then open a different tab/terminal:
+
+mongo
+After this your local setup will work properly

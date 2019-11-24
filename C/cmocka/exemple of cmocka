@@ -1,0 +1,50 @@
+#include <stdarg.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <stdint.h>
+#include <assert.h>
+#include <sys/stat.h>
+#include <string.h>
+
+extern "C"
+{
+#include "cmocka.h"
+}
+
+
+unsigned char msg[] = "Message to send"; 
+int error = 0;
+
+
+class CUTEST
+{
+public :
+
+    static void test_transparent(void** state)
+    {
+        int indice = 1;
+        indice++;
+        assert_false(0);
+        
+    }
+
+    static void test2(void** state)
+    {
+        assert_true(0);
+        assert_false(0);
+        assert_non_null(0);
+        assert_null(0);
+        assert_int_equal(0, 0);
+        assert_int_not_equal(0, 0);       
+    }
+};
+
+int main()
+{
+    const struct CMUnitTest tests[] = {
+       cmocka_unit_test( CUTEST::test_transparent ),
+       cmocka_unit_test( CUTEST::test2 ),
+    };
+
+    return cmocka_run_group_tests_name("Test Service Telecom transparent", tests, NULL, NULL );
+}

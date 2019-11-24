@@ -1,0 +1,10 @@
+example:
+
+include_directories(
+../../../../tools/mock
+$ENV{FR_PLATFORM}/inc/peripherique/
+$ENV{FR_PLATFORM}/inc/commun/test/cmocka
+)
+
+add_executable(exchange_test_move_trx_backup main.cpp )
+target_link_libraries (exchange_test_move_trx_backup cmocka echanges)

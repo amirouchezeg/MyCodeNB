@@ -1,0 +1,22 @@
+to find the moduls launched in start and auther 
+
+ls /etc/amd.d/
+
+--------remove dtpsvcd to launche from start
+chmod -r /etc/amd.d/dtpsvcd
+//-r : fore status READ 
+--------add dtpsvcd to launche from start
+chmod +r /etc/amd.d/dtpsvcd
+
+----to start dtpsvcd and show runtime log
+to find the command tu use to launche service mainaully
+
+open file 
+
+cat /etc/amd.d/dtpsvcd
+
+> path = /fr/usr/bin/dtpsvcd
+
+then the command is 
+
+/fr/usr/bin/dtpsvcd

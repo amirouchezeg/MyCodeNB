@@ -1,0 +1,10 @@
+to debuge instead in compilation of 
+   cmake 
+replace by 
+   cmake -D CMAKE_BUILD_TYPE=Debug
+
+and to execute the executable
+
+~$ gdb nameOfExecutable 
+
+https://www.tutorialspoint.com/gnu_debugger/gdb_debugging_examples.htm

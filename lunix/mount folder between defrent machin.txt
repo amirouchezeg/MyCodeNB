@@ -1,0 +1,4 @@
+to config server follow this tuto : https://vitux.com/install-nfs-server-and-client-on-ubuntu/ 
+
+
+in the clinet execute this command : mount @serverIp:/mnt/sharedfolder /mnt -o nolock
