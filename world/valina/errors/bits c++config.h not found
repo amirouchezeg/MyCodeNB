@@ -1,0 +1,10 @@
+Missing include “bits/c++config.h” when cross compiling 64 bit program on 32 bit in Ubuntu
+
+
+I added the 
+		# export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/spica/tools/android-19-toolchain/include/c++/4.8/arm-linux-androideabi/armv7-a/
+
+to vmake file
+
+
+

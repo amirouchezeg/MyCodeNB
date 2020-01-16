@@ -1,1 +1,2 @@
 host_db { path : /etc/tlcmdb/hosts_db } 
+applis.ini { /fr/etc/applis.ini }

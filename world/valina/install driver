@@ -1,0 +1,15 @@
+source :> https://visualgdb.com/KB/usbdebug-manual/
+
+1 :: In the SDK Manager install "Google USB Driver". 
+2 :: In the Device Manager (windows) locate your Android device. Then right-click on it and select "Update Driver Software".
+3 :: Select "Browse my computer for driver software"
+4 :: Select "Let me pick from a list of device drivers on my computer"
+5 :: Select "Show All Devices"
+6 :: Press the "Have Disk" button
+7 :: Enter the path to the Google USB driver. Normally it is located in the following directory
+	C:\Program Files (x86)\Android\android-sdk\extras\google\usb_driver
+	for me ::C:\Utilisateurs\A761098\AppData\Local\Android\Sdk\extras\google\usb_driver
+8 :: Select "Android ADB Interface" from the list of device types.
+9 :: yes>install>close
+
+

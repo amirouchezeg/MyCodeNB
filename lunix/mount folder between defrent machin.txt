@@ -2,3 +2,4 @@ to config server follow this tuto : https://vitux.com/install-nfs-server-and-cli
 
 
 in the clinet execute this command : mount @serverIp:/mnt/sharedfolder /mnt -o nolock
+ex : mount 10.221.246.127:/mnt/sharedfolder /mnt -o nolock

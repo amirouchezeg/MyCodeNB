@@ -1,0 +1,1 @@
+ python update-terminal.py --nochecksig --spica --adb-server 5037 -p SACC_VALINA.csv -t 10.221.245.154

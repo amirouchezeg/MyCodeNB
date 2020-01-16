@@ -20,3 +20,9 @@ cat /etc/amd.d/dtpsvcd
 then the command is 
 
 /fr/usr/bin/dtpsvcd
+
+
+list : 
+/fr/usr/bin/dtpsvcd
+/usr/bin/tl
+

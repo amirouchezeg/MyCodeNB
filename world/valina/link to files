@@ -1,0 +1,4 @@
+tmc :  http://applinux.tp.testnet.banksys.be/build_terminal_management/tmc/version_012504/tmc-lib_012504_all.deb
+	install it dpkg -i filename.deb : the file it well be in /usr/samoa/version_012504
+	-> cp /usr/samoa/version_012504 /usr/samoa/terminal_management/tmc/version_012504
+
