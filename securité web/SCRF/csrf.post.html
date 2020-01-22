@@ -1,0 +1,12 @@
+<html>
+<body>
+    <h1>CSRF form</h1>
+    <form action="http://localhost/fix/auth/" method="POST">
+        <input  name="login"    value="test" />
+        <input  name="password" value="test" />
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+</html>
