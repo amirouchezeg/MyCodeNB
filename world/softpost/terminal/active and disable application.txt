@@ -1,0 +1,12 @@
+----> 	open applis.ini file
+vi /fr/etc/applis.ini
+
+NUM_APPLI=33
+LIB=amex
+LOAD=O
+STATUS=Inactive
+SERVER_STATE=online
+SERVER_TYPE=SoftPOS
+VERSION=30.00.14
+
+# make O or delete it from LOAD=

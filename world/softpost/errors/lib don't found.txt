@@ -1,0 +1,14 @@
+the libs is in fr_platrorm
+
+then we need to link the lib
+
+----- libcmocka don't found
+
+in the file sources/tools/compilation/samoa.cmake
+add the link to cmocka
+
+set(ARCH "x86")
+....
+link_directories( $ENV{FR_PLATFORM}/libplatform_x86/ )
+
+----- 

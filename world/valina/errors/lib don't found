@@ -1,0 +1,5 @@
+the libs of valina is in 
+	fr_platform/third_party/libplatform_android
+
+check the link in the linkage (cmakelist.txt) if thier link to this folder
+
