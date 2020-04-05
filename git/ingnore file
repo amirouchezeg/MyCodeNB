@@ -1,0 +1,7 @@
+//to ignore this file I used the command 
+
+git update-index --assume-unchanged <file>
+
+//To revert that ignorance use the following command:
+
+git update-index --no-assume-unchanged <file>
